@@ -23,7 +23,7 @@ Equipos: 2
 ////////////////////////////////////////////////////////////////////////////
 //      Apoyo(5)                   //              Ofensivos(5)           //
 //        =>  (M)Tortuga           //                =>  (M)Koopa         //
-//              Vision: 5          //                       Vision: 3     //                                                                            
+//              Vision: 5          //                       Vision: 3     //                                          
 //              Pasos: 3           //                       Pasos: 7      //
 //        =>  (B)Yoshi             //                =>  (M)Wario         //
 //              Vision: 1          //                       Vision: 2     //
