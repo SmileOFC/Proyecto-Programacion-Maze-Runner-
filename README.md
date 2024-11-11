@@ -10,37 +10,52 @@ de 3 espacios, por tanto los items pasivos q este  jugador lleve en el inventari
 dependencia de la situacion en la que se vea alguna de sus fichas. Hay dos tipos de items, pasivos(Cofres) y activos(Vendedores). El primer equipo que logre llevar
 una de sus fichas al centro gana.
 
-LEYENDA
+///LEYENDA///
 
-Equipos: 2
+>Equipos: 2
 
-Malos(M) => Players: 5
+>Malos(M) => Players: 5
 
 Roles: Apoyo(2) Ofensivos(3)
 
-Buenos(B) => players: 5
+>Buenos(B) => players: 5
 
 Roles: Apoyo(3) Ofensivos(2)
 
-Fichas: 10
+>Fichas: 10
 
-Roles: 3
-  
+>Roles: 3
+
 ////////////////////////////////////////////////////////////////////////////
+
 //      Apoyo(5)                   //              Ofensivos(5)           //
+
 //        =>  (M)Tortuga           //                =>  (M)Koopa         //
-//              Vision: 5          //                       Vision: 3     //                                          
+
+//              Vision: 5          //                       Vision: 3     //
+
 //              Pasos: 3           //                       Pasos: 7      //
+
 //        =>  (B)Yoshi             //                =>  (M)Wario         //
+
 //              Vision: 1          //                       Vision: 2     //
+
 //              Pasos: 10          //                       Pasos: 8      //
+
 //        =>  (B)Luigi             //                =>  (M)Waluigi       //
+
 //              Vision: 1          //                       Vision: 1     //
+
 //              Pasos: 6           //                       Pasos: 12     //
+
 //        =>  (B)Hongo             //                =>  (B)Peach         //
+
 //              Vision: 1          //                       Vision: 1     //
+
 //              Pasos: 4           //                       Pasos: 11     //
-//////////////////////////////////////////////////////////////////////////// 
+
+////////////////////////////////////////////////////////////////////////////
+
 //                            >  MIXTOS <                                 //
 //           (M)Bowser                             (B)Mario               //
 //              Vision: 1                             Vision: 1           //
