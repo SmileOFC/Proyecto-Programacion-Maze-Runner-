@@ -1,5 +1,4 @@
-﻿using static Program;
-
+﻿
 public class Bufss{
 
     public static void Buff(int x)

@@ -1,5 +1,4 @@
-﻿using static Program;
-
+﻿
 public class Jugar
     {       
         public static int Mover(int x, char y)

@@ -1,7 +1,7 @@
 ﻿using System; 
 public class Rondas
 {
-    public static void Ronda()
+    public static void Main()
     {   
         int z=1;
         int ve;
@@ -26,7 +26,7 @@ public class Rondas
         
                 if ( keyInfo.KeyChar == 'h'){
 
-
+                    Habilidades.Habilidad();
 
                 }
                     

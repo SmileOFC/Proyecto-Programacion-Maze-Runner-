@@ -1,7 +1,4 @@
-﻿using static Program;
-
-
-
+﻿
 public class Tablero{
 
         public static Random rand = new Random();

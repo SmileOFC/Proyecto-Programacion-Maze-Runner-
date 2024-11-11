@@ -1,5 +1,4 @@
-﻿using static Program;
-
+﻿
 public class Trampas{
 
     public static void Trampa(int t, int x,int tx, int ty, int px, int py, char p)

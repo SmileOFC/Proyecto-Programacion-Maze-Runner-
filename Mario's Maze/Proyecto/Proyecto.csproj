@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <Folder Include="Habilidades\" />
+    <Folder Include="Tablero\Cofres\" />
+    <Folder Include="Tablero\NPCs\" />
   </ItemGroup>
 
 </Project>

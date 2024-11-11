@@ -1,5 +1,4 @@
-﻿using static Program;
-
+﻿
 public class Velocidades{
 
     static int b21 = 10;

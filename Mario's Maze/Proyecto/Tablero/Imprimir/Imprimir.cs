@@ -1,5 +1,4 @@
-﻿using static Program;
-
+﻿
 public class Imprime {
 
     public static void Imprimir()
