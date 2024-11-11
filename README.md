@@ -113,7 +113,7 @@ Habilidades:
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Mixtos:
+Habilidades Mixtas:
 
 >Bowser(Apoyo) => -1 Pasos(Individual) +1 Vision(Aliado) / Efecto inmediato / Selectiva / Refresca(5)
 
@@ -162,25 +162,25 @@ Items Activos: 4 (Uso unico)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Items Pasivos: 8
+Items Pasivos: 8 (Temporales)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
->>=>  Gorra de SM: +1 Cant.Pasos
+>>=>  Gorra de SM: +1 Cant.Pasos / Refresca()
 
->>=>  Corona de Peach: +2 Cant.Pasos
+>>=>  Corona de Peach: +2 Cant.Pasos / Refresca() 
 
->>=>  Mario's Car: +3 Cant.Pasos
+>>=>  Mario's Car: +3 Cant.Pasos / Refresca()
 
->>=>  Arcoiris: +1 Vision
+>>=>  Arcoiris: +1 Vision / Refresca()
 
->>=>  Ventilador: +2 Vision
+>>=>  Ventilador: +2 Vision / Refresca()
 
->>=>  Tornado: +3 Vision
+>>=>  Tornado: +3 Vision / Refresca()
 
->>=>  Pala: +1 Revelar Trampas
+>>=>  Pala: +1 Revelar Trampas / Refresca()
 
->>=>  Detector de metales: +2 Revelar Trampas
+>>=>  Detector de metales: +2 Revelar Trampas / Refresca()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
