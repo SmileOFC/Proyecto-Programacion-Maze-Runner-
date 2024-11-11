@@ -13,7 +13,6 @@ una de sus fichas al centro gana.
 LEYENDA
 
 Equipos: 2
-
 ^^^^^^^^^^
 
   Malos(M) => Players: 5
