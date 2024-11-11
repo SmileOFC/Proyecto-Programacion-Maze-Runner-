@@ -1,5 +1,8 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Descripcion:
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Este proyecto es un juego 1 vs 1 de laberintos a nivel de consola, cada jugador pertenecera a un equipo, cada equipo tiene 5 fichas a elegir de las cuales puedes 
 elegir 3, hay un solo modo de juego, 1 vs 1 y 6 fichas en total en el tablero 3 fichas por equipo en el tablero. Las fichas tienen rols como apoyarse a si misma 
@@ -9,6 +12,8 @@ de los cuales solo podras llevar 2 a tu inventario. Tambien podras comprarle ite
 de 3 espacios, por tanto los items pasivos q este  jugador lleve en el inventario afectaran a todas sus fichas y los activos los podra usar estrategicamente en 
 dependencia de la situacion en la que se vea alguna de sus fichas. Hay dos tipos de items, pasivos(Cofres) y activos(Vendedores). El primer equipo que logre llevar
 una de sus fichas al centro gana.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///LEYENDA///
 
