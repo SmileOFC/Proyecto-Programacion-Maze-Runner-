@@ -14,84 +14,96 @@ una de sus fichas al centro gana.
 
 >Equipos: 2
 
->Malos(M) => Players: 5
+>>Malos(M) => Players: 5
 
-Roles: Apoyo(2) Ofensivos(3)
+>>>Roles: Apoyo(2) Ofensivos(3)
 
->Buenos(B) => players: 5
+>>Buenos(B) => players: 5
 
-Roles: Apoyo(3) Ofensivos(2)
+>>>Roles: Apoyo(3) Ofensivos(2)
 
->Fichas: 10
+>Total de Fichas: 10
 
 >Roles: 3
 
-////////////////////////////////////////////////////////////////////////////
+Apoyo(4)
 
-//      Apoyo(5)                   //              Ofensivos(5)           //
+>(M)Tortuga
+>>Vision: 5
+>>Pasos: 3
 
-//        =>  (M)Tortuga           //                =>  (M)Koopa         //
+>(B)Yoshi
+>>Vision: 1
+>>Pasos: 10
 
-//              Vision: 5          //                       Vision: 3     //
+>(B)Luigi
+>>Vision: 1
+>>Pasos: 6
 
-//              Pasos: 3           //                       Pasos: 7      //
+>(B)Hongo
+>>Vision: 1
+>>Pasos: 4
 
-//        =>  (B)Yoshi             //                =>  (M)Wario         //
+Ofensivos(4)
 
-//              Vision: 1          //                       Vision: 2     //
+>(M)Koopa
+>>Vision: 3
+>>Pasos: 7
 
-//              Pasos: 10          //                       Pasos: 8      //
+>(M)Wario
+>>Vision: 2
+>>Pasos: 8
 
-//        =>  (B)Luigi             //                =>  (M)Waluigi       //
+>(M)Waluigi
+>>Vision: 1
+>>Pasos: 12
 
-//              Vision: 1          //                       Vision: 1     //
+>(B)Peach
+>>Vision: 1
+>>Pasos: 11
 
-//              Pasos: 6           //                       Pasos: 12     //
+Mixtos(2)
 
-//        =>  (B)Hongo             //                =>  (B)Peach         //
+>(M)Bowser
+>>Vision: 1
+>>Pasos: 9
 
-//              Vision: 1          //                       Vision: 1     //
+>(B)Mario
+>>Vision: 1
+>>Pasos: 5
 
-//              Pasos: 4           //                       Pasos: 11     //
+Habilidades:
 
-////////////////////////////////////////////////////////////////////////////
+Yoshi(Apoyo) => +5 Vision / Efecto inmediato / Individual / Refresca(3)
 
-//                            >  MIXTOS <                                 //
-//           (M)Bowser                             (B)Mario               //
-//              Vision: 1                             Vision: 1           //
-//              Pasos: 9                              Pasos: 5            //
-//                                                                        //
-////////////////////////////////////////////////////////////////////////////
+Luigi(Apoyo) => +3 Revelar Trampas / Efecto Inmediato / Global / Refresca(5)
 
-Habilidades: 
-^^^^^^^^^^^^
-  Yoshi(Apoyo) => +5 Vision / Efecto inmediato / Individual / Refresca(3)
-  
-  Luigi(Apoyo) => +3 Revelar Trampas / Efecto Inmediato / Global / Refresca(5) 
-  
-  Hongo(Apoyo) => +2 Pasos(Aliados) -2 Pasos(Contrario)/ Efecto Temporal(2) / Selectiva / Refresca(8)
-  
-  Tortuga(Apoyo) =>  Destruye un muro / Efecto Temporal(2) / Selectiva / Refresca(8)
-  
-  Wario(Ofensiva) => Se vuelve inmune a trampas / Efecto inmediato / Individual / Refresca(5)
-  
-  Koopa(Ofensiva) => -1 vision(Individual) +2 Pasos(Individual) / Efecto Inmediato / Selectiva / Refresca(8)
+Hongo(Apoyo) => +2 Pasos(Aliados) -2 Pasos(Contrario)/ Efecto Temporal(2) / Selectiva / Refresca(8)
 
-  Waluigi(Ofensiva) => Elimina todos los items del inventario del contrario / Efecto Inmediato / Activa / Refesca(8)
-  
-  Peach(Ofensiva) => Anula todos los efectos negativos de un aliado / Efecto Inmediato / Selectiva / Refresca(5)
+Tortuga(Apoyo) =>  Destruye un muro / Efecto Temporal(2) / Selectiva / Refresca(8)
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-  
-  Mixtos:
-  
-  Bowser(Apoyo) => -1 Pasos(Individual) +1 Vision(Aliado) / Efecto inmediato / Selectiva / Refresca(5)
-  Bowser(Ofensiva) => -1 vision(Contrario) -2 Pasos(Contrario) / Efeccto Temporal(3) / Slectiva / Refresca(8)
+Wario(Ofensiva) => Se vuelve inmune a trampas / Efecto inmediato / Individual / Refresca(5)
 
-  Mario(Apoyo) => Salta un muro / Efecto  inmediato / Individual / Refresca(5)
-  Mario(Ofensiva) => Empuja max(5) paso en cualquier direccion a un Contrario / Efecto Inmediato / Selectiva / Refresca(8)
+Koopa(Ofensiva) => -1 vision(Individual) +2 Pasos(Individual) / Efecto Inmediato / Selectiva / Refresca(8)
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Waluigi(Ofensiva) => Elimina todos los items del inventario del contrario / Efecto Inmediato / Activa / Refesca(8)
+
+Peach(Ofensiva) => Anula todos los efectos negativos de un aliado / Efecto Inmediato / Selectiva / Refresca(5)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Mixtos:
+
+Bowser(Apoyo) => -1 Pasos(Individual) +1 Vision(Aliado) / Efecto inmediato / Selectiva / Refresca(5)
+
+Bowser(Ofensiva) => -1 vision(Contrario) -2 Pasos(Contrario) / Efeccto Temporal(3) / Slectiva / Refresca(8)
+
+
+Mario(Apoyo) => Salta un muro / Efecto  inmediato / Individual / Refresca(5)
+
+Mario(Ofensiva) => Empuja max(5) paso en cualquier direccion a un Contrario / Efecto Inmediato / Selectiva / Refresca(8)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
      
 Trampas: 3 (Ocultas)
