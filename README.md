@@ -104,13 +104,15 @@ Mario(Apoyo) => Salta un muro / Efecto  inmediato / Individual / Refresca(5)
 Mario(Ofensiva) => Empuja max(5) paso en cualquier direccion a un Contrario / Efecto Inmediato / Selectiva / Refresca(8)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- 
-     
+
 Trampas: 3 (Ocultas)
 ^^^^^^^^^^^^^^^^^^^^
-  Hueco => Al caer en un hueco con una ficha esta vuelve a su posicion inicial
-  Bomba => Retrasa 2 casillas en direccion contraria
-  Placa => Se levantara un muro justo delante imposibilitantote el paso hasta el siguiente turno
+
+Hueco => Al caer en un hueco con una ficha esta vuelve a su posicion inicial
+
+Bomba => Retrasa 2 casillas en direccion contraria
+
+Placa => Se levantara un muro justo delante imposibilitantote el paso hasta el siguiente turno
 
 Buff: 2 (Visibles)
 ^^^^^^^^^^^^^^^^^^
