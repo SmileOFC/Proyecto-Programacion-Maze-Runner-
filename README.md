@@ -1,7 +1,7 @@
 Descripcion: 
 Este proyecto es un juego 1 vs 1 de laberintos a nivel de consola, cada jugador pertenecera a un equipo, cada equipo tiene 5 fichas a elegir de las cuales puedes 
 elegir 3, hay un solo modo de juego, 1 vs 1 y 6 fichas en total en el tablero 3 fichas por equipo en el tablero. Las fichas tienen rols como apoyarse a si misma 
-apoyar un aliado o retrasar a una ficha  del contrario. En el camino te encontraras a obstaculos como son trampas y NPCs, que te dificultaran llegar a la meta. 
+apoyar un aliado o retrasar a una ficha  del contrario. En el camino te encontraras a obstaculos como son trampas y NPCs, que te dificultaran llegar a la meta.  
 Tambien tendras Buffs y cofres por el camino. Para  interactuar con los NPCs se tiene q pagar con monedas que recogeras x el camnino. Los cofres traeran 5 items 
 de los cuales solo podras llevar 2 a tu inventario. Tambien podras comprarle items mejores a los vendedores. Cada Jugador tendra un inventario con una capacidad 
 de 3 espacios, por tanto los items pasivos q este  jugador lleve en el inventario afectaran a todas sus fichas y los activos los podra usar estrategicamente en 
