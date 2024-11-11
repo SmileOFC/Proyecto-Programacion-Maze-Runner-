@@ -8,10 +8,14 @@ Tambien tendras Buffs y cofres por el camino. Para  interactuar con los NPCs se 
 de los cuales solo podras llevar 2 a tu inventario. Tambien podras comprarle items mejores a los vendedores. Cada Jugador tendra un inventario con una capacidad 
 de 3 espacios, por tanto los items pasivos q este  jugador lleve en el inventario afectaran a todas sus fichas y los activos los podra usar estrategicamente en 
 dependencia de la situacion en la que se vea alguna de sus fichas. Hay dos tipos de items, pasivos(Cofres) y activos(Vendedores). El primer equipo que logre llevar
-una de sus fichas al centro gana. 
-            > LEYENDA <
+una de sus fichas al centro gana.
+
+LEYENDA
+
 Equipos: 2
+
 ^^^^^^^^^^
+
   Malos(M) => Players: 5
     Roles: Apoyo(2) Ofensivos(3)
   Buenos(B) => players: 5
