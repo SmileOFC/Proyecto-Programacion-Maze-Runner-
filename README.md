@@ -22,7 +22,7 @@ Equipos: 2
 
 >>=> Roles: Apoyo(3) Ofensivos(2)
 
-Total de Fichas: 10
+Total de Fichas: 10 
 Roles: 3
 
 >>>Apoyo(4)
