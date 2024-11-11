@@ -13,17 +13,18 @@ una de sus fichas al centro gana.
 LEYENDA
 
 Equipos: 2
-^^^^^^^^^^
 
-  Malos(M) => Players: 5
-    Roles: Apoyo(2) Ofensivos(3)
-  Buenos(B) => players: 5
-    Roles: Apoyo(3) Ofensivos(2)
-  
-  Fichas: 10
-  ^^^^^^^^^^
-  Roles: 3
-  ^^^^^^^^
+Malos(M) => Players: 5
+
+Roles: Apoyo(2) Ofensivos(3)
+
+Buenos(B) => players: 5
+
+Roles: Apoyo(3) Ofensivos(2)
+
+Fichas: 10
+
+Roles: 3
   
 ////////////////////////////////////////////////////////////////////////////
 //      Apoyo(5)                   //              Ofensivos(5)           //
