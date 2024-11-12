@@ -38,14 +38,16 @@
                        
                 Pasos = Jugar.Mover(x,keyInfo.KeyChar);
 
-                } 
+                }
+                if(Pasos==2) break; 
             }
             // COLDOWNS
             Trampas.PlacaQuitar();
             if(Inmunidad.Consultar(x) != 0)
                 Inmunidad.Rest(x);
             
-
+            // WIN 
+            if(Pasos==2) break; 
         }
 
     }

@@ -1,10 +1,10 @@
 ﻿using System; 
 public class Program {
-    static void Main()
+    public static void Main()
     {   
         Loby.LOBY();
         Rondas.Ronda();
-
+        Loby.WIN();
                
     }       
 }
