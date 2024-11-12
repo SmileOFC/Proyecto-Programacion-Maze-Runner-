@@ -17,6 +17,10 @@
             Estadisticas.i27+=c;
         if(x==28)
             Estadisticas.i28+=c;
+        if(x==29)
+            Estadisticas.i29+=c;
+        if(x==20)
+            Estadisticas.i20+=c;
     }
 
     public static int Consultar(int x){
@@ -60,6 +64,17 @@
         if(x==28){
             if(Estadisticas.i28==0) return 0;
             else return Estadisticas.i28;
+        }
+
+        if(x==29){
+            if(Estadisticas.i29==0) return 0;
+            else return Estadisticas.i29;
+        }
+
+        if(x==20){
+            if(Estadisticas.i20==0) return 0;
+            else return Estadisticas.i20;
+
         }else return 0;
 
     }
@@ -82,6 +97,10 @@
             Estadisticas.i27-=1;
         if(x==28) 
             Estadisticas.i28-=1;
+        if(x==29) 
+            Estadisticas.i29-=1;
+        if(x==20) 
+            Estadisticas.i20-=1;
     }
 
 }

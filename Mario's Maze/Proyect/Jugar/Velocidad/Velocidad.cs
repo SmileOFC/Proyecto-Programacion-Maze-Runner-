@@ -18,6 +18,10 @@ public static class Velocidades{
                 return Estadisticas.b27;
             if(x==28)
                 return Estadisticas.b28;
+            if(x==29)
+                return Estadisticas.b29;
+            if(x==20)
+                return Estadisticas.b20;
                 return 0;
 
     }
@@ -40,6 +44,10 @@ public static class Velocidades{
                 return 3;
             if(x==28)
                 return 8;
+            if(x==29)
+                return 11;
+            if(x==20)
+                return 12;
                 return 0;
     }
     public static int Velocidad(int x)
@@ -125,6 +133,26 @@ public static class Velocidades{
                     return 0;
                 }
                 return Estadisticas.b28;            
+            }
+            if(x==29){
+
+                Estadisticas.b29 -= 1 ;
+                if(Estadisticas.b29==0)
+                {
+                    Estadisticas.b29=v(29);
+                    return 0;
+                }
+                return Estadisticas.b29;            
+            }
+            if(x==20){
+
+                Estadisticas.b20 -= 1 ;
+                if(Estadisticas.b20==0)
+                {
+                    Estadisticas.b20=v(20);
+                    return 0;
+                }
+                return Estadisticas.b20;            
             }
             return 0;
         }

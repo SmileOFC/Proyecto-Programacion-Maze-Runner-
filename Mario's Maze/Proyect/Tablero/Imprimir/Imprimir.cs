@@ -3,9 +3,13 @@ public class Imprime {
 
     public static void Imprimir()
     {  
+        Console.WriteLine("");
+        Console.WriteLine(""); 
 
         for (int i = 0; i < Tablero.filas; i++)
         {
+            Console.Write("     ");
+            
             for (int j = 0; j < Tablero.columnas; j++)
             {
 
@@ -34,6 +38,12 @@ public class Imprime {
                 }
                 if(Tablero.laberinto[i,j]==28){
                     Console.Write("P8");
+                }
+                if(Tablero.laberinto[i,j]==29){
+                    Console.Write("P9");
+                }
+                if(Tablero.laberinto[i,j]==20){
+                    Console.Write("PP");
                 }
 
                 // TRAMPAS
@@ -76,6 +86,9 @@ public class Imprime {
 
                 if(Tablero.laberinto[i,j]==5){
                     Console.Write("  ");
+                }
+                if(Tablero.laberinto[i,j]==55){
+                    Console.Write("[]");
                 }
 
             }
