@@ -7,10 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Tablero\Cofres\" />
-    <Folder Include="Tablero\NPCs\" />
-    <Folder Include="Tablero\Trampas\" />
-  </ItemGroup>
-
 </Project>

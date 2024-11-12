@@ -36,7 +36,7 @@ public class Jugar
                 return Velocidades.Velocidad(x); }
 
                 if(Arriba(xy[0],xy[1]) == 4){ 
-                Bufss.Buff(Tablero.laberinto[xy[0]-1,xy[1]]);                  
+                Bufss.Buff(Tablero.laberinto[xy[0]-1,xy[1]],x,xy[0]-1,xy[1],xy[0],xy[1]);                  
                 return Velocidades.Velocidad(x);}
                 
                 if(Arriba(xy[0],xy[1]) == 5)
@@ -64,17 +64,17 @@ public class Jugar
                 }
 
                 if(Abajo(xy[0],xy[1]) == 2)
-                    return 1;
+                    return Velocidades.Actual(x);
                 if(Abajo(xy[0],xy[1]) == 3){
                     Trampas.Trampa(Tablero.laberinto[xy[0]+1,xy[1]],x,xy[0]+1,xy[1],xy[0],xy[1],y);
                     return Velocidades.Velocidad(x); }
 
                 if(Abajo(xy[0],xy[1]) == 4){ 
-                    Bufss.Buff(Tablero.laberinto[xy[0]+1,xy[1]]); 
+                    Bufss.Buff(Tablero.laberinto[xy[0]+1,xy[1]],x,xy[0]+1,xy[1],xy[0],xy[1]); 
                     return Velocidades.Velocidad(x);}                 
 
                 if(Abajo(xy[0],xy[1]) == 5)
-                    return 2;
+                    return 2; // win
 
                 if(Abajo(xy[0],xy[1]) == 0)
                 {
@@ -85,7 +85,7 @@ public class Jugar
                         b = true;
                     if(Derecha(xy[0],xy[1])==1 || Derecha(xy[0],xy[1])==3 || Derecha(xy[0],xy[1])==4 || Derecha(xy[0],xy[1])==5)
                         b = true;
-                    if(b) return 1; else return 0;
+                    if(b) return Velocidades.Actual(x); else return 0;
                 }
             }
             if (y == 'a')
@@ -98,13 +98,13 @@ public class Jugar
                 }
 
                 if(Izquierda(xy[0],xy[1]) == 2)
-                   return 1;
+                   return Velocidades.Actual(x);
                 if(Izquierda(xy[0],xy[1]) == 3){
                    Trampas.Trampa(Tablero.laberinto[xy[0],xy[1]-1],x,xy[0],xy[1]-1,xy[0],xy[1],y);
                    return Velocidades.Velocidad(x); }
 
                 if(Izquierda(xy[0],xy[1]) == 4){ 
-                   Bufss.Buff(Tablero.laberinto[xy[0],xy[1]-1]);
+                   Bufss.Buff(Tablero.laberinto[xy[0],xy[1]-1],x,xy[0],xy[1]-1,xy[0],xy[1]);
                    return Velocidades.Velocidad(x); }                  
 
                 if(Izquierda(xy[0],xy[1]) == 5)
@@ -119,7 +119,7 @@ public class Jugar
                         b = true;
                     if(Derecha(xy[0],xy[1])==1 || Derecha(xy[0],xy[1])==3 || Derecha(xy[0],xy[1])==4 || Derecha(xy[0],xy[1])==5)
                         b = true;
-                    if(b) return 1; else return 0;
+                    if(b) return Velocidades.Actual(x); else return 0;
                 }
             }
             if (y == 'd')
@@ -132,13 +132,13 @@ public class Jugar
                 }
 
                 if(Derecha(xy[0],xy[1]) == 2)
-                   return 1;
+                   return Velocidades.Actual(x);
                 if(Derecha(xy[0],xy[1]) == 3){
                    Trampas.Trampa(Tablero.laberinto[xy[0],xy[1]+1],x,xy[0],xy[1]+1,xy[0],xy[1],y);
                    return Velocidades.Velocidad(x);}
 
                 if(Derecha(xy[0],xy[1]) == 4){ 
-                   Bufss.Buff(Tablero.laberinto[xy[0]+1,xy[1]]);  
+                   Bufss.Buff(Tablero.laberinto[xy[0]+1,xy[1]],x,xy[0],xy[1]+1,xy[0],xy[1]);  
                    return Velocidades.Velocidad(x);}                
 
                 if(Derecha(xy[0],xy[1]) == 5)
@@ -153,10 +153,10 @@ public class Jugar
                         b = true;
                     if(Izquierda(xy[0],xy[1])==1 || Izquierda(xy[0],xy[1])==3 || Izquierda(xy[0],xy[1])==4 || Izquierda(xy[0],xy[1])==5)
                         b = true;
-                    if(b) return 1; else return 0;
+                    if(b) return Velocidades.Actual(x); else return 0;
                 }
             }   
-        return 1;
+        return Velocidades.Actual(x);
         }
             static int Abajo(int F, int C)
             {

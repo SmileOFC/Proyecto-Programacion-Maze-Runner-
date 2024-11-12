@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyecto\\Tablero\\Trampas\\Trampas.csproj",
-      "projectName": "Trampas",
-      "projectPath": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyecto\\Tablero\\Trampas\\Trampas.csproj",
+      "projectUniqueName": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyecto\\Tablero\\Niebla\\Niebla.csproj",
+      "projectName": "Niebla",
+      "projectPath": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyecto\\Tablero\\Niebla\\Niebla.csproj",
       "packagesPath": "C:\\Users\\Mayito\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyecto\\Tablero\\Trampas\\obj\\",
+      "outputPath": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyecto\\Tablero\\Niebla\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mayito\\AppData\\Roaming\\NuGet\\NuGet.Config"

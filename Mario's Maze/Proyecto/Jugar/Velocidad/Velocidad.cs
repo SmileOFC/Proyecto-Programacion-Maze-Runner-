@@ -1,16 +1,38 @@
 ﻿
-public class Velocidades{
+public static class Velocidades{
 
-    static int b21 = 10;
-    static int b22 = 7;
-    static int b23 = 6;
-    static int b24 = 5;
-    static int b25 = 4;
-    static int b26 = 9;
-    static int b27 = 3;
-    static int b28 = 8;
+    public static int b21 = 10;
+    public static int b22 = 7;
+    public static int b23 = 6;
+    public static int b24 = 5;
+    public static int b25 = 4;
+    public static int b26 = 9;
+    public static int b27 = 3;
+    public static int b28 = 8;
 
-    static int v(int x){
+    public static int Actual(int x){
+
+            if(x==21)
+                return b21; 
+            if(x==22) 
+                return b22;
+            if(x==23) 
+                return b23;
+            if(x==24)
+                return b24;
+            if(x==25)
+                return b25;
+            if(x==26)
+                return b26;
+            if(x==27)
+                return b27;
+            if(x==28)
+                return b28;
+                return 0;
+
+    }
+
+    public static int v(int x){
     
             if(x==21)
                 return 10; 
@@ -41,7 +63,7 @@ public class Velocidades{
                     b21=v(21);
                     return 0;
                 }
-                return x;
+                return b21;
             }
                 
             if(x==22){
@@ -52,7 +74,7 @@ public class Velocidades{
                     b22=v(22);
                     return 0;
                 }
-                return x;                
+                return b22;                
             }
             if(x==23){
 
@@ -62,7 +84,7 @@ public class Velocidades{
                     b23=v(23);
                     return 0;
                 }
-                return x;
+                return b23;
             }
             if(x==24){
 
@@ -72,7 +94,7 @@ public class Velocidades{
                     b24=v(24);
                     return 0;
                 }
-                return x;
+                return b24;
             }
             if(x==25){
 
@@ -82,7 +104,7 @@ public class Velocidades{
                     b25=v(25);
                     return 0;
                 }
-                return x;
+                return b25;
             }
             if(x==26){
 
@@ -92,7 +114,7 @@ public class Velocidades{
                     b26=v(26);
                     return 0;
                 }
-                return x;
+                return b26;
             }
             if(x==27){
 
@@ -102,7 +124,7 @@ public class Velocidades{
                     b27=v(27);
                     return 0;
                 }
-                return x;
+                return b27;
             }
             if(x==28){
 
@@ -112,9 +134,9 @@ public class Velocidades{
                     b28=v(28);
                     return 0;
                 }
-                return x;            
+                return b28;            
             }
-            return x;
+            return 0;
         }
 
 }

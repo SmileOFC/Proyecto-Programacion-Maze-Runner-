@@ -1,0 +1,5 @@
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyecto\Tablero\Trampas\obj\Debug\net8.0\Trampas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyecto\Tablero\Trampas\obj\Debug\net8.0\Trampas.AssemblyInfoInputs.cache
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyecto\Tablero\Trampas\obj\Debug\net8.0\Trampas.AssemblyInfo.cs
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyecto\Tablero\Trampas\obj\Debug\net8.0\Trampas.csproj.CoreCompileInputs.cache
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyecto\Tablero\Trampas\obj\Debug\net8.0\Trampas.sourcelink.json

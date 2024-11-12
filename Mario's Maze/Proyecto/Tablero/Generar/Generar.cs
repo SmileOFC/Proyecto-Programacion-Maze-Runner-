@@ -53,7 +53,7 @@ public class Tablero{
 
         // Trampas
 
-        /*for (int i = 1; i < filas; i++)
+        for (int i = 1; i < filas; i++)
         {
             for (int j = 1; j < columnas; j++)
             {
@@ -61,7 +61,7 @@ public class Tablero{
                 if(laberinto[i,j]==1){
                     c++;
                     if(c==10){
-                        int a = rand.Next(31,33);
+                        int a = rand.Next(33,34);
                         laberinto[i,j]=a;
                         c=0;
                     }
@@ -70,12 +70,10 @@ public class Tablero{
                 
             }
         }
-
-        */
        
         //Buff
 
-       for (int i = 1; i < filas; i++)
+      /* for (int i = 1; i < filas; i++)
         {
             for (int j = 1; j < columnas; j++)
             {
@@ -83,7 +81,7 @@ public class Tablero{
                 if(laberinto[i,j]==1){
                     c++;
                     if(c==20){
-                        int a = rand.Next(41,42);
+                        int a = rand.Next(41,43);
                         laberinto[i,j]=a;
                         c=0;
                     }
@@ -91,7 +89,7 @@ public class Tablero{
 
                 
             }
-        }   
+        }   */
     }
 
         //NPC

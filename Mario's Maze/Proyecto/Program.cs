@@ -1,26 +1,27 @@
 ﻿using System; 
-public class Rondas
-{
-    public static void Main()
+public class Program {
+    static void Main()
     {   
-        int z=1;
-        int ve;
+        
     
         Tablero.Generar();
         Console.Clear();
         // LOBY SELECT PLAYER      
 
+        int ve;
+
         for (int x = Tablero.rand.Next(21,29); x<30; x++){
 
             ve=1;
-            if (z == 0) break;
+            
             if (x == 28) x=21;
 
             while (ve>0){
 
                 Console.Clear();
                 Imprime.Imprimir();
-                Console.WriteLine("Player: " + x);
+                Console.WriteLine("Player: " + (x-20));
+                Console.WriteLine("Velocidad: " + Velocidades.Actual(x));
                 
                 var keyInfo = Console.ReadKey();
         
@@ -34,14 +35,13 @@ public class Rondas
                        
                 ve = Jugar.Mover(x,keyInfo.KeyChar);
 
-                    if(z==2) {
-
-                    // win  
-
-                    } 
-        
                 } 
             }
+            // COLDOWNS
+            if(Inmunidad.Consultar(x) != 0)
+                Inmunidad.Rest(x);
+            
+
         }       
     }       
 }

@@ -1,8 +1,9 @@
-﻿
-public class Trampas{
+﻿public class Trampas{
 
     public static void Trampa(int t, int x,int tx, int ty, int px, int py, char p)
-        {
+    {
+        
+        if(Inmunidad.Consultar(x) == 0){
 
         if(t==31){ //hueco
 
@@ -74,9 +75,7 @@ public class Trampas{
         
         }
 
-        if (t==34){ //Placa
-
-            Console.WriteLine("Hola");
+        if (t==33){ //Placa
 
             Tablero.laberinto[px,py] = 0;
             Tablero.laberinto[tx,ty] = x;
@@ -92,9 +91,10 @@ public class Trampas{
 
             if(Tablero.laberinto[tx,ty-1] == 1)
                 Tablero.laberinto[tx,ty-1] = 0;
+            Imprime.Imprimir();
         }
         
-        /* if(t==33){ //bala
+        /* if(t==34){ //bala
             Console.WriteLine("Hola");
             if(tx-2 > 0 && tx+2 < columnas && ty-2 > 0 && ty+2 < filas){
                 Tablero.laberinto[px,py] = 1;
@@ -134,8 +134,14 @@ public class Trampas{
                 }
             }
         }
-*/
+*/  }
+    else{
 
-        }
+        Tablero.laberinto[px,py] = 1;
+        Tablero.laberinto[tx,ty] = x;
+
+    }
+
+    }
 
 }
