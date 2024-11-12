@@ -1,0 +1,15 @@
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.AssemblyInfoInputs.cache
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.AssemblyInfo.cs
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.csproj.CoreCompileInputs.cache
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.sourcelink.json
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\Proyect.exe
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\Proyect.deps.json
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\Proyect.runtimeconfig.json
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\Proyect.dll
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\Proyect.pdb
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.dll
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\refint\Proyect.dll
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.pdb
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.genruntimeconfig.cache
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\ref\Proyect.dll
