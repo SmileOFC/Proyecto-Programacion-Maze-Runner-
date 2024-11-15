@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "naE5h7Oyc3ZzKnRjTcY79BFcV1YOM6KvPp901S9f0SafxV+fPKy0mjIWWgs47zBMfTgdCXva1xLJmKaCcVFQWA==",
+  "dgSpecHash": "29W6vYvDrujR2znLj0+7xh/kKx8n7YYc7a9Bz5vdAvgMWPKwrfybf9V+9j0ynlY9Q+WIWRuqU5konkP+ATvVpA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyect\\Proyect.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mayito\\.nuget\\packages\\spectre.console\\0.49.1\\spectre.console.0.49.1.nupkg.sha512"
+  ],
   "logs": []
 }

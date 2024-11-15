@@ -1,0 +1,5 @@
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\Tablero\Generar\obj\Debug\net8.0\Generar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\Tablero\Generar\obj\Debug\net8.0\Generar.AssemblyInfoInputs.cache
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\Tablero\Generar\obj\Debug\net8.0\Generar.AssemblyInfo.cs
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\Tablero\Generar\obj\Debug\net8.0\Generar.csproj.CoreCompileInputs.cache
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\Tablero\Generar\obj\Debug\net8.0\Generar.sourcelink.json

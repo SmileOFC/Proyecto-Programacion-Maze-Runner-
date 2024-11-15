@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Program\\Tablero\\Generar\\Generar.csproj": {}
+    "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyect\\Tablero\\Generar\\Generar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Program\\Tablero\\Generar\\Generar.csproj": {
+    "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyect\\Tablero\\Generar\\Generar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Program\\Tablero\\Generar\\Generar.csproj",
+        "projectUniqueName": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyect\\Tablero\\Generar\\Generar.csproj",
         "projectName": "Generar",
-        "projectPath": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Program\\Tablero\\Generar\\Generar.csproj",
+        "projectPath": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyect\\Tablero\\Generar\\Generar.csproj",
         "packagesPath": "C:\\Users\\Mayito\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Program\\Tablero\\Generar\\obj\\",
+        "outputPath": "C:\\Users\\Mayito\\OneDrive\\Documentos\\GitHub\\Proyecto-Programacion-Maze-Runner-\\Mario's Maze\\Proyect\\Tablero\\Generar\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mayito\\AppData\\Roaming\\NuGet\\NuGet.Config"

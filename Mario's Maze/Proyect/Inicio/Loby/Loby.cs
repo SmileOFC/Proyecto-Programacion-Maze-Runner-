@@ -13,20 +13,15 @@ public class Loby{
 
         var keyInfo = Console.ReadKey();
 
-        if(keyInfo.KeyChar == '1')
+        if(keyInfo.KeyChar == '1'){
+            
+            Modo.Select();
             Picks.SelectEquipo();
-
+        }
         //if(keyInfo.KeyChar == 2)
 
         if(keyInfo.KeyChar == 3)
-            Environment.Exit(0);    
-    }
-
-    public static void WIN(){
-
-
-
-        Program.Main();
+            Environment.Exit(-1);    
     }
     
 }

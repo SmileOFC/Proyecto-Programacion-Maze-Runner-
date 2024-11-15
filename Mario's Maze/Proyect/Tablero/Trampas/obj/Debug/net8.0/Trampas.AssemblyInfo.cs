@@ -10,13 +10,6 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Trampas")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3345cdd9aa3f5a51edc2607b22362990e323515")]
-[assembly: System.Reflection.AssemblyProductAttribute("Trampas")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Trampas")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 
