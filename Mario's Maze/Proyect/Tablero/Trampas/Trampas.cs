@@ -3,25 +3,31 @@
 
     public static List<int[]> Muro = new List<int[]>();
 
-    public static void PlacaQuitar()
+    public static void PlacaQuitar(int p)
     {
 
         if (Muro.Count > 0)
         {
-
             for (int x = 0; x < Muro.Count; x++)
+            {
 
+                Console.Clear();
+                Interfaz.Imprimir(p);
+                Thread.Sleep(1000);
                 Tablero.laberinto[Muro[x][0], Muro[x][1]] = 1;
-
+            }
             Muro.Clear();
         }
     }
 
-    public static void PlacaGenerar(int x, int y)
+    public static void PlacaGenerar(int p, int x, int y)
     {
 
+        Console.Clear();
+        Interfaz.Imprimir(p);
+        Thread.Sleep(1000);
         Muro.Add(new int[] { x, y });
-        Tablero.laberinto[x, y] = 0;
+        Tablero.laberinto[x, y] = 35;
     }
 
 
@@ -29,14 +35,16 @@
     public static void Trampa(int t, int x, int tx, int ty, int px, int py, char p)
     {
 
-        if (Program.Player[x].Inmune == 0)
+        if (!Program.Player[x].Inmune)
         {
 
-            if (t == 30)
+            if (t == 31)
             { //hueco
 
                 Tablero.laberinto[px, py] = 1;
                 Tablero.laberinto[tx, ty] = 1;
+                Program.Player[x].Inmovil = true;
+
 
                 List<int> Respwn = new List<int>(Picks.Fichas.ToArray());
                 int c = 0;
@@ -47,7 +55,6 @@
                     if (c == Respwn.Count) break;
                     if (Respwn[c] == x)
                     {
-
                         if (c == 0)
                             Tablero.laberinto[1, 1] = Respwn[c];
 
@@ -65,141 +72,157 @@
 
                         if (c == 5)
                             Tablero.laberinto[29, 29] = Respwn[c];
-
                     }
-
                     c++;
                 }
-
-                Program.Player[x].Inmovil = 1;
             }
 
             if (t == 32)
             { //bomba
 
-                Tablero.laberinto[px, py] = 1;
-                Tablero.laberinto[tx, ty] = 1;
-
-                if (p == 'a' && py + 2 < 30)
+                if (p == 'a')
                 {
 
-                    if (Tablero.laberinto[px, py + 2] == 1)
+                    if (py + 2 < 30 && Tablero.laberinto[px, py + 2] == 1)
                     {
 
-                        Tablero.laberinto[px, py + 1] = 1;
+                        Tablero.laberinto[px, py] = 1;
+                        Tablero.laberinto[tx, ty] = 1;
                         Tablero.laberinto[px, py + 2] = x;
                     }
                     else
                     {
-                        Tablero.laberinto[px, py] = 1;
-                        Tablero.laberinto[tx, ty] = x;
+                        if (Tablero.laberinto[px, py + 1] == 1)
+                        {
+
+                            Tablero.laberinto[px, py] = 1;
+                            Tablero.laberinto[tx, ty] = 1;
+                            Tablero.laberinto[px, py + 1] = x;
+                        }
+                        else
+                        {
+                            Tablero.laberinto[px, py] = 1;
+                            Tablero.laberinto[tx, ty] = x;
+                        }
                     }
                 }
-                else
-                {
-                    Tablero.laberinto[px, py] = 1;
-                    Tablero.laberinto[tx, ty] = x;
-                }
 
 
 
-                if (p == 'd' && py - 2 > 0)
+                if (p == 'd')
                 {
 
-                    if (Tablero.laberinto[px, py - 2] == 1)
+                    if (py - 2 > 0 && Tablero.laberinto[px, py - 2] == 1)
                     {
 
-                        Tablero.laberinto[px, py - 1] = 1;
+                        Tablero.laberinto[px, py] = 1;
+                        Tablero.laberinto[tx, ty] = 1;
                         Tablero.laberinto[px, py - 2] = x;
                     }
                     else
                     {
-                        Tablero.laberinto[px, py] = 1;
-                        Tablero.laberinto[tx, ty] = x;
+                        if (Tablero.laberinto[px, py - 1] == 1)
+                        {
+                            Tablero.laberinto[px, py] = 1;
+                            Tablero.laberinto[tx, ty] = 1;
+                            Tablero.laberinto[px, py - 1] = x;
+
+                        }
+                        else
+                        {
+                            Tablero.laberinto[px, py] = 1;
+                            Tablero.laberinto[tx, ty] = x;
+                        }
                     }
                 }
-                else
-                {
-                    Tablero.laberinto[px, py] = 1;
-                    Tablero.laberinto[tx, ty] = x;
-                }
 
-                if (p == 'w' && py + 2 < 30)
+
+                if (p == 'w')
                 {
 
-                    if (Tablero.laberinto[px + 2, py] == 1)
+                    if (px + 2 < 30 && Tablero.laberinto[px + 2, py] == 1)
                     {
 
-                        Tablero.laberinto[px + 1, py] = 1;
+                        Tablero.laberinto[px, py] = 1;
+                        Tablero.laberinto[tx, ty] = 1;
                         Tablero.laberinto[px + 2, py] = x;
                     }
                     else
                     {
-                        Tablero.laberinto[px, py] = 1;
-                        Tablero.laberinto[tx, ty] = x;
+                        if (Tablero.laberinto[px + 1, py] == 1)
+                        {
+                            Tablero.laberinto[px, py] = 1;
+                            Tablero.laberinto[tx, ty] = 1;
+                            Tablero.laberinto[px + 1, py] = x;
+                        }
+                        else
+                        {
+                            Tablero.laberinto[px, py] = 1;
+                            Tablero.laberinto[tx, ty] = x;
+                        }
                     }
                 }
-                else
-                {
-                    Tablero.laberinto[px, py] = 1;
-                    Tablero.laberinto[tx, ty] = x;
-                }
 
-                if (p == 's' && py - 2 > 0)
+
+                if (p == 's')
                 {
 
-                    if (Tablero.laberinto[px - 2, py] == 1)
+                    if (px - 2 > 0 && Tablero.laberinto[px - 2, py] == 1)
                     {
 
-                        Tablero.laberinto[px - 1, py] = 1;
+                        Tablero.laberinto[px, py] = 1;
+                        Tablero.laberinto[tx, ty] = 1;
                         Tablero.laberinto[px - 2, py] = x;
                     }
                     else
                     {
-                        Tablero.laberinto[px, py] = 1;
-                        Tablero.laberinto[tx, ty] = x;
+                        if (Tablero.laberinto[px - 1, py] == 1)
+                        {
+                            Tablero.laberinto[px, py] = 1;
+                            Tablero.laberinto[tx, ty] = 1;
+                            Tablero.laberinto[px - 1, py] = x;
+                        }
+                        else
+                        {
+                            Tablero.laberinto[px, py] = 1;
+                            Tablero.laberinto[tx, ty] = x;
+                        }
+
                     }
                 }
-                else
-                {
-                    Tablero.laberinto[px, py] = 1;
-                    Tablero.laberinto[tx, ty] = x;
-                }
-
             }
 
             if (t == 33)
             { //Placa
 
-                Console.WriteLine("Hola");
-
                 Tablero.laberinto[px, py] = 1;
                 Tablero.laberinto[tx, ty] = x;
-                Program.Player[x].Inmovil = 1;
+                Program.Player[x].Inmovil = true;
+                Tablero.UpdateNiebla(x, tx, ty);
 
                 if (Tablero.laberinto[tx + 1, ty] == 1)
-                    PlacaGenerar(tx + 1, ty);
+                    PlacaGenerar(p, tx + 1, ty);
 
                 if (Tablero.laberinto[tx, ty + 1] == 1)
-                    PlacaGenerar(tx, ty + 1);
+                    PlacaGenerar(p, tx, ty + 1);
 
                 if (Tablero.laberinto[tx - 1, ty] == 1)
-                    PlacaGenerar(tx - 1, ty);
+                    PlacaGenerar(p, tx - 1, ty);
 
                 if (Tablero.laberinto[tx, ty - 1] == 1)
-                    PlacaGenerar(tx, ty + -1);
+                    PlacaGenerar(p, tx, ty + -1);
 
                 if (Tablero.laberinto[tx - 1, ty - 1] == 1)
-                    PlacaGenerar(tx - 1, ty - 1);
+                    PlacaGenerar(p, tx - 1, ty - 1);
 
                 if (Tablero.laberinto[tx + 1, ty - 1] == 1)
-                    PlacaGenerar(tx + 1, ty - 1);
+                    PlacaGenerar(p, tx + 1, ty - 1);
 
                 if (Tablero.laberinto[tx + 1, ty + 1] == 1)
-                    PlacaGenerar(tx + 1, ty + 1);
+                    PlacaGenerar(p, tx + 1, ty + 1);
 
                 if (Tablero.laberinto[tx - 1, ty + 1] == 1)
-                    PlacaGenerar(tx - 1, ty + 1);
+                    PlacaGenerar(p, tx - 1, ty + 1);
 
 
 
@@ -249,12 +272,9 @@
         }
         else
         {
-
             Tablero.laberinto[px, py] = 1;
             Tablero.laberinto[tx, ty] = x;
 
         }
-
     }
-
 }

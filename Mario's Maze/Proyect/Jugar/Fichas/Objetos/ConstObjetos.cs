@@ -2,27 +2,30 @@
 public class CrearPlayer
 {
     public string? Name;
-    public bool Equipo;
     public int Pasos;
-    public int Pasos_Static;
+    public int PasosStatic;
+    public int PasosCont;
+    public int Habilidad;
+    public bool Equipo;
     public int Vision;
     public int VisionStatic;
-    public int Inmovil;
-    public int Inmune;
-    public int BufPasos;
-    public int BufVision;
-    public bool BufInmune;
-    public CrearPlayer(string Name_, int Pasos_,bool Equipo_,int PasosStatic_, int Vision_,int VisionStatic_, int Inmovil_, int Inmune_,bool BufInmune_, int BufPasos_, int BufVision_)
+    public bool Inmovil;
+    public bool Inmune;
+    public bool BufPasos;
+    public bool BufVision;
+    
+    public CrearPlayer(string Name_, int Pasos_,int PasosStatic_, int PasosCont_, int Habilidad_, bool Equipo_, int Vision_,int VisionStatic_, bool Inmovil_, bool Inmune_, bool BufPasos_, bool BufVision_)
     {
         Name = Name_;
         Pasos = Pasos_;
+        PasosStatic = PasosStatic_;
+        PasosCont = PasosCont_;
+        Habilidad = Habilidad_;
         Equipo = Equipo_;
-        Pasos_Static = PasosStatic_;
         Vision = Vision_;
         VisionStatic = VisionStatic_;
         Inmovil = Inmovil_;
         Inmune = Inmune_;
-        BufInmune = BufInmune_;
         BufPasos = BufPasos_;
         BufVision = BufVision_;
 

@@ -1,428 +1,330 @@
 ﻿
 public class Jugar
 {
-    public static int Mover(int x, char y)
+    public static int Mover(int Player, char Direccion)
     {
-        int[] xy = new int[2];
+        int x=1;
+        int y=1;
 
-        for (int i = 1; i < Tablero.filas; i++)
+        for (int xx = 1; xx < Tablero.filas; xx++)
         {
-            for (int j = 1; j < Tablero.columnas; j++)
+            for (int yy = 1; yy < Tablero.columnas; yy++)
             {
 
-                if (Tablero.laberinto[i, j] == x)
+                if (Tablero.laberinto[xx, yy] == Player)
                 {
-
-                    xy[0] = i;
-                    xy[1] = j;
-
+                    x = xx;
+                    y = yy;
+                    break;
                 }
+
             }
         }
 
-        if (y == 'w')
+        if (Direccion == 'w')
         {
-            if (Arriba(xy[0], xy[1]) == 1)
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 1)
             {
-                Tablero.laberinto[xy[0] - 1, xy[1]] = x;
-                Tablero.laberinto[xy[0], xy[1]] = 1;
-                if (Program.Player[x].Pasos - 1 != 0)
+                Tablero.laberinto[x - 1, y] = Player;
+                Tablero.laberinto[x, y] = 1;
+
+                if (Program.Player[Player].Pasos - 1 != 0)
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
                 }
                 else
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                     return 0;
                 }
             }
 
-            if (Arriba(xy[0], xy[1]) == 2)
-                return Program.Player[x].Pasos;
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 2)
+                return Program.Player[Player].Pasos;
 
-            if (Arriba(xy[0], xy[1]) == 3)
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 0)
+                return Program.Player[Player].Pasos;
+
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 3)
             {
-                Trampas.Trampa(Tablero.laberinto[xy[0] - 1, xy[1]], x, xy[0] - 1, xy[1], xy[0], xy[1], y);
-                if (Program.Player[x].Pasos - 1 != 0)
+                Trampas.Trampa(Tablero.laberinto[x - 1, y], Player, x - 1, y, x, y, Direccion);
+                if (Program.Player[Player].Pasos - 1 != 0)
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
                 }
                 else
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                     return 0;
                 }
             }
 
-            if (Arriba(xy[0], xy[1]) == 4)
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 4)
             {
-                Bufss.Buff(Tablero.laberinto[xy[0] - 1, xy[1]], x, xy[0] - 1, xy[1], xy[0], xy[1]);
-                if (Program.Player[x].Pasos - 1 != 0)
+                Bufss.Buff(Tablero.laberinto[x - 1, y], Player, x - 1, y, x, y);
+                if (Program.Player[Player].Pasos - 1 != 0)
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
                 }
                 else
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                     return 0;
                 }
             }
 
-            if (Arriba(xy[0], xy[1]) == 55){
-                Tablero.laberinto[xy[0],xy[1]]=1;
-                return 50; // win
-            }
-                
-
-            if (Arriba(xy[0], xy[1]) == 0)
-                return Program.Player[x].Pasos;
-        }
-        if (y == 's')
-        {
-            if (Abajo(xy[0], xy[1]) == 1)
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 55)
             {
-                Tablero.laberinto[xy[0] + 1, xy[1]] = x;
-                Tablero.laberinto[xy[0], xy[1]] = 1;
-                if (Program.Player[x].Pasos - 1 != 0)
-                {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
-                }
-                else
-                {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
-
-                    return 0;
-                }
-            }
-
-            if (Abajo(xy[0], xy[1]) == 2)
-                return Program.Player[x].Pasos;
-
-            if (Abajo(xy[0], xy[1]) == 3)
-            {
-                Trampas.Trampa(Tablero.laberinto[xy[0] + 1, xy[1]], x, xy[0] + 1, xy[1], xy[0], xy[1], y);
-                if (Program.Player[x].Pasos - 1 != 0)
-                {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
-                }
-                else
-                {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
-
-                    return 0;
-                }
-            }
-
-            if (Abajo(xy[0], xy[1]) == 4)
-            {
-                Bufss.Buff(Tablero.laberinto[xy[0] + 1, xy[1]], x, xy[0] + 1, xy[1], xy[0], xy[1]);
-                if (Program.Player[x].Pasos - 1 != 0)
-                {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
-                }
-                else
-                {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
-
-                    return 0;
-                }
-            }
-
-            if (Abajo(xy[0], xy[1]) == 55){
-                Tablero.laberinto[xy[0],xy[1]]=1;
+                Tablero.laberinto[x, y] = 1;
                 return 50; // win
             }
 
-            if (Abajo(xy[0], xy[1]) == 0)
-                return Program.Player[x].Pasos;
+
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 0)
+                return Program.Player[Player].Pasos;
         }
-        if (y == 'a')
+        if (Direccion == 's')
         {
-            if (Izquierda(xy[0], xy[1]) == 1)
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 1)
             {
-                Tablero.laberinto[xy[0], xy[1] - 1] = x;
-                Tablero.laberinto[xy[0], xy[1]] = 1;
-                if (Program.Player[x].Pasos - 1 != 0)
+                Tablero.laberinto[x + 1, y] = Player;
+                Tablero.laberinto[x, y] = 1;
+                if (Program.Player[Player].Pasos - 1 != 0)
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
                 }
                 else
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                     return 0;
                 }
             }
 
-            if (Izquierda(xy[0], xy[1]) == 2)
-                return Program.Player[x].Pasos;
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 2)
+                return Program.Player[Player].Pasos;
 
-            if (Izquierda(xy[0], xy[1]) == 3)
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 0)
+                return Program.Player[Player].Pasos;
+
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 3)
             {
-                Trampas.Trampa(Tablero.laberinto[xy[0], xy[1] - 1], x, xy[0], xy[1] - 1, xy[0], xy[1], y);
-                if (Program.Player[x].Pasos - 1 != 0)
+                Trampas.Trampa(Tablero.laberinto[x + 1, y], Player, x + 1, y, x, y, Direccion);
+                if (Program.Player[Player].Pasos - 1 != 0)
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
                 }
                 else
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                     return 0;
                 }
             }
 
-            if (Izquierda(xy[0], xy[1]) == 4)
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 4)
             {
-                Bufss.Buff(Tablero.laberinto[xy[0], xy[1] - 1], x, xy[0], xy[1] - 1, xy[0], xy[1]);
-                if (Program.Player[x].Pasos - 1 != 0)
+                Bufss.Buff(Tablero.laberinto[x + 1, y], Player, x + 1, y, x, y);
+                if (Program.Player[Player].Pasos - 1 != 0)
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
                 }
                 else
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                     return 0;
                 }
             }
 
-            if (Izquierda(xy[0], xy[1]) == 55){
-                Tablero.laberinto[xy[0],xy[1]]=1;
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 55)
+            {
+                Tablero.laberinto[x, y] = 1;
                 return 50; // win
             }
 
-            if (Izquierda(xy[0], xy[1]) == 0)
-                return Program.Player[x].Pasos;
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 0)
+                return Program.Player[Player].Pasos;
         }
-        if (y == 'd')
+        if (Direccion == 'a')
         {
-            if (Derecha(xy[0], xy[1]) == 1)
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 1)
             {
-                Tablero.laberinto[xy[0], xy[1] + 1] = x;
-                Tablero.laberinto[xy[0], xy[1]] = 1;
-                if (Program.Player[x].Pasos - 1 != 0)
+                Tablero.laberinto[x, y - 1] = Player;
+                Tablero.laberinto[x, y] = 1;
+                if (Program.Player[Player].Pasos - 1 != 0)
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
                 }
                 else
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                     return 0;
                 }
             }
 
-            if (Derecha(xy[0], xy[1]) == 2)
-                return Program.Player[x].Pasos;
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 2)
+                return Program.Player[Player].Pasos;
 
-            if (Derecha(xy[0], xy[1]) == 3)
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 0)
+                return Program.Player[Player].Pasos;
+
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 3)
             {
-                Trampas.Trampa(Tablero.laberinto[xy[0], xy[1] + 1], x, xy[0], xy[1] + 1, xy[0], xy[1], y);
-                if (Program.Player[x].Pasos - 1 != 0)
+                Trampas.Trampa(Tablero.laberinto[x, y - 1], Player, x, y - 1, x, y, Direccion);
+                if (Program.Player[Player].Pasos - 1 != 0)
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
                 }
                 else
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                     return 0;
                 }
             }
 
-            if (Derecha(xy[0], xy[1]) == 4)
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 4)
             {
-                Bufss.Buff(Tablero.laberinto[xy[0], xy[1] + 1], x, xy[0], xy[1] + 1, xy[0], xy[1]);
-                if (Program.Player[x].Pasos - 1 != 0)
+                Bufss.Buff(Tablero.laberinto[x, y - 1], Player, x, y - 1, x, y);
+                if (Program.Player[Player].Pasos - 1 != 0)
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    return Program.Player[x].Pasos - 1;
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
                 }
                 else
                 {
-                    Tablero.UpdateNiebla(x, xy[0], xy[1]);
-                    Program.Player[x].Pasos = Program.Player[x].Pasos_Static;
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                     return 0;
                 }
             }
 
-            if (Derecha(xy[0], xy[1]) == 5){
-                Tablero.laberinto[xy[0],xy[1]]=1;
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 5)
+            {
+                Tablero.laberinto[x, y] = 1;
                 return 50; // win
             }
 
-            if (Derecha(xy[0], xy[1]) == 0)
-                return Program.Player[x].Pasos;
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 0)
+                return Program.Player[Player].Pasos;
         }
-
-
-        return Program.Player[x].Pasos;
-    }
-    static int Abajo(int F, int C)
-    {
-        // win
-        if (Tablero.laberinto[F + 1, C] == 5)
+        if (Direccion == 'd')
         {
-            return 55;
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 1)
+            {
+                Tablero.laberinto[x, y + 1] = Player;
+                Tablero.laberinto[x, y] = 1;
+                if (Program.Player[Player].Pasos - 1 != 0)
+                {
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
+                }
+                else
+                {
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
+
+                    return 0;
+                }
+            }
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 2)
+                return Program.Player[Player].Pasos;
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 0)
+                return Program.Player[Player].Pasos;
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 3)
+            {
+                Trampas.Trampa(Tablero.laberinto[x, y + 1], Player, x, y + 1, x, y, Direccion);
+                if (Program.Player[Player].Pasos - 1 != 0)
+                {
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
+                }
+                else
+                {
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
+
+                    return 0;
+                }
+            }
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 4)
+            {
+                Bufss.Buff(Tablero.laberinto[x, y + 1], Player, x, y + 1, x, y);
+                if (Program.Player[Player].Pasos - 1 != 0)
+                {
+                    Program.Player[Player].PasosCont = Program.Player[Player].PasosCont + 1; 
+                    Program.Player[Player].Pasos = Program.Player[Player].Pasos - 1;
+
+                    return Program.Player[Player].Pasos;
+                }
+                else
+                {
+
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
+
+                    return 0;
+                }
+            }
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 5)
+            {
+                Tablero.laberinto[x, y] = 1;
+                return 50; // win
+            }
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 0)
+                return Program.Player[Player].Pasos;
         }
 
-        // camino
-        if (Tablero.laberinto[F + 1, C] == 1)
-        {
-            return 1;
-        }
 
-        // trampa
-        if (Tablero.laberinto[F + 1, C] == 31 || Tablero.laberinto[F + 1, C] == 32 || Tablero.laberinto[F + 1, C] == 33 || Tablero.laberinto[F + 1, C] == 34)
-        {
-            return 3;
-        }
-
-        // buff
-        if (Tablero.laberinto[F + 1, C] == 41 || Tablero.laberinto[F + 1, C] == 42 || Tablero.laberinto[F + 1, C] == 43)
-        {
-            return 4;
-        }
-
-        // colision
-
-        if (Tablero.laberinto[F + 1, C] == 0)
-        {
-            return 2; // direccion equivocada     
-        }
-
-        return 0;  // ficha
-    }
-    static int Arriba(int F, int C)
-    {
-        // win
-        if (Tablero.laberinto[F - 1, C] == 5)
-        {
-            return 55;
-        }
-
-        // camino
-        if (Tablero.laberinto[F - 1, C] == 1)
-        {
-            return 1;
-        }
-
-        // trampa
-        if (Tablero.laberinto[F - 1, C] == 31 || Tablero.laberinto[F - 1, C] == 32 || Tablero.laberinto[F - 1, C] == 33 || Tablero.laberinto[F + 1, C] == 34)
-        {
-            return 3;
-        }
-
-        // buff
-        if (Tablero.laberinto[F - 1, C] == 41 || Tablero.laberinto[F - 1, C] == 42 || Tablero.laberinto[F - 1, C] == 43)
-        {
-            return 4;
-        }
-
-        // colision
-
-        if (Tablero.laberinto[F - 1, C] == 0)
-        {
-            return 2; // direccion equivocada     
-        }
-
-        return 0;  // ficha
-    }
-    static int Izquierda(int F, int C)
-    {
-        // win
-        if (Tablero.laberinto[F, C - 1] == 5)
-        {
-            return 55;
-        }
-
-        // camino
-        if (Tablero.laberinto[F, C - 1] == 1)
-        {
-            return 1;
-        }
-
-        // trampa
-        if (Tablero.laberinto[F, C - 1] == 31 || Tablero.laberinto[F, C - 1] == 32 || Tablero.laberinto[F, C = 1] == 33 || Tablero.laberinto[F + 1, C] == 34)
-        {
-            return 3;
-        }
-
-        // buff
-        if (Tablero.laberinto[F, C - 1] == 41 || Tablero.laberinto[F, C - 1] == 42 || Tablero.laberinto[F, C - 1] == 43)
-        {
-            return 4;
-        }
-
-        // colision
-
-        if (Tablero.laberinto[F, C - 1] == 0)
-        {
-            return 2; // direccion equivocada     
-        }
-
-        return 0;  // ficha
-    }
-    static int Derecha(int F, int C)
-    {
-        // win
-        if (Tablero.laberinto[F, C + 1] == 55)
-        {
-            return 55;
-        }
-
-        // camino
-        if (Tablero.laberinto[F, C + 1] == 1)
-        {
-            return 1;
-        }
-
-        // trampa
-        if (Tablero.laberinto[F, C + 1] == 31 || Tablero.laberinto[F, C + 1] == 32 || Tablero.laberinto[F, C + 1] == 33 || Tablero.laberinto[F + 1, C] == 34)
-        {
-            return 3;
-        }
-
-        // buff
-        if (Tablero.laberinto[F, C + 1] == 41 || Tablero.laberinto[F, C + 1] == 42 || Tablero.laberinto[F, C + 1] == 43)
-        {
-            return 4;
-        }
-
-        // colision
-
-        if (Tablero.laberinto[F, C + 1] == 0)
-        {
-            return 2; // direccion equivocada     
-        }
-
-        return 0;  // ficha
+        return Program.Player[Player].Pasos;
     }
 }

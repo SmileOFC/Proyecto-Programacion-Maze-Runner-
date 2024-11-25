@@ -16,3 +16,7 @@ C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Ma
 C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\Spectre.Console.dll
 C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.csproj.AssemblyReference.cache
 C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\obj\Debug\net8.0\Proyect.csproj.CopyComplete
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\Spectre.Console.Cli.dll
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\de\Spectre.Console.Cli.resources.dll
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\fr\Spectre.Console.Cli.resources.dll
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\sv\Spectre.Console.Cli.resources.dll

@@ -1,11 +1,10 @@
 ﻿
 public class Tablero
 {
-
-    static int Cont = 0;
     public static Random rand = new Random();
     public static int filas = 31, columnas = 31;
 
+    public static bool[,] Puntero = new bool[filas, columnas];
     public static int[,] laberinto = new int[filas, columnas];
 
     public static bool[,] niebla = new bool[filas, columnas];
@@ -87,7 +86,7 @@ public class Tablero
             while (Picks.Fichas.Count > 0)
             {
 
-                if (Cont != 6)
+                if (Cont < 8)
                 {
                     if (Cont == 0)
                         laberinto[1, 1] = Fichas[Cont];
@@ -152,7 +151,7 @@ public class Tablero
                     Cont++;
                     if (Cont == 30)
                     {
-                        int a = rand.Next(41, 43);
+                        int a = rand.Next(41, 44);
                         laberinto[i, j] = a;
                         Cont = 0;
                     }
@@ -167,8 +166,8 @@ public class Tablero
         for (int i = 1; i < 30; i++)
         {
             for (int j = 1; j < 30; j++)
-            if(Tablero.laberinto[i, j] != 21 || Tablero.laberinto[i, j] != 22 || Tablero.laberinto[i, j] != 23 || Tablero.laberinto[i, j] != 24 || Tablero.laberinto[i, j] != 25 || Tablero.laberinto[i, j] != 26 || Tablero.laberinto[i, j] != 27 || Tablero.laberinto[i, j] != 28 || Tablero.laberinto[i, j] != 29 || Tablero.laberinto[i, j] != 20)
-                niebla[i, j] = true;
+                if (Tablero.laberinto[i, j] != 21 || Tablero.laberinto[i, j] != 22 || Tablero.laberinto[i, j] != 23 || Tablero.laberinto[i, j] != 24 || Tablero.laberinto[i, j] != 25 || Tablero.laberinto[i, j] != 26 || Tablero.laberinto[i, j] != 27 || Tablero.laberinto[i, j] != 28 || Tablero.laberinto[i, j] != 29 || Tablero.laberinto[i, j] != 20)
+                    niebla[i, j] = true;
         }
 
         // Quitar Niebla inicial
@@ -176,19 +175,22 @@ public class Tablero
         for (int i = 1; i < 30; i++)
         {
             for (int j = 1; j < 30; j++)
-            if(Tablero.laberinto[i, j] == 21 || Tablero.laberinto[i, j] == 22 || Tablero.laberinto[i, j] == 23 || Tablero.laberinto[i, j] == 24 || Tablero.laberinto[i, j] == 25 || Tablero.laberinto[i, j] == 26 || Tablero.laberinto[i, j] == 27 || Tablero.laberinto[i, j] == 28 || Tablero.laberinto[i, j] == 29 || Tablero.laberinto[i, j] == 20)
-                UpdateNiebla(Tablero.laberinto[i, j],i,j);
+                if (Tablero.laberinto[i, j] == 21 || Tablero.laberinto[i, j] == 22 || Tablero.laberinto[i, j] == 23 || Tablero.laberinto[i, j] == 24 || Tablero.laberinto[i, j] == 25 || Tablero.laberinto[i, j] == 26 || Tablero.laberinto[i, j] == 27 || Tablero.laberinto[i, j] == 28 || Tablero.laberinto[i, j] == 29 || Tablero.laberinto[i, j] == 20)
+                    UpdateNiebla(Tablero.laberinto[i, j], i, j);
         }
     }
-    
+
     static void AgregarParedes(int x, int y)
     {
 
-
-        if (x > 1) paredes.Add((x - 1, y, x - 2, y));
-        if (x < filas - 2) paredes.Add((x + 1, y, x + 2, y));
-        if (y > 1) paredes.Add((x, y - 1, x, y - 2));
-        if (y < columnas - 2) paredes.Add((x, y + 1, x, y + 2));
+        if (x > 1)
+            paredes.Add((x - 1, y, x - 2, y));
+        if (x < filas - 2)
+            paredes.Add((x + 1, y, x + 2, y));
+        if (y > 1)
+            paredes.Add((x, y - 1, x, y - 2));
+        if (y < columnas - 2)
+            paredes.Add((x, y + 1, x, y + 2));
     }
 
     public static void UpdateNiebla(int p, int x, int y)
