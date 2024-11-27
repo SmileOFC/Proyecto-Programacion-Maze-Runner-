@@ -1,11 +1,18 @@
-﻿public class Rondas
+﻿using Spectre.Console;
+using SixLabors.ImageSharp;
+
+public class Rondas
 {
 
-    public static List<int> Fichas = new List<int>(Picks.Fichas.ToArray());
+    public static List<int> FichasList = new List<int>(Picks.Fichas.ToArray());
+    public static List<int> EquipoMalosList = new List<int>(Picks.EquipoMalos.ToArray());
+    public static List<int> EquipoBuenosList = new List<int>(Picks.EquipoBuenos.ToArray());
 
     public static void Ronda()
     {
-        int cont = 0;
+        int EquipoBuenoWin = 0;
+        int EquipoMaloWin = 0;
+
 
         Tablero.GenerarTablero();
         int Jugando;
@@ -18,28 +25,28 @@
 
             if (a == 6) a = 0;
 
-            int player = Fichas[a];
+            int Player = FichasList[a];
 
             int ejex = 1;
             int ejey = 1;
 
-            if (player != 0)
+            if (Player != 0)
             {
                 // Turnos
                 while (Jugando > 0)
                 {
 
                     // inmovil 
-                    if (Program.Player[player].Inmovil) break;
+                    if (Program.Player[Player].Inmovil) break;
 
-                    // Pocision del player
+                    // Pocision del Player
 
                     for (int fila = 1; fila < Tablero.filas; fila++)
                     {
                         for (int columna = 1; columna < Tablero.columnas; columna++)
                         {
 
-                            if (Tablero.laberinto[fila, columna] == player)
+                            if (Tablero.laberinto[fila, columna] == Player)
                             {
 
                                 ejex = fila;
@@ -54,22 +61,22 @@
                     // Actualizar interfaz
                     Console.Clear();
 
-                    Tablero.UpdateNiebla(player, ejex, ejey);
-                    Interfaz.Imprimir(player);
+                    Tablero.UpdateNiebla(Player, ejex, ejey);
+                    Interfaz.Imprimir(Player);
 
                     Console.WriteLine("");
-                    Console.WriteLine("     Player: " + Program.Player[player].Name);
-                    Console.WriteLine("     Pasos:  " + Program.Player[player].Pasos);
-                    Console.WriteLine("     Inmune: " + Program.Player[player].Inmune);
+                    Console.WriteLine("     Player: " + Program.Player[Player].Name);
+                    Console.WriteLine("     Pasos :  " + Program.Player[Player].Pasos);
+                    Console.WriteLine("     Koopa : " + Program.Player[27].Habilidad);
                     Console.WriteLine("");
 
 
 
                     var keyInfo = Console.ReadKey();
 
-                    // [E] Interactuar Pendiente ///////////////
-                    if (keyInfo.KeyChar == 'e')
-                        Jugando = 30;
+                    // [T] Tienda 
+                    if (keyInfo.KeyChar == 't')
+                        Tienda.Comprar(Player);
 
                     // [Q] Inventario Pendiente ///////////////
                     if (keyInfo.KeyChar == 'q')
@@ -82,7 +89,7 @@
                     // [R] Cancelar turno
                     if (keyInfo.KeyChar == 'r')
                     {
-                        Program.Player[player].Pasos = Program.Player[player].PasosStatic;
+                        Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
                         Jugando = 0;
                     }
 
@@ -90,34 +97,72 @@
                     // [F] Habilidad 
                     if (keyInfo.KeyChar == 'f')
                     {
-                        if (Program.Player[player].PasosCont >= Program.Player[player].Habilidad)
-                            Habilidades.Habilidad(player, ejex, ejey);
+                        if (Program.Player[Player].PasosCont >= Program.Player[Player].Habilidad)
+                            Habilidades.Habilidad(Player, ejex, ejey);
                         else // todavia no haz cargado la habilidad
                             Console.WriteLine("todavia");
                     }
-
-
 
                     // [A][W][S][D] Moverse  
                     if (keyInfo.KeyChar == 'w' || keyInfo.KeyChar == 's' || keyInfo.KeyChar == 'd' || keyInfo.KeyChar == 'a')
                     {
 
-                        Jugando = Jugar.Mover(player, keyInfo.KeyChar);
+                        Jugando = Jugar.Mover(Player, keyInfo.KeyChar);
 
                     }
-                    //WIN pendiente ///////
-                    if (Jugando == 50) break;
+                    // Ficha Buenos Meta 
+                    if (Jugando == 515)
+                    {
+
+                        EquipoBuenoWin += 1;
+                        break;
+                    }
+
+                    // Ficha Malos Meta 
+                    if (Jugando == 525)
+                    {
+
+                        EquipoMaloWin += 1;
+                        break;
+                    }
+
+                    // QUitar puertas
+
+                    if (Program.EquipoBuenoLlave)
+                    {
+                        if (Tablero.laberinto[13, 15] == 313)
+                            Tablero.laberinto[13, 15] = 1;
+                        else
+                            Tablero.laberinto[17, 15] = 1;
+
+                    }
+
+                    if (Program.EquipoMaloLlave)
+                    {
+
+                        if (Tablero.laberinto[13, 15] == 323)
+                            Tablero.laberinto[13, 15] = 1;
+                        else
+                            Tablero.laberinto[17, 15] = 1;
+
+                    }
+
+                    // Update Coldown Habilidad de Koopa/Wario
+
+                    Program.Player[27].Habilidad = Program.Player[27].PasosStatic * 3;
+
+                    Program.Player[29].Habilidad = Program.Player[29].VisionStatic * 3;
+
                 }
 
-
-                // Pocision del player para niebla
+                // Pocision del Player para niebla
 
                 for (int fila = 1; fila < Tablero.filas; fila++)
                 {
                     for (int columna = 1; columna < Tablero.columnas; columna++)
                     {
 
-                        if (Tablero.laberinto[fila, columna] == player)
+                        if (Tablero.laberinto[fila, columna] == Player)
                         {
 
                             ejex = fila;
@@ -129,80 +174,49 @@
 
                 }
 
-                Tablero.UpdateNiebla(player, ejex, ejey);
-
-
+                Tablero.UpdateNiebla(Player, ejex, ejey);
 
                 // COLDOWNS
 
                 //buff inmunidad
 
-                if (Program.Player[player].Inmune)
-                    Program.Player[player].Inmune = false;
+                if (Program.Player[Player].Inmune)
+                    Program.Player[Player].Inmune = false;
 
                 //Buff pasos
-                if (Program.Player[player].BufPasos)
+                if (Program.Player[Player].BufPasos)
                 {
-                    Program.Player[player].Pasos = Program.Player[player].PasosStatic;
-                    Program.Player[player].BufPasos = false;
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
+                    Program.Player[Player].BufPasos = false;
 
                 }
 
                 //Buff vision
-                if (Program.Player[player].BufVision)
+                if (Program.Player[Player].BufVision)
                 {
 
-                    Program.Player[player].Vision = Program.Player[player].VisionStatic;
-                    Program.Player[player].BufVision = false;
+                    Program.Player[Player].Vision = Program.Player[Player].VisionStatic;
+                    Program.Player[Player].BufVision = false;
 
                 }
 
 
                 //Inmobilidad
-                if (Program.Player[player].Inmovil)
+                if (Program.Player[Player].Inmovil)
                 {
 
-                    Trampas.PlacaQuitar(player);
-                    Program.Player[player].Inmovil = false;
-                    Program.Player[player].Pasos = Program.Player[player].PasosStatic;
+                    Trampas.PlacaQuitar(Player);
+                    Program.Player[Player].Inmovil = false;
+                    Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
 
                 }
 
-                // WIN 
-                if (Jugando == 50)
-                {
-
-                    FichaWin(player);
-                    break;
-                }
             }
 
-            for (int j = 0; j < Fichas.Count; j++)
-                if (Fichas[j] == 0)
-                    cont++;
-            if (cont == 3)
+            // WIN background sonido.stop();
+            if (EquipoBuenoWin == 3 || EquipoMaloWin == 3)
                 break;
 
         }
     }
-
-    static void FichaWin(int player)
-    {
-
-        for (int i = 0; i < Fichas.Count; i++)
-        {
-
-            if (Fichas[i] == player)
-            {
-
-                Fichas[i] = 0;
-            }
-
-
-        }
-
-
-    }
-
-
 }

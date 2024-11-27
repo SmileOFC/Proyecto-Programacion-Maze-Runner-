@@ -20,3 +20,5 @@ C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Ma
 C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\de\Spectre.Console.Cli.resources.dll
 C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\fr\Spectre.Console.Cli.resources.dll
 C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\sv\Spectre.Console.Cli.resources.dll
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\SixLabors.ImageSharp.dll
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\Spectre.Console.ImageSharp.dll

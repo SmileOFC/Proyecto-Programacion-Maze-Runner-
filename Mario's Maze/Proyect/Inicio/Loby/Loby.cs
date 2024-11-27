@@ -20,8 +20,6 @@ public class Loby
 
                 if (keyInfo.KeyChar == '1')
                 {
-
-                    Modo.Select();
                     Picks.SelectEquipo();
                     break;
                 }

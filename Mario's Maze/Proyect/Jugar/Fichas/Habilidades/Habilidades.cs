@@ -15,12 +15,6 @@ public class Habilidades
                 Console.Clear();
                 Interfaz.Imprimir(player);
 
-                Console.WriteLine("");
-                Console.WriteLine("     Player: " + Program.Player[player].Name);
-                Console.WriteLine("     Pasos:  " + Program.Player[player].Pasos);
-                Console.WriteLine("     Inmune: " + Program.Player[player].Inmune);
-                Console.WriteLine("");
-
                 var keyInfo = Console.ReadKey();
 
                 if (keyInfo.KeyChar == 'w')
@@ -109,11 +103,6 @@ public class Habilidades
             Console.Clear();
             Interfaz.Imprimir(player);
 
-            Console.WriteLine("");
-            Console.WriteLine("     Player: " + Program.Player[player].Name);
-            Console.WriteLine("     Pasos:  " + Program.Player[player].Pasos);
-            Console.WriteLine("     Inmune: " + Program.Player[player].Inmune);
-            Console.WriteLine("");
 
             Thread.Sleep(5000);
 
@@ -126,9 +115,8 @@ public class Habilidades
 
         if (player == 22)//Hongo
         {
-            List<int> Equipo = new List<int>(Picks.EquipoBuenos.ToArray());
-            for (int i = 0; i < Picks.EquipoBuenos.Count; i++)
-                Program.Player[Equipo[i]].Vision = Program.Player[Equipo[i]].Vision + 1;
+            for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
+                Program.Player[Rondas.EquipoBuenosList[i]].Vision = Program.Player[Rondas.EquipoBuenosList[i]].Vision + 1;
 
             Program.Player[player].PasosCont = 0;
 
@@ -141,11 +129,6 @@ public class Habilidades
             Console.Clear();
             Interfaz.Imprimir(player);
 
-            Console.WriteLine("");
-            Console.WriteLine("     Player: " + Program.Player[player].Name);
-            Console.WriteLine("     Pasos:  " + Program.Player[player].Pasos);
-            Console.WriteLine("     Inmune: " + Program.Player[player].Inmune);
-            Console.WriteLine("");
             int xx = x;
             int yy = y;
 
@@ -154,7 +137,7 @@ public class Habilidades
 
                 var keyInfo = Console.ReadKey();
 
-                if (keyInfo.KeyChar == 'w' && xx - 1 > 0 )
+                if (keyInfo.KeyChar == 'w' && xx - 1 > 0)
                 {
 
                     Tablero.Puntero[xx - 1, yy] = true;
@@ -188,7 +171,7 @@ public class Habilidades
                     Console.WriteLine("");
 
                 }
-                if (keyInfo.KeyChar == 'a' && yy - 1 > 0 )
+                if (keyInfo.KeyChar == 'a' && yy - 1 > 0)
                 {
 
                     Tablero.Puntero[xx, yy - 1] = true;
@@ -248,10 +231,10 @@ public class Habilidades
 
         if (player == 24)//Peach
         {
-            List<int> Equipo = new List<int>(Picks.EquipoMalo.ToArray());
 
-            for (int i = 0; i < Picks.EquipoMalo.Count; i++)
-                Program.Player[Equipo[i]].Inmovil = true;
+
+            for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
+                Program.Player[Rondas.EquipoBuenosList[i]].Inmovil = true;
 
             Program.Player[player].PasosCont = 0;
 
@@ -270,12 +253,6 @@ public class Habilidades
             {
                 Console.Clear();
                 Interfaz.Imprimir(player);
-
-                Console.WriteLine("");
-                Console.WriteLine("     Player: " + Program.Player[player].Name);
-                Console.WriteLine("     Pasos:  " + Program.Player[player].Pasos);
-                Console.WriteLine("     Inmune: " + Program.Player[player].Inmune);
-                Console.WriteLine("");
 
                 var keyInfo = Console.ReadKey();
 
@@ -335,13 +312,17 @@ public class Habilidades
 
         if (player == 27)//Koopa
         {
-            Program.Player[player].VisionStatic = Program.Player[player].VisionStatic - 1;
-            Program.Player[player].Vision = Program.Player[player].Vision - 1;
+            if (Program.Player[player].VisionStatic - 1 > 0 && Program.Player[player].Vision - 1 > 0)
+            {
 
-            Program.Player[player].Pasos = Program.Player[player].Pasos + 5;
-            Program.Player[player].PasosStatic = Program.Player[player].PasosStatic + 5;
+                Program.Player[player].VisionStatic = Program.Player[player].VisionStatic - 1;
+                Program.Player[player].Vision = Program.Player[player].Vision - 1;
 
-            Program.Player[player].PasosCont = 0;
+                Program.Player[player].Pasos = Program.Player[player].Pasos + 5;
+                Program.Player[player].PasosStatic = Program.Player[player].PasosStatic + 5;
+
+                Program.Player[player].PasosCont = 0;
+            }
         }
 
         if (player == 28)//Waluigi
@@ -352,11 +333,6 @@ public class Habilidades
             Console.Clear();
             Interfaz.Imprimir(player);
 
-            Console.WriteLine("");
-            Console.WriteLine("     Player: " + Program.Player[player].Name);
-            Console.WriteLine("     Pasos:  " + Program.Player[player].Pasos);
-            Console.WriteLine("     Inmune: " + Program.Player[player].Inmune);
-            Console.WriteLine("");
             int xx = x;
             int yy = y;
 
@@ -365,7 +341,7 @@ public class Habilidades
 
                 var keyInfo = Console.ReadKey();
 
-                if (keyInfo.KeyChar == 'w' && xx - 1 > 0 )
+                if (keyInfo.KeyChar == 'w' && xx - 1 > 0)
                 {
 
                     Tablero.Puntero[xx - 1, yy] = true;
@@ -399,7 +375,7 @@ public class Habilidades
                     Console.WriteLine("");
 
                 }
-                if (keyInfo.KeyChar == 'a' && yy - 1 > 0 )
+                if (keyInfo.KeyChar == 'a' && yy - 1 > 0)
                 {
 
                     Tablero.Puntero[xx, yy - 1] = true;
@@ -433,11 +409,11 @@ public class Habilidades
                     Console.WriteLine("");
 
                 }
-                if (keyInfo.KeyChar == 'e' && Tablero.laberinto[xx,yy] == 1 )
+                if (keyInfo.KeyChar == 'e' && Tablero.laberinto[xx, yy] == 1)
                 {
 
                     Tablero.Puntero[xx, yy] = false;
-                    Tablero.laberinto[xx,yy] = 31;
+                    Tablero.laberinto[xx, yy] = 31;
 
                     Program.Player[player].PasosCont = 0;
                     break;
@@ -446,16 +422,26 @@ public class Habilidades
 
         }
 
-        if(player == 29)//Wario
+        if (player == 29)//Wario
         {
 
-            Program.Player[player].VisionStatic = Program.Player[player].VisionStatic + 1;
-            Program.Player[player].Vision = Program.Player[player].Vision + 1;
+            if (Program.Player[player].Pasos - 5 > 0 || Program.Player[player].PasosStatic - 5 > 0)
+            {
 
-            Program.Player[player].Pasos = Program.Player[player].Pasos - 1;
-            Program.Player[player].PasosStatic = Program.Player[player].PasosStatic - 1;
+                Program.Player[player].VisionStatic = Program.Player[player].VisionStatic + 1;
+                Program.Player[player].Vision = Program.Player[player].Vision + 1;
 
-            Program.Player[player].PasosCont = 0;
+                Program.Player[player].Pasos = Program.Player[player].Pasos - 5;
+                Program.Player[player].PasosStatic = Program.Player[player].PasosStatic - 5;
+
+                Program.Player[player].PasosCont = 0;
+            }
+            else
+            {
+
+                // Necesitas mas pasos para poder utilizar la habilidad
+
+            }
 
         }
 
