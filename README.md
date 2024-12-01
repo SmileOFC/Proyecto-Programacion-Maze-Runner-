@@ -17,7 +17,7 @@ una de sus fichas al centro gana.
 
 # MazeRunner
 
-![MazeRunner](https://img.shields.io/badge/MazeRunner-Black?style=for-the-badge&logo=joystick&logoColor=white&labelColor=black)
+![🎮 MazeRunner](https://img.shields.io/badge/MazeRunner-Black?style=for-the-badge&logo=joystick&logoColor=white&labelColor=black)
 
 ## Bienvenido a MazeRunner
 
