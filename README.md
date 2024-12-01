@@ -15,6 +15,20 @@ una de sus fichas al centro gana.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+# MazeRunner
+
+![MazeRunner](https://img.shields.io/badge/MazeRunner-Black?style=for-the-badge&logo=joystick&logoColor=white&labelColor=black)
+
+## Bienvenido a MazeRunner
+
+Este es un proyecto increíble para los amantes de los videojuegos y los desafíos de laberintos. ¡Explora, resuelve y disfruta!
+
+### Características
+- 🕹️ Diversión garantizada
+- 🎮 Interfaz amigable
+- 🚀 Rápido y eficiente
+
+
 ///LEYENDA///
 
 Equipos: 2
