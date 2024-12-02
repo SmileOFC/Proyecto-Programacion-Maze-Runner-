@@ -1,6 +1,23 @@
 ﻿using Spectre.Console;
 public class Selects {
 
+    public static string SelectEscalera(){
+
+        Console.WriteLine("");
+        var Select = AnsiConsole.Prompt(
+                            new SelectionPrompt<string>()
+                            .Title("Seleccione donde poner la escalera: ")
+                            .PageSize(3)
+                            .AddChoices(new[] { "Arriba", "Abajo", "Izquierda","Derecha" })
+                        );
+
+                        
+
+        return Select;
+
+        
+    }
+
     public static string SelectPlayerBuenos()
     {
 

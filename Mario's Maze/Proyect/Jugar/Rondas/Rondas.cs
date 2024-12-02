@@ -1,43 +1,48 @@
-﻿using Spectre.Console;
-using SixLabors.ImageSharp;
+﻿using SixLabors.ImageSharp;
+using Spectre.Console;
 
 public class Rondas
 {
-
     public static List<int> FichasList = new List<int>(Picks.Fichas.ToArray());
     public static List<int> EquipoMalosList = new List<int>(Picks.EquipoMalos.ToArray());
     public static List<int> EquipoBuenosList = new List<int>(Picks.EquipoBuenos.ToArray());
-
-    public static void Ronda()
+    static bool EntradaTiendaBuenos = false;
+    static bool EntradaTiendaMalos = false;
+    static int EquipoBuenoWin = 0;
+    static int EquipoMaloWin = 0;
+    static int Jugando;
+    static int ejex = 1;
+    static int ejey = 1;
+    static int Player;
+    public static int Ronda()
     {
-        int EquipoBuenoWin = 0;
-        int EquipoMaloWin = 0;
-
-
         Tablero.GenerarTablero();
-        int Jugando;
+
+        //
+        if (Program.Player[Tablero.laberinto[1, 1]].Equipo)
+            EntradaTiendaBuenos = true;
+        else
+            EntradaTiendaMalos = true;
 
         // Rondas
-        for (int a = 0; ; a++)
+        for (int Turno = 0; ; Turno++)
         {
-
             Jugando = 1;
 
-            if (a == 6) a = 0;
+            if (Turno == FichasList.Count)
+                Turno = 0;
 
-            int Player = FichasList[a];
+            Player = FichasList[Turno];
 
-            int ejex = 1;
-            int ejey = 1;
-
+            // Revisar q el player no haya llegado a la meta o este inmovil
             if (Player != 0)
             {
                 // Turnos
                 while (Jugando > 0)
                 {
-
-                    // inmovil 
-                    if (Program.Player[Player].Inmovil) break;
+                    // revisar q no este inmovil
+                    if (Program.Player[Player].Inmovil)
+                        break;
 
                     // Pocision del Player
 
@@ -45,46 +50,84 @@ public class Rondas
                     {
                         for (int columna = 1; columna < Tablero.columnas; columna++)
                         {
-
                             if (Tablero.laberinto[fila, columna] == Player)
                             {
-
                                 ejex = fila;
                                 ejey = columna;
                                 break;
-
                             }
                         }
-
                     }
 
-                    // Actualizar interfaz
+                    ///////////////////Actualizar interfaz pendiente arreglar
                     Console.Clear();
 
                     Tablero.UpdateNiebla(Player, ejex, ejey);
                     Interfaz.Imprimir(Player);
-
-                    Console.WriteLine("");
-                    Console.WriteLine("     Player: " + Program.Player[Player].Name);
-                    Console.WriteLine("     Pasos :  " + Program.Player[Player].Pasos);
-                    Console.WriteLine("     Koopa : " + Program.Player[27].Habilidad);
-                    Console.WriteLine("");
-
-
-
+                    Imprime.Print(Player, Player);
                     var keyInfo = Console.ReadKey();
 
-                    // [T] Tienda 
+                    // [T] Tienda
                     if (keyInfo.KeyChar == 't')
-                        Tienda.Comprar(Player);
-
-                    // [Q] Inventario Pendiente ///////////////
-                    if (keyInfo.KeyChar == 'q')
-                        Jugando = 30;
+                    {
+                        if (Program.Player[Player].Equipo) // bueno
+                        {
+                            if (EntradaTiendaBuenos)
+                            {
+                                Tienda.Comprar(Player);
+                                EntradaTiendaBuenos = false;
+                                EntradaTiendaMalos = true;
+                            }
+                        }
+                        else
+                        {
+                            if (EntradaTiendaMalos) // malo
+                            {
+                                Tienda.Comprar(Player);
+                                EntradaTiendaBuenos = true;
+                                EntradaTiendaMalos = false;
+                            }
+                        }
+                    }
 
                     // [Esc] Menu Pendiente //////////////////
-                    if (keyInfo.Key == ConsoleKey.Escape)
-                        Jugando = 40;
+                    if (keyInfo.KeyChar == 'q')
+                    {
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.Clear();
+                        Interfaz.Imprimir(Player);
+                        Console.WriteLine("");
+                        var Select = AnsiConsole.Prompt(
+                            new SelectionPrompt<string>()
+                                .Title("───── [Red1]MENU[/] ────────────────────────")
+                                .PageSize(3)
+                                .MoreChoicesText("────────────────────────────────────────────────")
+                                .AddChoices(new[] { " Continuar", " Guia", " Salir" })
+                        );
+
+                        if (Select == " Guia") { }
+                        if (Select == " Salir")
+                        {
+                            Console.BackgroundColor = ConsoleColor.Cyan;
+                            Console.Clear();
+                            Interfaz.Imprimir(Player);
+                            Console.WriteLine("");
+                            var Salir = AnsiConsole.Prompt(
+                                new SelectionPrompt<string>()
+                                    .Title(
+                                        "───── [Red1]Ya te aburriste de perder Chama? ^v^[/] ────────────────────────"
+                                    )
+                                    .PageSize(3)
+                                    .MoreChoicesText(
+                                        "────────────────────────────────────────────────"
+                                    )
+                                    .AddChoices(new[] { "Si", "No" })
+                            );
+
+                            if (Salir == "Si")
+                                return 0;
+                        }
+                    }
 
                     // [R] Cancelar turno
                     if (keyInfo.KeyChar == 'r')
@@ -93,8 +136,7 @@ public class Rondas
                         Jugando = 0;
                     }
 
-
-                    // [F] Habilidad 
+                    // [F] Habilidad
                     if (keyInfo.KeyChar == 'f')
                     {
                         if (Program.Player[Player].PasosCont >= Program.Player[Player].Habilidad)
@@ -103,48 +145,49 @@ public class Rondas
                             Console.WriteLine("todavia");
                     }
 
-                    // [A][W][S][D] Moverse  
+                    // [A][W][S][D] Moverse
                     if (keyInfo.KeyChar == 'w' || keyInfo.KeyChar == 's' || keyInfo.KeyChar == 'd' || keyInfo.KeyChar == 'a')
                     {
-
                         Jugando = Jugar.Mover(Player, keyInfo.KeyChar);
-
                     }
+
+                    //////////////////////////// REVISAR ///////////////////////////////////////////
+
                     // Ficha Buenos Meta 
                     if (Jugando == 515)
                     {
+                        Console.WriteLine("Holaaaaa");
+                        Thread.Sleep(5000);
 
                         EquipoBuenoWin += 1;
                         break;
                     }
 
-                    // Ficha Malos Meta 
+                    // Ficha Malos Meta
                     if (Jugando == 525)
                     {
-
                         EquipoMaloWin += 1;
                         break;
                     }
 
-                    // QUitar puertas
+                    /////////////////////////////////////////////////////////////////////////////////////
+
+                    // Quitar puertas
 
                     if (Program.EquipoBuenoLlave)
                     {
-                        if (Tablero.laberinto[13, 15] == 313)
-                            Tablero.laberinto[13, 15] = 1;
+                        if (Tablero.laberinto[13, 15] == 111)
+                            Tablero.laberinto[13, 15] = 11;
                         else
                             Tablero.laberinto[17, 15] = 1;
-
                     }
 
                     if (Program.EquipoMaloLlave)
                     {
-
-                        if (Tablero.laberinto[13, 15] == 323)
-                            Tablero.laberinto[13, 15] = 1;
+                        if (Tablero.laberinto[13, 15] == 121)
+                            Tablero.laberinto[13, 15] = 12;
                         else
                             Tablero.laberinto[17, 15] = 1;
-
                     }
 
                     // Update Coldown Habilidad de Koopa/Wario
@@ -152,7 +195,6 @@ public class Rondas
                     Program.Player[27].Habilidad = Program.Player[27].PasosStatic * 3;
 
                     Program.Player[29].Habilidad = Program.Player[29].VisionStatic * 3;
-
                 }
 
                 // Pocision del Player para niebla
@@ -161,17 +203,13 @@ public class Rondas
                 {
                     for (int columna = 1; columna < Tablero.columnas; columna++)
                     {
-
                         if (Tablero.laberinto[fila, columna] == Player)
                         {
-
                             ejex = fila;
                             ejey = columna;
                             break;
-
                         }
                     }
-
                 }
 
                 Tablero.UpdateNiebla(Player, ejex, ejey);
@@ -188,35 +226,34 @@ public class Rondas
                 {
                     Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
                     Program.Player[Player].BufPasos = false;
-
                 }
 
                 //Buff vision
                 if (Program.Player[Player].BufVision)
                 {
-
                     Program.Player[Player].Vision = Program.Player[Player].VisionStatic;
                     Program.Player[Player].BufVision = false;
-
                 }
-
 
                 //Inmobilidad
                 if (Program.Player[Player].Inmovil)
                 {
-
                     Trampas.PlacaQuitar(Player);
                     Program.Player[Player].Inmovil = false;
                     Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
-
                 }
-
             }
 
             // WIN background sonido.stop();
             if (EquipoBuenoWin == 3 || EquipoMaloWin == 3)
                 break;
-
         }
+
+        return 1;
+    }
+
+    private static object HeaderStyle(Style style)
+    {
+        throw new NotImplementedException();
     }
 }

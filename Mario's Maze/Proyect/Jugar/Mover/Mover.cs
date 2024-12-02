@@ -23,6 +23,8 @@ public class Jugar
     }
     public static int Mover(int Player, char Direccion)
     {
+        Console.BackgroundColor = ConsoleColor.Cyan;
+
         int x = 1;
         int y = 1;
         var yn = "";
@@ -40,6 +42,11 @@ public class Jugar
         panel2.Padding(1, 1, 1, 1);
 
         var panel3 = new Panel("Necesitas una llave para abrir esta puerta.");
+        panel3.Header("[Red1] NOTA [/]", Justify.Left);
+        panel3.Border(BoxBorder.Rounded);
+        panel3.Padding(1, 1, 1, 1);
+
+        var panel4 = new Panel("Esta no es la entrada de tu equipo.");
         panel3.Header("[Red1] NOTA [/]", Justify.Left);
         panel3.Border(BoxBorder.Rounded);
         panel3.Padding(1, 1, 1, 1);
@@ -64,7 +71,7 @@ public class Jugar
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 0)
                 return Program.Player[Player].Pasos;
 
-            if (Program.chek[Tablero.laberinto[x - 1, y]] == 1 || Program.chek[Tablero.laberinto[x - 1, y]] == 51)
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 1 || Program.chek[Tablero.laberinto[x - 1, y]] == 151 || Program.chek[Tablero.laberinto[x - 1, y]] == 252 || Program.chek[Tablero.laberinto[x - 1, y]] == 353 || Program.chek[Tablero.laberinto[x - 1, y]] == 454)
             {
                 Tablero.laberinto[x - 1, y] = Player;
                 Tablero.laberinto[x, y] = 1;
@@ -148,6 +155,7 @@ public class Jugar
             /////////////////////////////////////////////////////////////////////////////////////////////////////
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 6)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -164,6 +172,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -200,6 +209,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 7)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -216,6 +226,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -253,6 +264,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 8)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -269,6 +281,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -319,6 +332,7 @@ public class Jugar
                 else // malos
                 {
 
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -349,6 +363,7 @@ public class Jugar
                 else // Buenos
                 {
 
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -361,16 +376,49 @@ public class Jugar
 
             }
 
-            if (Program.chek[Tablero.laberinto[x - 1, y]] == 11) // puerta
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 11 && Program.Player[Player].Equipo) // puerta abierta
             {
 
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                AnsiConsole.Write(panel3);
-                var keyInfo = Console.ReadKey();
+                Tablero.laberinto[x - 1, y] = Player;
+                Tablero.laberinto[x, y] = 1;
+
+                return RestPasos(Player);
 
             }
+
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 12 && !Program.Player[Player].Equipo) // puerta abierta
+            {
+
+                Tablero.laberinto[x - 1, y] = Player;
+                Tablero.laberinto[x, y] = 1;
+
+                return RestPasos(Player);
+
+            }
+
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 1112) // puerta abierta
+            {
+                if (Program.Player[Player].Equipo)
+                {
+
+                    Tablero.laberinto[x - 1, y] = Player;
+                    Tablero.laberinto[x, y] = 11;
+
+                    return RestPasos(Player);
+
+                }
+                else
+                {
+
+                    Tablero.laberinto[x - 1, y] = Player;
+                    Tablero.laberinto[x, y] = 12;
+
+                    return RestPasos(Player);
+                }
+            }
+
         }
         if (Direccion == 's')
         {
@@ -378,7 +426,7 @@ public class Jugar
                 return Program.Player[Player].Pasos;
 
 
-            if (Program.chek[Tablero.laberinto[x + 1, y]] == 1 || Program.chek[Tablero.laberinto[x + 1, y]] == 51)
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 1 || Program.chek[Tablero.laberinto[x + 1, y]] == 151 || Program.chek[Tablero.laberinto[x + 1, y]] == 252 || Program.chek[Tablero.laberinto[x + 1, y]] == 353 || Program.chek[Tablero.laberinto[x + 1, y]] == 454)
             {
                 Tablero.laberinto[x + 1, y] = Player;
                 Tablero.laberinto[x, y] = 1;
@@ -459,6 +507,7 @@ public class Jugar
             /////////////////////////////////////////////////////////////////////////////////////////////////////
             if (Program.chek[Tablero.laberinto[x + 1, y]] == 6)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -475,6 +524,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -511,6 +561,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x + 1, y]] == 7)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -527,6 +578,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -564,6 +616,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x + 1, y]] == 8)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -580,6 +633,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -630,6 +684,7 @@ public class Jugar
                 else // malos
                 {
 
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -660,6 +715,7 @@ public class Jugar
                 else // Buenos
                 {
 
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -672,15 +728,47 @@ public class Jugar
 
             }
 
-            if (Program.chek[Tablero.laberinto[x + 1, y]] == 11)
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 11 && Program.Player[Player].Equipo) // puerta abierta
             {
 
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                AnsiConsole.Write(panel3);
-                var keyInfo = Console.ReadKey();
+                Tablero.laberinto[x + 1, y] = Player;
+                Tablero.laberinto[x, y] = 1;
 
+                return RestPasos(Player);
+
+            }
+
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 12 && !Program.Player[Player].Equipo) // puerta abierta
+            {
+
+                Tablero.laberinto[x + 1, y] = Player;
+                Tablero.laberinto[x, y] = 1;
+
+                return RestPasos(Player);
+
+            }
+
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 1112) // puerta abierta
+            {
+                if (Program.Player[Player].Equipo)
+                {
+
+                    Tablero.laberinto[x + 1, y] = Player;
+                    Tablero.laberinto[x, y] = 11;
+
+                    return RestPasos(Player);
+
+                }
+                else
+                {
+
+                    Tablero.laberinto[x + 1, y] = Player;
+                    Tablero.laberinto[x, y] = 12;
+
+                    return RestPasos(Player);
+                }
             }
 
         }
@@ -690,7 +778,7 @@ public class Jugar
                 return Program.Player[Player].Pasos;
 
 
-            if (Program.chek[Tablero.laberinto[x, y - 1]] == 1 || Program.chek[Tablero.laberinto[x, y - 1]] == 51)
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 1 || Program.chek[Tablero.laberinto[x, y - 1]] == 151 || Program.chek[Tablero.laberinto[x, y - 1]] == 252 || Program.chek[Tablero.laberinto[x, y - 1]] == 353 || Program.chek[Tablero.laberinto[x, y - 1]] == 454)
             {
                 Tablero.laberinto[x, y - 1] = Player;
                 Tablero.laberinto[x, y] = 1;
@@ -771,6 +859,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y - 1]] == 6)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -787,6 +876,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -823,6 +913,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y - 1]] == 7)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -839,6 +930,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -876,6 +968,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y - 1]] == 8)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -892,6 +985,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -925,7 +1019,7 @@ public class Jugar
 
             }
 
-            if (Program.chek[Tablero.laberinto[x, y - 1]] == 31) // recoge ficha de los buenos
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 31) // recoge llave de los buenos
             {
 
 
@@ -942,6 +1036,7 @@ public class Jugar
                 else // malos
                 {
 
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -954,7 +1049,7 @@ public class Jugar
             }
             /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            if (Program.chek[Tablero.laberinto[x, y - 1]] == 32) // recoge ficha de los malos
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 32) // recoge llave de los malos
             {
 
 
@@ -971,6 +1066,7 @@ public class Jugar
                 else // Buenos
                 {
 
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -981,15 +1077,47 @@ public class Jugar
             }
 
 
-            if (Program.chek[Tablero.laberinto[x, y - 1]] == 11)
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 11 && Program.Player[Player].Equipo) // puerta abierta
             {
 
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                AnsiConsole.Write(panel3);
-                var keyInfo = Console.ReadKey();
+                Tablero.laberinto[x, y - 1] = Player;
+                Tablero.laberinto[x, y] = 1;
 
+                return RestPasos(Player);
+
+            }
+
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 12 && !Program.Player[Player].Equipo) // puerta abierta
+            {
+
+                Tablero.laberinto[x, y - 1] = Player;
+                Tablero.laberinto[x, y] = 1;
+
+                return RestPasos(Player);
+
+            }
+
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 1112) // puerta abierta
+            {
+                if (Program.Player[Player].Equipo)
+                {
+
+                    Tablero.laberinto[x, y - 1] = Player;
+                    Tablero.laberinto[x, y] = 11;
+
+                    return RestPasos(Player);
+
+                }
+                else
+                {
+
+                    Tablero.laberinto[x, y - 1] = Player;
+                    Tablero.laberinto[x, y] = 12;
+
+                    return RestPasos(Player);
+                }
             }
 
         }
@@ -998,7 +1126,7 @@ public class Jugar
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 0)
                 return Program.Player[Player].Pasos;
 
-            if (Program.chek[Tablero.laberinto[x, y + 1]] == 1 || Program.chek[Tablero.laberinto[x, y + 1]] == 51)
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 1 || Program.chek[Tablero.laberinto[x, y + 1]] == 151 || Program.chek[Tablero.laberinto[x, y + 1]] == 252 || Program.chek[Tablero.laberinto[x, y + 1]] == 353 || Program.chek[Tablero.laberinto[x, y + 1]] == 454)
             {
                 Tablero.laberinto[x, y + 1] = Player;
                 Tablero.laberinto[x, y] = 1;
@@ -1079,6 +1207,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 6)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -1095,6 +1224,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -1131,6 +1261,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 7)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -1147,6 +1278,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -1184,6 +1316,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 8)
             {
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -1200,6 +1333,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -1250,6 +1384,7 @@ public class Jugar
                 else // malos
                 {
 
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -1279,6 +1414,7 @@ public class Jugar
                 else // Buenos
                 {
 
+                    Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -1288,15 +1424,47 @@ public class Jugar
                 }
             }
 
-            if (Program.chek[Tablero.laberinto[x, y + 1]] == 11)
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 11 && Program.Player[Player].Equipo) // puerta abierta
             {
 
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                AnsiConsole.Write(panel3);
-                var keyInfo = Console.ReadKey();
+                Tablero.laberinto[x, y + 1] = Player;
+                Tablero.laberinto[x, y] = 1;
 
+                return RestPasos(Player);
+
+            }
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 12 && !Program.Player[Player].Equipo) // puerta abierta
+            {
+
+                Tablero.laberinto[x, y + 1] = Player;
+                Tablero.laberinto[x, y] = 1;
+
+                return RestPasos(Player);
+
+            }
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 1112) // puerta abierta
+            {
+                if (Program.Player[Player].Equipo)
+                {
+
+                    Tablero.laberinto[x, y + 1] = Player;
+                    Tablero.laberinto[x, y] = 11;
+
+                    return RestPasos(Player);
+
+                }
+                else
+                {
+
+                    Tablero.laberinto[x, y + 1] = Player;
+                    Tablero.laberinto[x, y] = 12;
+
+                    return RestPasos(Player);
+                }
             }
 
         }

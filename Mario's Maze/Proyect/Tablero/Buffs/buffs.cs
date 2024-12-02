@@ -35,19 +35,6 @@ public class Bufss
 
         }
 
-        if (x == 44)
-        { // coins
-
-
-
-        }
-
-        if (x == 45)
-        { // llave
-
-
-        }
-
     }
 
 }

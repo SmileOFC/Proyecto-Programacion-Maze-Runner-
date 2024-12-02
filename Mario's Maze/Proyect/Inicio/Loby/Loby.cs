@@ -2,7 +2,7 @@
 public class Loby
 {
 
-    public static void LOBY()
+    public static int loby()
     {
         while (true)
         {
@@ -15,7 +15,7 @@ public class Loby
             Console.WriteLine("//////////////////////");
             var keyInfo = Console.ReadKey();
 
-            if (keyInfo.KeyChar == '1' || keyInfo.KeyChar == '1' || keyInfo.KeyChar == '3')
+            if (keyInfo.KeyChar == '1' || keyInfo.KeyChar == '1')
             {
 
                 if (keyInfo.KeyChar == '1')
@@ -25,13 +25,16 @@ public class Loby
                 }
                 //if(keyInfo.KeyChar == 2)
 
-                if (keyInfo.KeyChar == 3)
-                    Environment.Exit(-1);
+                /* if (keyInfo.KeyChar == 3)
+                    Environment.Exit(0); */
 
             }
 
+            return 0;
+
         }
 
+    return 1;
 
     }
 

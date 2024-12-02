@@ -1,13 +1,14 @@
 ﻿using Spectre.Console;
+
 public class Interfaz
 {
-
     public static Dictionary<int, bool> TrampaVisibleF = new Dictionary<int, bool>();
     public static Dictionary<int, bool> TrampaVisibleC = new Dictionary<int, bool>();
 
+    public static Color? White { get; private set; }
+
     public static string Tabs(string s)
     {
-
         int a = s.Count();
         string Tab = s;
 
@@ -20,222 +21,341 @@ public class Interfaz
 
     public static void Imprimir(int x)
     {
-
+        // Cambiar el color de fondo de la consola a azul
+        Console.BackgroundColor = ConsoleColor.Cyan;
+        
         Console.WriteLine("");
-
-
+        Console.WriteLine("");
 
         for (int i = 0; i < Tablero.filas; i++)
         {
-            Console.Write("    ");
+            AnsiConsole.Markup("[cyan on cyan]                  [/]");
 
             for (int j = 0; j < Tablero.columnas; j++)
             {
 
-                // PLAYERS
-
-                if (Tablero.laberinto[i, j] == 20 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("[red1]█[/]" + "[blue3]█[/]");
-
-                if (Tablero.laberinto[i, j] == 21 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("█" + "[green3]█[/]");
-
-                if (Tablero.laberinto[i, j] == 22 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("[red1]█[/]" + "█");
-
-                if (Tablero.laberinto[i, j] == 23 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("█" + "[green1]█[/]");
-
-                if (Tablero.laberinto[i, j] == 24 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("[hotpink]█[/]" + "[yellow1]█[/]");
-
-
-
-                if (Tablero.laberinto[i, j] == 25 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("[red1]█[/]" + "[green3]█[/]");
-
-                if (Tablero.laberinto[i, j] == 26 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("[orange4_1]█[/]" + "█");
-
-                if (Tablero.laberinto[i, j] == 27 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("[green1]█[/]" + "█");
-
-                if (Tablero.laberinto[i, j] == 28 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("█" + "[purple4]█[/]");
-
-                if (Tablero.laberinto[i, j] == 29 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("[yellow1]█[/]" + "[purple4]█[/]");
-
-                // TRAMPAS
-
-                if (Tablero.laberinto[i, j] == 31 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                {
-                    if (TrampaVisibleF.Count == 0)
-                    {
-
-                        Console.Write("T1");
-                    }
-                    else
-                    {
-
-                        if (TrampaVisibleF.ContainsKey(i) && TrampaVisibleC.ContainsKey(j))
-                        {
-
-                            AnsiConsole.Markup("[red1]█[/]" + "[red1]█[/]");
-
-                        }
-                        else Console.Write("  ");
-
-                    }
-                }
-
-                if (Tablero.laberinto[i, j] == 32 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                {
-                    if (TrampaVisibleF.Count == 0)
-                    {
-
-                        Console.Write("T2");
-                    }
-                    else
-                    {
-
-                        if (TrampaVisibleF.ContainsKey(i) && TrampaVisibleC.ContainsKey(j))
-                        {
-
-                            AnsiConsole.Markup("[red1]█[/]" + "[red1]█[/]");
-
-                        }
-                        else Console.Write("  ");
-
-                    }
-                }
-
-                if (Tablero.laberinto[i, j] == 33 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                {
-                    if (TrampaVisibleF.Count == 0)
-                    {
-
-                        Console.Write("T3");
-                    }
-                    else
-                    {
-
-                        if (TrampaVisibleF.ContainsKey(i) && TrampaVisibleC.ContainsKey(j))
-                        {
-
-                            AnsiConsole.Markup("[red1]█[/]" + "[red1]█[/]");
-
-                        }
-                        else Console.Write("  ");
-
-                    }
-                }
-
-                if (Tablero.laberinto[i, j] == 35 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("[grey on black]▌▌[/]");
-
-                // BUFF
-
-                if (Tablero.laberinto[i, j] == 41 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                {
-                    Console.Write("B1");
-                }
-                if (Tablero.laberinto[i, j] == 42 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                {
-                    Console.Write("B2");
-                }
-                if (Tablero.laberinto[i, j] == 43 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                {
-                    Console.Write("B3");
-                }
-
                 // LABERINTO
 
-                if (Tablero.laberinto[i, j] == 1 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                if (
+                    Tablero.laberinto[i, j] == 1 || Tablero.laberinto[i, j] == 1112
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
                 {
                     AnsiConsole.Markup("[rosybrown]██[/]");
                 }
-                if (Tablero.laberinto[i, j] == 0 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                if (
+                    Tablero.laberinto[i, j] == 0
+                    || Tablero.laberinto[i, j] == 1111
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                )
                 {
                     AnsiConsole.Markup("[darkgreen]██[/]");
                 }
 
                 // META
 
-                if (Tablero.laberinto[i, j] == 111 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                if (
+                    Tablero.laberinto[i, j] == 111
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
                 {
-
                     AnsiConsole.Markup("[orange4_1]█[/]" + "[blue3]█[/]");
-
                 }
 
-                if (Tablero.laberinto[i, j] == 121 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                if (
+                    Tablero.laberinto[i, j] == 121
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
                 {
-
                     AnsiConsole.Markup("[orange4_1]█[/]" + "[red1]█[/]");
-
                 }
 
-                if (Tablero.laberinto[i, j] == 5 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                if (
+                    Tablero.laberinto[i, j] == 5
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
                 {
                     AnsiConsole.Markup("[red1]█[/]" + "█");
                 }
 
 
-                // Coins 
+                // PLAYERS
 
-                if (Tablero.laberinto[i, j] == 2 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                if (
+                    Tablero.laberinto[i, j] == 20
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("[red1]█[/]" + "[blue3]█[/]");
+
+                if (
+                    Tablero.laberinto[i, j] == 21
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("█" + "[green3]█[/]");
+
+                if (
+                    Tablero.laberinto[i, j] == 22
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("[red1]█[/]" + "█");
+
+                if (
+                    Tablero.laberinto[i, j] == 23
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("█" + "[green1]█[/]");
+
+                if (
+                    Tablero.laberinto[i, j] == 24
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("[hotpink]█[/]" + "[yellow1]█[/]");
+
+                if (
+                    Tablero.laberinto[i, j] == 25
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("[red1]█[/]" + "[green3]█[/]");
+
+                if (
+                    Tablero.laberinto[i, j] == 26
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("[orange4_1]█[/]" + "█");
+
+                if (
+                    Tablero.laberinto[i, j] == 27
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("[green1]█[/]" + "█");
+
+                if (
+                    Tablero.laberinto[i, j] == 28
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("█" + "[purple4]█[/]");
+
+                if (
+                    Tablero.laberinto[i, j] == 29
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("[yellow1]█[/]" + "[purple4]█[/]");
+
+                // TRAMPAS
+
+                if (
+                    Tablero.laberinto[i, j] == 31
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
                 {
+                    if (TrampaVisibleF.Count == 0)
+                    {
+                        AnsiConsole.Markup("T1");
+                    }
+                    else
+                    {
+                        if (TrampaVisibleF.ContainsKey(i) && TrampaVisibleC.ContainsKey(j))
+                        {
+                            AnsiConsole.Markup("[red1]██[/]");
+                        }
+                        else
+                            AnsiConsole.Markup("T1");
+                    }
+                }
 
+                if (
+                    Tablero.laberinto[i, j] == 32
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                {
+                    if (TrampaVisibleF.Count == 0)
+                    {
+                        AnsiConsole.Markup("T2");
+                    }
+                    else
+                    {
+                        if (TrampaVisibleF.ContainsKey(i) && TrampaVisibleC.ContainsKey(j))
+                        {
+                            AnsiConsole.Markup("[red1]██[/]");
+                        }
+                        else
+                            AnsiConsole.Markup("T2");
+                    }
+                }
+
+                if (
+                    Tablero.laberinto[i, j] == 33
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                {
+                    if (TrampaVisibleF.Count == 0)
+                    {
+                        AnsiConsole.Markup("T3");
+                    }
+                    else
+                    {
+                        if (TrampaVisibleF.ContainsKey(i) && TrampaVisibleC.ContainsKey(j))
+                        {
+                            AnsiConsole.Markup("[red1]██[/]");
+                        }
+                        else
+                            AnsiConsole.Markup("T3");
+                    }
+                }
+
+                if (
+                    Tablero.laberinto[i, j] == 35
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                    AnsiConsole.Markup("[black on rosybrown]▒▒[/]");
+
+                // BUFF
+
+                if (
+                    Tablero.laberinto[i, j] == 41
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                {
+                    AnsiConsole.Markup("[on rosybrown]  [/]");
+                }
+                if (
+                    Tablero.laberinto[i, j] == 42
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                {
+                    AnsiConsole.Markup("[on rosybrown]  [/]");
+                }
+                if (
+                    Tablero.laberinto[i, j] == 43
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                {
+                    AnsiConsole.Markup("[on rosybrown]  [/]");
+                }
+
+                // Coins
+
+                if (
+                    Tablero.laberinto[i, j] == 2
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                {
                     AnsiConsole.Markup("[yellow1]█[/]" + "[yellow1]█[/]");
-
                 }
                 //Llaves
 
-                if (Tablero.laberinto[i, j] == 323 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                if (
+                    Tablero.laberinto[i, j] == 323
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
                 {
-
                     AnsiConsole.Markup("[red1]█[/]" + "[yellow1]█[/]");
-
                 }
 
-                if (Tablero.laberinto[i, j] == 313 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                if (
+                    Tablero.laberinto[i, j] == 313
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
                 {
-
                     AnsiConsole.Markup("[blue3]█[/]" + "[yellow1]█[/]");
-
                 }
 
                 //Cofres
 
-                if (Tablero.laberinto[i, j] == 6 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false) // comun
+                if (
+                    Tablero.laberinto[i, j] == 6
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                ) // comun
                 {
-
                     AnsiConsole.Markup("[blue3]██[/]");
-
                 }
 
-                if (Tablero.laberinto[i, j] == 7 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false) // epico
+                if (
+                    Tablero.laberinto[i, j] == 7
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                ) // epico
                 {
-
                     AnsiConsole.Markup("[purple4]██[/]");
-
                 }
 
-                if (Tablero.laberinto[i, j] == 8 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false) // legendario
+                if (
+                    Tablero.laberinto[i, j] == 8
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                ) // legendario
                 {
-
                     AnsiConsole.Markup("[red1]██[/]");
-
                 }
 
-                // Puentes
+                // Escalera arriba
 
-                if (Tablero.laberinto[i, j] == 51 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false) 
+                if (
+                    Tablero.laberinto[i, j] == 151
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
                 {
+                    AnsiConsole.Markup("[orange4_1 on rosybrown]▀▀[/]");
+                }
 
-                    AnsiConsole.Markup("[orange4_1]██[/]");
+                // escalera abajo
 
+                if (
+                    Tablero.laberinto[i, j] == 252
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                {
+                    AnsiConsole.Markup("[orange4_1 on rosybrown]▄▄[/]");
+                }
+
+                // escalera izquierda
+
+                if (
+                    Tablero.laberinto[i, j] == 353
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                {
+                    AnsiConsole.Markup("[orange4_1 on rosybrown]▌ [/]");
+                }
+
+                // escalera derecha
+
+                if (
+                    Tablero.laberinto[i, j] == 454
+                    && Tablero.niebla[i, j] == false
+                    && Tablero.Puntero[i, j] == false
+                )
+                {
+                    AnsiConsole.Markup("[orange4_1 on rosybrown] ▐[/]");
                 }
 
                 // NIEBLA
@@ -247,16 +367,28 @@ public class Interfaz
 
                 if (Tablero.Puntero[i, j])
                 {
-
                     AnsiConsole.Markup("[red1]█[/]" + "[red1]█[/]");
-
                 }
-
             }
 
             // Layout Pendiente //////////////
 
-            Console.WriteLine();
+            AnsiConsole.Markup("[cyan on cyan]            [/]\n");
         }
+
+        AnsiConsole.Markup(
+            "[on green]                                                                                                                                                                                                                    [/]"
+        );
+        AnsiConsole.Markup(
+            "[on orange4_1]                                                                                                                                                                                                                    [/]"
+        );
+        AnsiConsole.Markup(
+            "[on orange4_1]                                                                                                                                                                                                                    [/]"
+        );
+
+        /////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////
     }
 }

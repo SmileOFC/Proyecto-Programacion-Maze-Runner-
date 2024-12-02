@@ -1,16 +1,18 @@
 ﻿public class Trampas
 {
+    
 
     public static List<int[]> Muro = new List<int[]>();
 
     public static void PlacaQuitar(int p)
     {
+        
 
         if (Muro.Count > 0)
         {
             for (int x = 0; x < Muro.Count; x++)
             {
-
+                Console.BackgroundColor = ConsoleColor.Cyan;
                 Console.Clear();
                 Interfaz.Imprimir(p);
                 Thread.Sleep(1000);
@@ -22,6 +24,7 @@
 
     public static void PlacaGenerar(int p, int x, int y)
     {
+        Console.BackgroundColor = ConsoleColor.Cyan;
 
         Console.Clear();
         Interfaz.Imprimir(p);
@@ -50,7 +53,7 @@
                     if (c > Respwn.Count) break;
                     if (Respwn[c] == x)
                     {
-                        if (c == 1)
+                        if (c == 0)
                         {
 
                             if (Tablero.laberinto[1, 1] == 1)
