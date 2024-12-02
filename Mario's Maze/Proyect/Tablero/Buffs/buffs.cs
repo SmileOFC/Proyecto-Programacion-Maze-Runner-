@@ -25,7 +25,7 @@ public class Bufss
         }
 
 
-        if (x == 43) // Gafas
+        if (x == 43) // Flor
         {
 
             Tablero.laberinto[px, py] = 1;

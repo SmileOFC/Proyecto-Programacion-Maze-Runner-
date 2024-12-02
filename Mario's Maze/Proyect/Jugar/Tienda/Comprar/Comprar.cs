@@ -9,7 +9,7 @@ public class Tienda
         
         while (true)
         {
-            Console.BackgroundColor = ConsoleColor.Cyan;
+            
             Console.Clear();
             Interfaz.Imprimir(Player);
             Console.WriteLine("");
@@ -33,7 +33,7 @@ public class Tienda
                     else
                         ChekCoins = Program.EquipoMaloCoins;
 
-Console.BackgroundColor = ConsoleColor.Cyan;
+
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -100,7 +100,7 @@ Console.BackgroundColor = ConsoleColor.Cyan;
                     else
                         ChekCoins = Program.EquipoMaloCoins;
 
-Console.BackgroundColor = ConsoleColor.Cyan;
+
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -144,7 +144,7 @@ Console.BackgroundColor = ConsoleColor.Cyan;
                     else
                         ChekCoins = Program.EquipoMaloCoins;
 
-Console.BackgroundColor = ConsoleColor.Cyan;
+
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -153,7 +153,7 @@ Console.BackgroundColor = ConsoleColor.Cyan;
                             .Title("───── [Red1]POCIONES[/] ────────────────────────")
                             .PageSize(5)
                             .MoreChoicesText("────────────────────────────────────────────────")
-                            .AddChoices(new[]{" Veneno"," Vision"," Velocidad"," Niebla"," Hielo"," Telaraña"," Atras"})
+                            .AddChoices(new[]{" Veneno"," Vision"," Velocidad"," Niebla"," Hielo"," Atras"})
                     );
 
                     if (SelectPocion == " Atras")
@@ -171,7 +171,7 @@ Console.BackgroundColor = ConsoleColor.Cyan;
 
                         if (SelectPocion == " Hielo") { }
 
-                        if (SelectPocion == " Telaraña") { }
+                  
                     }
                     else // Monedas Insuficientes Panel
                     { }

@@ -60,11 +60,17 @@ public class Rondas
                     }
 
                     ///////////////////Actualizar interfaz pendiente arreglar
+                    
                     Console.Clear();
-
                     Tablero.UpdateNiebla(Player, ejex, ejey);
+                    
                     Interfaz.Imprimir(Player);
-                    Imprime.Print(Player, Player);
+                    Imprime.Print(Player, Player, Player);
+
+                    //////////////////////////////////////////////////////////
+
+                    
+                    
                     var keyInfo = Console.ReadKey();
 
                     // [T] Tienda
@@ -93,8 +99,8 @@ public class Rondas
                     // [Esc] Menu Pendiente //////////////////
                     if (keyInfo.KeyChar == 'q')
                     {
-                        Console.BackgroundColor = ConsoleColor.Cyan;
                         Console.Clear();
+                       
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
                         var Select = AnsiConsole.Prompt(
@@ -108,7 +114,7 @@ public class Rondas
                         if (Select == " Guia") { }
                         if (Select == " Salir")
                         {
-                            Console.BackgroundColor = ConsoleColor.Cyan;
+                            
                             Console.Clear();
                             Interfaz.Imprimir(Player);
                             Console.WriteLine("");

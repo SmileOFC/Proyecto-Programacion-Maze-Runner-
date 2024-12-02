@@ -1,8 +1,7 @@
 ﻿public class Tablero
 {
     public static Random rand = new Random();
-    public static int filas = 31,
-        columnas = 31;
+    public static int filas = 31, columnas = 31;
     static int Cont = 0;
     public static bool[,] Puntero = new bool[filas, columnas];
     public static int[,] laberinto = new int[filas, columnas];

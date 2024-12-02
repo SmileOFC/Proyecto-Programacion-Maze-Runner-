@@ -5,8 +5,6 @@ public class Interfaz
     public static Dictionary<int, bool> TrampaVisibleF = new Dictionary<int, bool>();
     public static Dictionary<int, bool> TrampaVisibleC = new Dictionary<int, bool>();
 
-    public static Color? White { get; private set; }
-
     public static string Tabs(string s)
     {
         int a = s.Count();
@@ -19,17 +17,25 @@ public class Interfaz
         return Tab;
     }
 
-    public static void Imprimir(int x)
+    public static void Imprimir(int Player)
     {
-        // Cambiar el color de fondo de la consola a azul
-        Console.BackgroundColor = ConsoleColor.Cyan;
-        
-        Console.WriteLine("");
-        Console.WriteLine("");
+        // Definir el color blanco en RGB 
+        var whiteColor = new Color(255, 255, 255);
+        int Ancho = Console.WindowWidth;
+        int Alto = Console.WindowHeight;
+
+        for (int x = 0; x < Ancho; x++)
+        {
+
+            Console.SetCursorPosition(x, 0);
+            AnsiConsole.Markup("[on cyan] [/]\n");
+
+        }
 
         for (int i = 0; i < Tablero.filas; i++)
         {
-            AnsiConsole.Markup("[cyan on cyan]                  [/]");
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.Write("                  ");
 
             for (int j = 0; j < Tablero.columnas; j++)
             {
@@ -80,7 +86,7 @@ public class Interfaz
                     && Tablero.Puntero[i, j] == false
                 )
                 {
-                    AnsiConsole.Markup("[red1]█[/]" + "█");
+                    AnsiConsole.Markup("[red1]█[/]" + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]"); 
                 }
 
 
@@ -98,21 +104,21 @@ public class Interfaz
                     && Tablero.niebla[i, j] == false
                     && Tablero.Puntero[i, j] == false
                 )
-                    AnsiConsole.Markup("█" + "[green3]█[/]");
+                    AnsiConsole.Markup($"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]" + "[green3]█[/]");
 
                 if (
                     Tablero.laberinto[i, j] == 22
                     && Tablero.niebla[i, j] == false
                     && Tablero.Puntero[i, j] == false
                 )
-                    AnsiConsole.Markup("[red1]█[/]" + "█");
+                    AnsiConsole.Markup("[red1]█[/]" + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]");
 
                 if (
                     Tablero.laberinto[i, j] == 23
                     && Tablero.niebla[i, j] == false
                     && Tablero.Puntero[i, j] == false
                 )
-                    AnsiConsole.Markup("█" + "[green1]█[/]");
+                    AnsiConsole.Markup($"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]" + "[green1]█[/]");
 
                 if (
                     Tablero.laberinto[i, j] == 24
@@ -133,21 +139,21 @@ public class Interfaz
                     && Tablero.niebla[i, j] == false
                     && Tablero.Puntero[i, j] == false
                 )
-                    AnsiConsole.Markup("[orange4_1]█[/]" + "█");
+                    AnsiConsole.Markup("[orange4_1]█[/]" + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]");
 
                 if (
                     Tablero.laberinto[i, j] == 27
                     && Tablero.niebla[i, j] == false
                     && Tablero.Puntero[i, j] == false
                 )
-                    AnsiConsole.Markup("[green1]█[/]" + "█");
+                    AnsiConsole.Markup("[green1]█[/]" + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]");
 
                 if (
                     Tablero.laberinto[i, j] == 28
                     && Tablero.niebla[i, j] == false
                     && Tablero.Puntero[i, j] == false
                 )
-                    AnsiConsole.Markup("█" + "[purple4]█[/]");
+                    AnsiConsole.Markup($"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]" + "[purple4]█[/]");
 
                 if (
                     Tablero.laberinto[i, j] == 29
@@ -208,7 +214,7 @@ public class Interfaz
                 {
                     if (TrampaVisibleF.Count == 0)
                     {
-                        AnsiConsole.Markup("T3");
+                        AnsiConsole.Markup("T3"); 
                     }
                     else
                     {
@@ -226,7 +232,7 @@ public class Interfaz
                     && Tablero.niebla[i, j] == false
                     && Tablero.Puntero[i, j] == false
                 )
-                    AnsiConsole.Markup("[black on rosybrown]▒▒[/]");
+                    AnsiConsole.Markup("[black on rosybrown]■■[/]"); // █
 
                 // BUFF
 
@@ -361,7 +367,7 @@ public class Interfaz
                 // NIEBLA
 
                 if (Tablero.niebla[i, j] && Tablero.Puntero[i, j] == false)
-                    AnsiConsole.Markup("[grey53]██[/]");
+                    AnsiConsole.Markup("[grey53]██[/]"); 
 
                 // PUNTERO
 
@@ -371,20 +377,61 @@ public class Interfaz
                 }
             }
 
-            // Layout Pendiente //////////////
+            // Layout Pendiente ////////////// i => fila
 
-            AnsiConsole.Markup("[cyan on cyan]            [/]\n");
+            if (i < 5 || i > 24)
+            {
+
+                for (int x = 80; x < Ancho; x++)
+                {
+
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.Write(" ");
+
+                }
+                Console.WriteLine("");
+
+            }
+            else
+            {
+
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("                                        ");
+
+            }
         }
 
-        AnsiConsole.Markup(
-            "[on green]                                                                                                                                                                                                                    [/]"
-        );
-        AnsiConsole.Markup(
-            "[on orange4_1]                                                                                                                                                                                                                    [/]"
-        );
-        AnsiConsole.Markup(
-            "[on orange4_1]                                                                                                                                                                                                                    [/]"
-        );
+        // Label
+
+        for (int x = 7; x <= 24; x++) // fila
+        {
+            for (int y = 122; y < Ancho; y++ ) // columna
+            {
+
+                Console.SetCursorPosition(y,x);
+                AnsiConsole.Markup($"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]");
+
+            }
+        }
+
+        for (int x = 0; x < Ancho; x++)
+        {
+
+            Console.SetCursorPosition(x, 32);
+            AnsiConsole.Markup("[on green] [/]");
+
+        }
+        for (int x = 0; x < Ancho; x++)
+        {
+            for (int y = 33; y < Alto - 10; y++)
+            {
+
+                Console.SetCursorPosition(x, y);
+                AnsiConsole.Markup("[on orange4_1] [/]");
+
+            }
+        }
+
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 

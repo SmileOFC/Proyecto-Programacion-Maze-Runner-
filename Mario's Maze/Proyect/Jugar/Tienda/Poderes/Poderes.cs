@@ -24,7 +24,7 @@ public class Poderes
         {
             while (c == 0) // Seleccione Player para equipar
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
 
@@ -43,7 +43,7 @@ public class Poderes
         {
             while (c == 0) // Seleccione Player para equipar
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
 
@@ -59,7 +59,7 @@ public class Poderes
             }
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        Console.BackgroundColor = ConsoleColor.Cyan;
+        
         Console.Clear();
         Interfaz.Imprimir(Player);
         AnsiConsole.Write(panel1);
@@ -84,7 +84,7 @@ public class Poderes
 
         while (true)
         {   
-            Console.BackgroundColor = ConsoleColor.Cyan;
+            
             Console.Clear();
             Interfaz.Imprimir(Player);
             var keyInfo = Console.ReadKey();
@@ -100,7 +100,7 @@ public class Poderes
                 Tablero.Puntero[PunteroX - 1, PunteroY] = true;
                 Tablero.Puntero[PunteroX, PunteroY] = false;
                 PunteroX = PunteroX - 1;
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
             }
@@ -115,7 +115,7 @@ public class Poderes
                 Tablero.Puntero[PunteroX + 1, PunteroY] = true;
                 Tablero.Puntero[PunteroX, PunteroY] = false;
                 PunteroX = PunteroX + 1;
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
             }
@@ -130,7 +130,7 @@ public class Poderes
                 Tablero.Puntero[PunteroX, PunteroY - 1] = true;
                 Tablero.Puntero[PunteroX, PunteroY] = false;
                 PunteroY = PunteroY - 1;
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
             }
@@ -145,7 +145,7 @@ public class Poderes
                 Tablero.Puntero[PunteroX, PunteroY + 1] = true;
                 Tablero.Puntero[PunteroX, PunteroY] = false;
                 PunteroY = PunteroY + 1;
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
             }

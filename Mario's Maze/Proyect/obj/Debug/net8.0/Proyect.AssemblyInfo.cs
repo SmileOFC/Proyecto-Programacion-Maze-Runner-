@@ -13,7 +13,7 @@ using System.Reflection;
 /* [assembly: System.Reflection.AssemblyCompanyAttribute("Mario\'sMaze")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a88a24bd95f8f0ebf5a58dae143b155263f2579a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+011f4926c8000af5834695485171a3f747cab259")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mario\'sMaze")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mario\'sMaze")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")] */

@@ -21,7 +21,7 @@ public class Cofres
     public static void Cofre(int Player, int x)
     {
 
-        Console.BackgroundColor = ConsoleColor.Cyan;
+        
         ///////////////////////////////////////////////////////////////////////////////////////////////////////
         if (x == 6) // COMUN
         {
@@ -32,7 +32,7 @@ public class Cofres
                 if (Program.EquipoBuenoCoins > 0) // Revisar q tenga monedas
                 {
                     
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player); // Seleccione item
 
@@ -42,7 +42,7 @@ public class Cofres
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
 
@@ -82,7 +82,7 @@ public class Cofres
 
                 if (Program.EquipoMaloCoins > 0) // Revisar q tenga monedas
                 {
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player); // Seleccione item
 
@@ -92,7 +92,7 @@ public class Cofres
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
 
@@ -133,7 +133,7 @@ public class Cofres
 
                 if (Program.EquipoBuenoCoins > 2) // Revisar q tenga monedas
                 {
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player); // Seleccione item
 
@@ -143,7 +143,7 @@ public class Cofres
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
 
@@ -183,7 +183,7 @@ public class Cofres
 
                 if (Program.EquipoMaloCoins > 2) // Revisar q tenga monedas
                 {
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player); // Seleccione item
 
@@ -193,7 +193,7 @@ public class Cofres
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
 
@@ -234,7 +234,7 @@ public class Cofres
 
                 if (Program.EquipoBuenoCoins > 4) // Revisar q tenga monedas
                 {
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player); // Seleccione item
 
@@ -244,7 +244,7 @@ public class Cofres
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
 
@@ -284,7 +284,7 @@ public class Cofres
 
                 if (Program.EquipoMaloCoins > 4) // Revisar q tenga monedas
                 {
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player); // Seleccione item
 
@@ -294,7 +294,7 @@ public class Cofres
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
 

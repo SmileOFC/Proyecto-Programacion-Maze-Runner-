@@ -12,7 +12,7 @@
         {
             for (int x = 0; x < Muro.Count; x++)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(p);
                 Thread.Sleep(1000);
@@ -24,7 +24,7 @@
 
     public static void PlacaGenerar(int p, int x, int y)
     {
-        Console.BackgroundColor = ConsoleColor.Cyan;
+        
 
         Console.Clear();
         Interfaz.Imprimir(p);
@@ -32,8 +32,6 @@
         Muro.Add(new int[] { x, y });
         Tablero.laberinto[x, y] = 35;
     }
-
-
 
     public static void Trampa(int t, int x, int tx, int ty, int px, int py, char p)
     {

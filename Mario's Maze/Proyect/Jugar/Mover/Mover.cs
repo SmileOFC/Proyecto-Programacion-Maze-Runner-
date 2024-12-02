@@ -23,7 +23,7 @@ public class Jugar
     }
     public static int Mover(int Player, char Direccion)
     {
-        Console.BackgroundColor = ConsoleColor.Cyan;
+        
 
         int x = 1;
         int y = 1;
@@ -155,7 +155,7 @@ public class Jugar
             /////////////////////////////////////////////////////////////////////////////////////////////////////
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 6)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -172,7 +172,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -209,7 +209,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 7)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -226,7 +226,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -264,7 +264,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 8)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -281,7 +281,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -332,7 +332,7 @@ public class Jugar
                 else // malos
                 {
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -363,7 +363,7 @@ public class Jugar
                 else // Buenos
                 {
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -507,7 +507,7 @@ public class Jugar
             /////////////////////////////////////////////////////////////////////////////////////////////////////
             if (Program.chek[Tablero.laberinto[x + 1, y]] == 6)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -524,7 +524,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -561,7 +561,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x + 1, y]] == 7)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -578,7 +578,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -616,7 +616,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x + 1, y]] == 8)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -633,7 +633,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -684,7 +684,7 @@ public class Jugar
                 else // malos
                 {
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -715,7 +715,7 @@ public class Jugar
                 else // Buenos
                 {
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -859,7 +859,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y - 1]] == 6)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -876,7 +876,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -913,7 +913,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y - 1]] == 7)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -930,7 +930,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -968,7 +968,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y - 1]] == 8)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -985,7 +985,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -1036,7 +1036,7 @@ public class Jugar
                 else // malos
                 {
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -1066,7 +1066,7 @@ public class Jugar
                 else // Buenos
                 {
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -1207,7 +1207,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 6)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -1224,7 +1224,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -1261,7 +1261,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 7)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -1278,7 +1278,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -1316,7 +1316,7 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 8)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
                 Console.WriteLine("");
@@ -1333,7 +1333,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
                         Console.WriteLine("");
@@ -1384,7 +1384,7 @@ public class Jugar
                 else // malos
                 {
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");
@@ -1414,7 +1414,7 @@ public class Jugar
                 else // Buenos
                 {
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(Player);
                     Console.WriteLine("");

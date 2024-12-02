@@ -8,7 +8,7 @@ public class Habilidades
         {
             while (true)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(player);
 
@@ -82,7 +82,7 @@ public class Habilidades
                 }
             }
 
-            Console.BackgroundColor = ConsoleColor.Cyan;
+            
             Console.Clear();
             Interfaz.Imprimir(player);
             Thread.Sleep(5000);
@@ -107,7 +107,7 @@ public class Habilidades
         {
             Tablero.Puntero[x, y] = true;
 
-            Console.BackgroundColor = ConsoleColor.Cyan;
+            
             Console.Clear();
             Interfaz.Imprimir(player);
 
@@ -124,7 +124,7 @@ public class Habilidades
                     Tablero.Puntero[xx, yy] = false;
                     xx = xx - 1;
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(player);
                 }
@@ -134,7 +134,7 @@ public class Habilidades
                     Tablero.Puntero[xx, yy] = false;
                     xx = xx + 1;
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(player);
                 }
@@ -144,7 +144,7 @@ public class Habilidades
                     Tablero.Puntero[xx, yy] = false;
                     yy = yy - 1;
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(player);
                 }
@@ -154,7 +154,7 @@ public class Habilidades
                     Tablero.Puntero[xx, yy] = false;
                     yy = yy + 1;
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(player);
                 }
@@ -195,7 +195,7 @@ public class Habilidades
         {
             while (true)
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(player);
 
@@ -262,7 +262,7 @@ public class Habilidades
         {
             Tablero.Puntero[x, y] = true;
 
-            Console.BackgroundColor = ConsoleColor.Cyan;
+            
             Console.Clear();
             Interfaz.Imprimir(player);
 
@@ -279,7 +279,7 @@ public class Habilidades
                     Tablero.Puntero[xx, yy] = false;
                     xx = xx - 1;
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(player);
                 }
@@ -289,7 +289,7 @@ public class Habilidades
                     Tablero.Puntero[xx, yy] = false;
                     xx = xx + 1;
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(player);
                 }
@@ -299,7 +299,7 @@ public class Habilidades
                     Tablero.Puntero[xx, yy] = false;
                     yy = yy - 1;
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(player);
                 }
@@ -309,7 +309,7 @@ public class Habilidades
                     Tablero.Puntero[xx, yy] = false;
                     yy = yy + 1;
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    
                     Console.Clear();
                     Interfaz.Imprimir(player);
                 }

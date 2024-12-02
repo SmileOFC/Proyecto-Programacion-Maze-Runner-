@@ -7,14 +7,14 @@ public class Items
 
     public static void Escudo(int Player)
     {
-        Console.BackgroundColor = ConsoleColor.Cyan;
+        
         int c = 0;
 
         if (Program.Player[Player].Equipo) // Buenos
         {
             while (c == 0) // Seleccione player para equipar
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
 
@@ -33,7 +33,7 @@ public class Items
         {
             while (c == 0) // Seleccione player para equipar
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
 
@@ -62,7 +62,7 @@ public class Items
         {
             while (c == 0) // Seleccione player para equipar
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
 
@@ -81,7 +81,7 @@ public class Items
         {
             while (c == 0) // Seleccione player para equipar
             {
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                
                 Console.Clear();
                 Interfaz.Imprimir(Player);
 
@@ -107,7 +107,7 @@ public class Items
                 {
                     while (true)
                     {
-                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        
                         Console.Clear();
                         Interfaz.Imprimir(Player);
 

@@ -127,7 +127,7 @@ public class Program
         CrearPlayer Waluigi = new CrearPlayer("Waluigi", 9, 9, 0, 18, false, 1, 1, false, false, false, false);
         CrearPlayer Wario = new CrearPlayer("Wario", 11, 11, 0, 11, false, 1, 1, false, false, false, false);
 
-        // Diccionario Players
+        //////////////////////////// DICCIONARIO PLAYERS /////////////////////////////
 
         Player.Add(20, Mario);
         Player.Add(21, Luigi);
@@ -141,7 +141,7 @@ public class Program
         Player.Add(28, Waluigi);
         Player.Add(29, Wario);
 
-        // Diccionario Nombre
+        //////////////////////////// DICCIONARIO NOMBRES /////////////////////////////
 
         Nombre.Add("Mario", 20);
         Nombre.Add("Luigi", 21);
@@ -171,200 +171,7 @@ public class Program
         ChekMalos.Add('4', 28);
         ChekMalos.Add('5', 29);
 
-        ///////////////////////////////////// Diccionario Panel //////////////////////////////////
-
-        //// TABLERO ///////
-
-        // Players
-
-        Panel.Add(20,"It's me Mario...");
-        Panel.Add(21,"");
-        Panel.Add(22,"");
-        Panel.Add(23,"");
-        Panel.Add(24,"");
-
-        Panel.Add(25,"");
-        Panel.Add(26,"");
-        Panel.Add(27,"");
-        Panel.Add(28,"");
-        Panel.Add(29,"");
-
-        // Trampas
-
-        Panel.Add(31,"");
-        Panel.Add(32,"");
-        Panel.Add(33,"");
-
-        // Buffs
-
-        Panel.Add(41,"");
-        Panel.Add(42,"");
-        Panel.Add(43,"");
-
-        // Cofres
-
-        Panel.Add(6,"");
-        Panel.Add(7,"");
-        Panel.Add(8,"");
-
-        // Meta
-
-        /* Panel.Add(1,"");
-
-        // Llave Malos Buenos
-
-        Panel.Add(1,"");
-        Panel.Add(1,"");
-
-
-        ///// TIENDA /////
-
-        // items
-
-            // Escudo 
-            // Escalera
-
-        // poderes
-
-            // Bala
-            // Mascara
-
-        // pociones
-
-            // Veneno
-            // Vision
-            // Velocidad
-            // Niebla
-            // Hielo
-            // Telaraña
-
-
-        ///// ALERTAS ///////
-        
-        // Puerta Buenos no Malos
-
-        // Puerta Malos no Buenos
-
-        // Llave Buenos no Malos
-
-        // Llave Malos no Buenos
-
-
-        ///// SELECTS
-        
-            // cofre botas antorchas
-
-            // Direccion
-
-            // Select Players Buenos
-
-            // Select Players Malos        
-
-            // Direccion
-
-            // Menu / Continuar / guia / salir
-
-            // Salir / yes / no
-
-            // Cofre avanzar / Yes / No
-
-       */ 
-        ///////////////////// Diccionario ImgRuta /////////////////////
-
-        //// PLAYERS /////
-
-        ImgRuta.Add(20, @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Mario.png");
-        ImgRuta.Add(21, @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Luigi.png");
-        ImgRuta.Add(22, @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Hongo.png");
-        ImgRuta.Add(23, @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Yoshi.png");
-        ImgRuta.Add(24, @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Peach.png");
-
-        ImgRuta.Add(25, @".\InterfazGrafica\Assets\Players\Bowser.png");
-        ImgRuta.Add(26, @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\DonkeyKong.png");
-        ImgRuta.Add(27, @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Koopa.png");
-        ImgRuta.Add(28, @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Waluigi.png");
-        ImgRuta.Add(29, @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Wario.png");
-
-        // Trampas
-
-        ImgRuta.Add(31,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Trampas\Hueco.png");
-        ImgRuta.Add(32,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Trampas\Bomba.png");
-        ImgRuta.Add(33,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Trampas\Jaula.png");
-
-        // Buffs
-
-        ImgRuta.Add(41,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Buffs\BuffHongo.png");
-        ImgRuta.Add(42,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Buffs\Estrella.png");
-        ImgRuta.Add(43,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Buffs\Flor.png");
-
-        // Meta
-
-        ImgRuta.Add(5,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\Meta.png");
-/*
-        // Tienda
-
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\Tienda.png");
-
-        // Llave Malo Buenos
-
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\LlaveMalos.png");
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\LlaveBuenos.png");
-
-
-
-        //// COFRES /////
-
-        // Comun
-        ImgRuta.Add(6,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Comun\Cofre Comun.png");
-            //Antorcha / Botas
-            ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Comun\AntorchaComun.png");
-            ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Comun\BotaComun.png");
-            
-        // Epico
-        ImgRuta.Add(7,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Epico\Cofre Epico.png");
-            //Antorcha / Botas
-            ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Epico\AntorchaEpica.png");
-            ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Epico\BotaEpica.png");
-
-        // Legendario
-        ImgRuta.Add(8,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Legendario\Cofre Legendario .png");
-            //Antorcha / Botas
-            ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Legendario\AntorchaLegendaria.png");
-            ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Legendario\BotaLegendaria.png");
-
-
-        ///// TIENDA ////
-
-        // items
-
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Items\Escudo.png");
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Items\Escalera.png");
-
-        // poderes
-
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Poderes\Bala.png");
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Poderes\Mascara.png");
-
-        // pociones
-
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionVeneno.png");
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionVision.png");
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionVelocidad.png");
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionNiebla.png");
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionHielo.png");
-        ImgRuta.Add(1,@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionTelaraña.png");
- */
-        ///// ALERTAS
-        
-        
-
-        
-        
-        
-        
-        
-        
-        // Diccionario MOVER
+        //////////////////////////// DICCIONARIO MOVER //////////////////////
 
         chek.Add(0, 0);
         chek.Add(1, 1);
@@ -410,6 +217,139 @@ public class Program
         chek.Add(27, 20);
         chek.Add(28, 20);
         chek.Add(29, 20);
+
+        ///////////////////////////////////// DICCIONARIO PANELES //////////////////////////////////
+
+        //// TABLERO ///////
+
+        // Players
+
+        // Inicio
+        Panel.Add(20, $"[italic]Mario:\n\nIt's me Mario...[/]");
+        Panel.Add(21, $"[italic]Luigi:\n\nIt's me Luigi...[/]");
+        Panel.Add(22, $"[italic]Hongo:\n\nIt's me Hongo...[/]");
+        Panel.Add(23, $"[italic]Yoshi:\n\nIt's me Yoshi...[/]");
+        Panel.Add(24, $"[italic]Peach:\n\nIt's me Peach...[/]");
+
+        Panel.Add(25, $"[italic]Bowser:\n\nIt's me Bowser...[/]");
+        Panel.Add(26, $"[italic]DonKeyKong:\n\nIt's me DonKeyKong...[/]");
+        Panel.Add(27, $"[italic]Koopa:\n\nIt's me Koopa...[/]");
+        Panel.Add(28, $"[italic]Waluigi:\n\nIt's me Waluigi...[/]");
+        Panel.Add(29, $"[italic]Wario:\n\nIt's me Wario...[/]");
+
+        /////////////////////////////////////////////////////////////////////////
+
+        // Trampas
+
+        Panel.Add(31, $"[italic]Hueco:\n\nHaz caido en un hueco tu ficha saldra donde comenzo.[/]");
+        Panel.Add(32, $"[italic]Bomba:\n\nHaz pisado una bomba tu ficha fue empujada 2 pasos.[/]");
+        Panel.Add(33, $"[italic]Jaula:\n\nHaz activado una placa de presion y ha caido una jaula encima de tu ficha dejandola inmovil.[/]");
+
+        // Buffs
+
+        Panel.Add(41, $"[italic]Hongo:\n\nQue bien te haz encontrado un Hongo ahora podras avanzar +10 Pasos en este turno.[/]");
+        Panel.Add(42, $"[italic]Estrella:\n\nQue bien te haz encontrado una Estrella ahora seras inmune a las trampas en este turno.[/]");
+        Panel.Add(43, $"[italic]Flor:\n\nQue bien te haz encontrado una Flor ahora tendras +2 vision en este turno.[/]");
+
+        // Meta
+
+        Panel.Add(5, $"[italic]Meta:\n\nGenial haz llegado a la meta.[/]");
+
+        ////// MENU SELECT //////
+        
+
+        
+        ///// TIENDA SELECT //////
+
+        // Items / Poderes / Pociones / Salir
+                                                                                                  
+        Panel.Add(555, $"[italic]Tienda:\n\n          (Seleccione una opcion)\n\n    (1)Items (2)Poderes (3)Pociones (4)Salir[/]");
+
+        // Items Select / Escudo / Escalera / Salir
+                                                                                
+        Panel.Add(551,$"[italic]Items:\n\n        (Seleccione una opcion)\n\n    (1)Escudo (2)Escalera (3)Salir[/]");
+
+        // Poderes Select / Bala / Mascara / Salir
+                                                                                
+        Panel.Add(552,$"[italic]Poderes:\n\n         (Seleccione una opcion)\n\n     (1)Bala (2)Mascara (3)Salir[/]");
+
+        // Pociones Select / Veneno / Vision / Velocidad / Niebla / Hielo / Salir
+
+        Panel.Add(553,$"[italic]Pociones:\n\n           (Seleccione una opcion)\n    (1)Veneno (2)Vision (3)Velocidad \n      (4)Niebla (5)Hielo (6)Salir[/]");
+
+        ///////// COFRES SELECTS //////////
+
+        // Cofres abrir / Yes / No
+                                                                                 
+        Panel.Add(6, $"[italic]Cofre Comun: (1$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
+        Panel.Add(7, $"[italic]Cofre Epico: (3$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
+        Panel.Add(8, $"[italic]Cofre Legendario: (5$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
+
+        // Cofre Comun select / Bota / Antorcha
+                                                                                    
+        Panel.Add(70, $"[italic]Cofre Comun: (1$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
+
+        // Cofre Epico select / Bota / Antorcha
+
+        Panel.Add(80, $"[italic]Cofre Epico: (3$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
+
+        // Cofre Legendario select / Bota / Antorcha
+
+        Panel.Add(90, $"[italic]Cofre Legendario: (5$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
+
+        // Botas / Comunes / Epicas / Legendarias
+
+        Panel.Add(71,$"[italic]Botas Comunes:\n\nAhora la ficha seleccionada tendra +3 Pasos[/]");
+
+        Panel.Add(72,$"[italic]Botas Epicas:\n\nAhora la ficha seleccionada tendra +4 Pasos[/]");
+
+        Panel.Add(73,$"[italic]Botas Legendarias:\n\nAhora la ficha seleccionada tendra +5 Pasos[/]");
+
+        // Antorcha / Comun / Epica / Legendaria
+
+        Panel.Add(81,$"[italic]Antorcha Comun:\n\nAhora la ficha seleccionada tendra +1 Vision[/]");
+
+        Panel.Add(82,$"[italic]Antorcha Epica:\n\nAhora la ficha seleccionada tendra +2 Vision[/]");
+
+        Panel.Add(83,$"[italic]Antorcha Legendaria:\n\nAhora la ficha seleccionada tendra +3 Vision[/]");
+
+        ///// OTHERS SELECTS ///////
+
+         // Cofre avanzar no tienes monedas suficientes / Yes / No  
+                                                                                                                                                                      
+        Panel.Add(61, $"[italic]NOTA: No tienes monedas suficientes para abrir este cofre si deseas avanzar el cofre sera eliminado.\n\n       (Deseas avanzar?)\n         (1)Si (2)No[/]");
+
+        // Select Players Buenos
+
+        Panel.Add(62, $"[italic]Seleccione una Ficha:\n\n  (1)Mario (2)Luigi (3)Hongo (4)Yoshi (5)Peach[/]");
+
+        // Select Players Malos 
+
+        Panel.Add(63, $"[italic]Seleccione una Ficha:\n\n  (1)Bowser (2)DonKeyKong (3)Koopa (4)Waluigi (5)Wario[/]");
+
+        // Direccion
+
+        Panel.Add(64, $"[italic]Seleccione una Direccion:\n\n       (W)\n    (A)(S)(D)[/]");
+
+        // Menu / Continuar / guia / salir
+
+        Panel.Add(65, $"[italic]Menu:\n\n  (1)Continuar\n  (2)Guia\n  (3)Salir[/]");
+
+        // Salir / yes / no
+
+        Panel.Add(66, $"[italic]NOTA: Si sales se perdera la partida.\n\n      (Seguro que deseas Salir?)\n      (1)Si (2)No[/]");
+
+        ///// ALERTAS ///////
+
+        // Llave Malos Buenos
+
+        Panel.Add(333, $"[italic]\n\n  NOTA: Esta no es tu llave.[/]");
+
+        // Puerta 
+
+        Panel.Add(444, $"[italic]\n\n  NOTA:Esta no es tu puerta.[/]");
+
+        //////////////////////////////////////////////////////////////////////////////
 
     main:
         Console.Clear();
