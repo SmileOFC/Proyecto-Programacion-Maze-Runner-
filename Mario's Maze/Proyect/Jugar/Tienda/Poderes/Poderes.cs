@@ -2,7 +2,8 @@
 
 public class Poderes
 {
-    static string PlayerSelect = "";
+    static int PlayerSelect;
+    static char SelectDireccion;
 
     static int PunteroX;
     static int PunteroY;
@@ -12,64 +13,40 @@ public class Poderes
 
     public static void Bala(int Player)
     {
-        
-        var panel1 = new Panel("Seleccione en que direccion disparar.");
-        panel1.Header("[Red1] NOTA [/]", Justify.Left);
-        panel1.Border(BoxBorder.Rounded);
-        panel1.Padding(1, 1, 1, 1);
 
         int c = 0;
 
-        if (Program.Player[Player].Equipo) // Buenos
+        if (!Program.Player[Player].Equipo) // Malos
         {
-            while (c == 0) // Seleccione Player para equipar
+            while (c == 0) // Seleccione player para equipar
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
 
-                PlayerSelect = Selects.SelectPlayerMalos();
+                PlayerSelect = Selects.SelectPlayerBuenos(Player);
 
-                for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
-                    if (
-                        Program.Player[Rondas.EquipoMalosList[0]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoMalosList[1]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoMalosList[2]].Name == PlayerSelect
-                    )
+                for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
+                    if (Rondas.EquipoBuenosList[i] == PlayerSelect)
                         c++;
             }
         }
-        else // Malos
+        else // Buenos
         {
-            while (c == 0) // Seleccione Player para equipar
+            while (c == 0) // Seleccione player para equipar
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
 
-                PlayerSelect = Selects.SelectPlayerBuenos();
+                PlayerSelect = Selects.SelectPlayerMalos(Player);
 
-                for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
-                    if (
-                        Program.Player[Rondas.EquipoBuenosList[0]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoBuenosList[1]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoBuenosList[2]].Name == PlayerSelect
-                    )
+                for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
+                    if (Rondas.EquipoMalosList[i] == PlayerSelect)
                         c++;
             }
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-        Console.Clear();
-        Interfaz.Imprimir(Player);
-        AnsiConsole.Write(panel1);
-        var keyInf = Console.ReadKey();
 
         for (int x = 1; x < Tablero.filas; x++)
         {
             for (int y = 1; y < Tablero.columnas; y++)
             {
-                if (Tablero.laberinto[x, y] == Program.Nombre[PlayerSelect])
+                if (Tablero.laberinto[x, y] == PlayerSelect)
                 {
                     Tablero.Puntero[x, y] = true;
                     PunteroX = x;
@@ -83,83 +60,50 @@ public class Poderes
         }
 
         while (true)
-        {   
+        {
             
-            Console.Clear();
-            Interfaz.Imprimir(Player);
-            var keyInfo = Console.ReadKey();
+            SelectDireccion = Selects.Direccion(Player);
 
-            if (
-                keyInfo.KeyChar == 'w'
-                && PunteroX - 1 > 0
-                && PunteroX - 1 > PlayerX - 2
-                && PunteroY == PlayerY
-                && Tablero.laberinto[PunteroX - 1, PunteroY] == 1
-            )
+            if (SelectDireccion == 'w' && PunteroX - 1 > 0 && PunteroX - 1 > PlayerX - 2 && PunteroY == PlayerY && Tablero.laberinto[PunteroX - 1, PunteroY] == 1)
             {
+
                 Tablero.Puntero[PunteroX - 1, PunteroY] = true;
                 Tablero.Puntero[PunteroX, PunteroY] = false;
                 PunteroX = PunteroX - 1;
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
+
             }
-            if (
-                keyInfo.KeyChar == 's'
-                && PunteroX + 1 < 30
-                && PunteroX + 1 < PlayerX + 2
-                && PunteroY == PlayerY
-                && Tablero.laberinto[PunteroX + 1, PunteroY] == 1
-            )
+            if (SelectDireccion == 's' && PunteroX + 1 < 30 && PunteroX + 1 < PlayerX + 2 && PunteroY == PlayerY && Tablero.laberinto[PunteroX + 1, PunteroY] == 1)
             {
+
                 Tablero.Puntero[PunteroX + 1, PunteroY] = true;
                 Tablero.Puntero[PunteroX, PunteroY] = false;
                 PunteroX = PunteroX + 1;
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
+
             }
-            if (
-                keyInfo.KeyChar == 'a'
-                && PunteroY - 1 > 0
-                && PunteroY - 1 > PlayerY - 2
-                && PunteroX == PlayerX
-                && Tablero.laberinto[PunteroX, PunteroY - 1] == 1
-            )
+            if (SelectDireccion == 'a' && PunteroY - 1 > 0 && PunteroY - 1 > PlayerY - 2 && PunteroX == PlayerX && Tablero.laberinto[PunteroX, PunteroY - 1] == 1)
             {
+
                 Tablero.Puntero[PunteroX, PunteroY - 1] = true;
                 Tablero.Puntero[PunteroX, PunteroY] = false;
                 PunteroY = PunteroY - 1;
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
+
             }
-            if (
-                keyInfo.KeyChar == 'd'
-                && PunteroY + 1 < 30
-                && PunteroY + 1 < PlayerY + 2
-                && PunteroX == PlayerX
-                && Tablero.laberinto[PunteroX, PunteroY + 1] == 1
-            )
+            if ( SelectDireccion == 'd' && PunteroY + 1 < 30 && PunteroY + 1 < PlayerY + 2 && PunteroX == PlayerX && Tablero.laberinto[PunteroX, PunteroY + 1] == 1 )
             {
                 Tablero.Puntero[PunteroX, PunteroY + 1] = true;
                 Tablero.Puntero[PunteroX, PunteroY] = false;
                 PunteroY = PunteroY + 1;
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
+
             }
-            if (keyInfo.KeyChar == 'e')
+            if (SelectDireccion == 'e')
             {
                 Tablero.Puntero[PunteroX, PunteroY] = false;
-                Tablero.laberinto[PunteroX, PunteroY] = Program.Nombre[PlayerSelect];
+                Tablero.laberinto[PunteroX, PunteroY] = PlayerSelect;
                 Tablero.laberinto[PlayerX, PlayerY] = 1;
                 break;
             }
         }
     }
-
-    public static void Telaraña() { }
 
     public static void Mascara() { }
 }

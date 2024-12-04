@@ -23,7 +23,7 @@ public class Jugar
     }
     public static int Mover(int Player, char Direccion)
     {
-        
+
 
         int x = 1;
         int y = 1;
@@ -155,11 +155,7 @@ public class Jugar
             /////////////////////////////////////////////////////////////////////////////////////////////////////
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 6)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+                yn = Selects.CofreComunY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -172,13 +168,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -209,11 +199,8 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 7)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreEpicoY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -226,13 +213,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -241,9 +222,9 @@ public class Jugar
                         Cofres.Cofre(Player, 7);
 
                         if (Program.Player[Player].Equipo)
-                            Program.EquipoBuenoCoins -= 3;
+                            Program.EquipoBuenoCoins -= 1;
                         else
-                            Program.EquipoMaloCoins -= 3;
+                            Program.EquipoMaloCoins -= 1;
                     }
                 }
 
@@ -264,11 +245,8 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x - 1, y]] == 8)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreLegendarioY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -281,13 +259,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -296,9 +268,9 @@ public class Jugar
                         Cofres.Cofre(Player, 8);
 
                         if (Program.Player[Player].Equipo)
-                            Program.EquipoBuenoCoins -= 5;
+                            Program.EquipoBuenoCoins -= 1;
                         else
-                            Program.EquipoMaloCoins -= 5;
+                            Program.EquipoMaloCoins -= 1;
                     }
                 }
 
@@ -332,12 +304,7 @@ public class Jugar
                 else // malos
                 {
 
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    AnsiConsole.Write(panel2);
-
+                    Imprime.Print(Player, 55555, 333); // Player / Img / Panel
                     var keyInfo = Console.ReadKey();
 
                 }
@@ -363,12 +330,7 @@ public class Jugar
                 else // Buenos
                 {
 
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    AnsiConsole.Write(panel2);
-
+                    Imprime.Print(Player, 55555, 333); // Player / Img / Panel
                     var keyInfo = Console.ReadKey();
 
                 }
@@ -507,11 +469,8 @@ public class Jugar
             /////////////////////////////////////////////////////////////////////////////////////////////////////
             if (Program.chek[Tablero.laberinto[x + 1, y]] == 6)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreComunY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -524,13 +483,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -561,11 +514,8 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x + 1, y]] == 7)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreEpicoY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -578,13 +528,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -593,9 +537,9 @@ public class Jugar
                         Cofres.Cofre(Player, 7);
 
                         if (Program.Player[Player].Equipo)
-                            Program.EquipoBuenoCoins -= 3;
+                            Program.EquipoBuenoCoins -= 1;
                         else
-                            Program.EquipoMaloCoins -= 3;
+                            Program.EquipoMaloCoins -= 1;
                     }
                 }
 
@@ -616,11 +560,8 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x + 1, y]] == 8)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreLegendarioY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -633,13 +574,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -648,9 +583,9 @@ public class Jugar
                         Cofres.Cofre(Player, 8);
 
                         if (Program.Player[Player].Equipo)
-                            Program.EquipoBuenoCoins -= 5;
+                            Program.EquipoBuenoCoins -= 1;
                         else
-                            Program.EquipoMaloCoins -= 5;
+                            Program.EquipoMaloCoins -= 1;
                     }
                 }
 
@@ -684,12 +619,7 @@ public class Jugar
                 else // malos
                 {
 
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    AnsiConsole.Write(panel2);
-
+                    Imprime.Print(Player, 55555, 333); // Player / Img / Panel
                     var keyInfo = Console.ReadKey();
 
                 }
@@ -715,12 +645,7 @@ public class Jugar
                 else // Buenos
                 {
 
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    AnsiConsole.Write(panel2);
-
+                    Imprime.Print(Player, 55555, 333); // Player / Img / Panel
                     var keyInfo = Console.ReadKey();
 
                 }
@@ -859,11 +784,8 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y - 1]] == 6)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreComunY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -876,13 +798,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -913,11 +829,8 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y - 1]] == 7)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreEpicoY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -930,13 +843,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -945,9 +852,9 @@ public class Jugar
                         Cofres.Cofre(Player, 7);
 
                         if (Program.Player[Player].Equipo)
-                            Program.EquipoBuenoCoins -= 3;
+                            Program.EquipoBuenoCoins -= 1;
                         else
-                            Program.EquipoMaloCoins -= 3;
+                            Program.EquipoMaloCoins -= 1;
                     }
                 }
 
@@ -968,11 +875,8 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y - 1]] == 8)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreLegendarioY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -985,13 +889,7 @@ public class Jugar
                     if (ChekCoins < 5)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -1000,9 +898,9 @@ public class Jugar
                         Cofres.Cofre(Player, 8);
 
                         if (Program.Player[Player].Equipo)
-                            Program.EquipoBuenoCoins -= 5;
+                            Program.EquipoBuenoCoins -= 1;
                         else
-                            Program.EquipoMaloCoins -= 5;
+                            Program.EquipoMaloCoins -= 1;
                     }
                 }
 
@@ -1036,11 +934,7 @@ public class Jugar
                 else // malos
                 {
 
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    AnsiConsole.Write(panel2);
+                    Imprime.Print(Player, 55555, 333); // Player / Img / Panel
                     var keyInfo = Console.ReadKey();
 
                 }
@@ -1065,12 +959,7 @@ public class Jugar
                 }
                 else // Buenos
                 {
-
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    AnsiConsole.Write(panel2);
+                    Imprime.Print(Player, 55555, 333); // Player / Img / Panel
                     var keyInfo = Console.ReadKey();
 
                 }
@@ -1207,11 +1096,8 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 6)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreComunY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -1224,13 +1110,7 @@ public class Jugar
                     if (ChekCoins < 1)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -1261,11 +1141,8 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 7)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
+
+                yn = Selects.CofreEpicoY_N(Player);
 
                 if (yn == "Si")
                 {
@@ -1278,13 +1155,7 @@ public class Jugar
                     if (ChekCoins < 3)
                     {
 
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                        yn = Selects.AvanzarY_N(Player);
 
 
                     }
@@ -1293,9 +1164,9 @@ public class Jugar
                         Cofres.Cofre(Player, 7);
 
                         if (Program.Player[Player].Equipo)
-                            Program.EquipoBuenoCoins -= 3;
+                            Program.EquipoBuenoCoins -= 1;
                         else
-                            Program.EquipoMaloCoins -= 3;
+                            Program.EquipoMaloCoins -= 1;
                     }
                 }
 
@@ -1316,44 +1187,28 @@ public class Jugar
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 8)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
-                Console.WriteLine("");
-                yn = Selects.SelectY_N();
 
-                if (yn == "Si")
+                if (Program.Player[Player].Equipo)
+                    ChekCoins = Program.EquipoBuenoCoins;
+                else
+                    ChekCoins = Program.EquipoMaloCoins;
+
+                if (ChekCoins < 5)
                 {
 
-                    if (Program.Player[Player].Equipo)
-                        ChekCoins = Program.EquipoBuenoCoins;
-                    else
-                        ChekCoins = Program.EquipoMaloCoins;
-
-                    if (ChekCoins < 5)
-                    {
-
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        AnsiConsole.Write(panel1);
-
-                        yn = Selects.AvanzarY_N();
+                    yn = Selects.AvanzarY_N(Player);
 
 
-                    }
-                    else
-                    {
-                        Cofres.Cofre(Player, 8);
-
-                        if (Program.Player[Player].Equipo)
-                            Program.EquipoBuenoCoins -= 5;
-                        else
-                            Program.EquipoMaloCoins -= 5;
-                    }
                 }
+                else
+                {
+                    Cofres.Cofre(Player, 8);
 
+                    if (Program.Player[Player].Equipo)
+                        Program.EquipoBuenoCoins -= 1;
+                    else
+                        Program.EquipoMaloCoins -= 1;
+                }
                 if (yn == "Si")
                 {
 
@@ -1366,6 +1221,10 @@ public class Jugar
                 else return Program.Player[Player].Pasos;
 
             }
+
+
+
+
 
             if (Program.chek[Tablero.laberinto[x, y + 1]] == 31) // recoge ficha de los buenos
             {
@@ -1384,11 +1243,7 @@ public class Jugar
                 else // malos
                 {
 
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    AnsiConsole.Write(panel2);
+                    Imprime.Print(Player, 55555, 333); // Player / Img / Panel
                     var keyInfo = Console.ReadKey();
 
                 }
@@ -1414,11 +1269,7 @@ public class Jugar
                 else // Buenos
                 {
 
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    AnsiConsole.Write(panel2);
+                    Imprime.Print(Player, 55555, 333); // Player / Img / Panel
                     var keyInfo = Console.ReadKey();
 
                 }
@@ -1466,9 +1317,9 @@ public class Jugar
                     return RestPasos(Player);
                 }
             }
-
         }
 
         return Program.Player[Player].Pasos;
+
     }
 }

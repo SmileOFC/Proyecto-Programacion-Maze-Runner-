@@ -6,25 +6,17 @@ public class Tienda
 
     public static void Comprar(int Player)
     {
-        
+
         while (true)
         {
-            
-            Console.Clear();
-            Interfaz.Imprimir(Player);
-            Console.WriteLine("");
-            var Select = AnsiConsole.Prompt(
-                new SelectionPrompt<string>()
-                    .Title("───── [Red1]TIENDA[/] ────────────────────────")
-                    .PageSize(3)
-                    .MoreChoicesText("────────────────────────────────────────────────")
-                    .AddChoices(new[] { " Items", " Poderes", " Pociones", " Salir" })
-            );
 
-            if (Select == " Salir")
+            int Select = Selects.Tienda(Player);
+
+
+            if (Select == 4)
                 break;
 
-            if (Select == " Items") // Items
+            if (Select == 1) // Items
             {
                 while (true)
                 {
@@ -34,24 +26,17 @@ public class Tienda
                         ChekCoins = Program.EquipoMaloCoins;
 
 
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    var SelectItem = AnsiConsole.Prompt(
-                        new SelectionPrompt<string>()
-                            .Title("───── [Red1]ITEMS[/] ────────────────────────")
-                            .PageSize(3)
-                            .MoreChoicesText("────────────────────────────────────────────────")
-                            .AddChoices(new[] { " Escudo", " Escalera", " Atras" })
-                    );
+                    int SelectItem = Selects.Items(Player);
 
-                    if (SelectItem == " Atras")
+                    if (SelectItem == 3)
                         break;
 
                     if (ChekCoins >= 1)
                     {
-                        if (SelectItem == " Escudo")
+                        if (SelectItem == 1) // Escudo
                         {
+                            Imprime.Print(Player, 5511, 5511); // Player / Img / Panel
+                            Console.ReadKey();
                             Items.Escudo(Player);
 
                             if (Program.Player[Player].Equipo)
@@ -62,8 +47,10 @@ public class Tienda
                             break;
                         }
 
-                        if (SelectItem == " Escalera")
+                        if (SelectItem == 2) // Escalera
                         {
+                            Imprime.Print(Player, 5512, 5512); // Player / Img / Panel
+                            Console.ReadKey();
                             Items.Escalera(Player);
 
                             if (Program.Player[Player].Equipo)
@@ -74,24 +61,17 @@ public class Tienda
                             break;
                         }
 
-                        /* if (SelectItem == " Tubo")
-                        {
-                            Items.Tubo(Player);
-
-                            if (Program.Player[Player].Equipo)
-                                Program.EquipoBuenoCoins -= 1;
-                            else
-                                Program.EquipoMaloCoins -= 1;
-
-                            break;
-                        } */
                     }
                     else // Monedas Insuficientes Panel
-                    { }
+                    {
+
+                        Imprime.Print(Player, 55555, 151515); // Player / Img / Panel
+
+                    }
                 }
             }
 
-            if (Select == " Poderes") //  Poderes
+            if (Select == 2) //  Poderes
             {
                 while (true)
                 {
@@ -101,25 +81,20 @@ public class Tienda
                         ChekCoins = Program.EquipoMaloCoins;
 
 
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    var SelectPoder = AnsiConsole.Prompt(
-                        new SelectionPrompt<string>()
-                            .Title("───── [Red1]PODERES[/] ────────────────────────")
-                            .PageSize(3)
-                            .MoreChoicesText("────────────────────────────────────────────────")
-                            .AddChoices(new[] { " Bala", " Mascara", " Atras" })
-                    );
+                    int SelectPoder = Selects.Poderes(Player);
 
-                    if (SelectPoder == " Atras")
+                    if (SelectPoder == 3)
                         break;
 
                     if (ChekCoins >= 1)
                     {
-                        if (SelectPoder == " Bala")
+                        if (SelectPoder == 1) // Bala
                         {
+
+                            Imprime.Print(Player, 5521, 5521); // Player / Img / Panel
+                            Console.ReadKey();
                             Poderes.Bala(Player);
+
                             if (Program.Player[Player].Equipo)
                                 Program.EquipoBuenoCoins -= 1;
                             else
@@ -128,14 +103,28 @@ public class Tienda
                             break;
                         }
 
-                        if (SelectPoder == " Mascara") { }
+                        if (SelectPoder == 2) // Mascara
+                        {
+
+                            Imprime.Print(Player, 5521, 5521); // Player / Img / Panel
+                            var keyInfo = Console.ReadKey();
+                            //Poderes.Mascara(Player);
+
+                            if (Program.Player[Player].Equipo)
+                                Program.EquipoBuenoCoins -= 1;
+                            else
+                                Program.EquipoMaloCoins -= 1;
+
+                            break;
+
+                        }
                     }
                     else // Monedas Insuficientes Panel
                     { }
                 }
             }
 
-            if (Select == " Pociones") //  Pociones
+            if (Select == 3) //  Pociones
             {
                 while (true)
                 {
@@ -145,33 +134,24 @@ public class Tienda
                         ChekCoins = Program.EquipoMaloCoins;
 
 
-                    Console.Clear();
-                    Interfaz.Imprimir(Player);
-                    Console.WriteLine("");
-                    var SelectPocion = AnsiConsole.Prompt(
-                        new SelectionPrompt<string>()
-                            .Title("───── [Red1]POCIONES[/] ────────────────────────")
-                            .PageSize(5)
-                            .MoreChoicesText("────────────────────────────────────────────────")
-                            .AddChoices(new[]{" Veneno"," Vision"," Velocidad"," Niebla"," Hielo"," Atras"})
-                    );
+                    int SelectPocion = Selects.Pociones(Player);
 
-                    if (SelectPocion == " Atras")
+                    if (SelectPocion == 6)
                         break;
 
                     if (ChekCoins >= 1)
                     {
-                        if (SelectPocion == " Veneno") { }
+                        if (SelectPocion == 1) { }
 
-                        if (SelectPocion == " Vision") { }
+                        if (SelectPocion == 2) { }
 
-                        if (SelectPocion == " Velocidad") { }
+                        if (SelectPocion == 3) { }
 
-                        if (SelectPocion == " Niebla") { }
+                        if (SelectPocion == 4) { }
 
-                        if (SelectPocion == " Hielo") { }
+                        if (SelectPocion == 5) { }
 
-                  
+
                     }
                     else // Monedas Insuficientes Panel
                     { }

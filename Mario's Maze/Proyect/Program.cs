@@ -92,7 +92,8 @@ public class Program
 
     public static int Main()
     {
-
+        // Cambiar fuente para poder usar emogings
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
 
         IntPtr hWnd = GetConsoleWindow(); // Obtener el estilo actual de la ventana
         int style = GetWindowLong(hWnd, GWL_STYLE); // Eliminar los estilos de la barra de título, minimizar y menú de sistema
@@ -115,17 +116,17 @@ public class Program
 
         }
 
-        CrearPlayer Mario = new CrearPlayer("Mario", 100, 12, 0, 48, true, 1, 1, false, false, false, false);
-        CrearPlayer Luigi = new CrearPlayer("Luigi", 10, 10, 0, 20, true, 1, 1, false, false, false, false);
-        CrearPlayer Hongo = new CrearPlayer("Hongo", 5, 5, 0, 20, true, 2, 2, false, false, false, false);
-        CrearPlayer Yoshi = new CrearPlayer("Yoshi", 6, 6, 0, 24, true, 1, 1, false, false, false, false);
-        CrearPlayer Peach = new CrearPlayer("Peach", 7, 7, 0, 28, true, 2, 2, false, false, false, false);
+        CrearPlayer Mario = new CrearPlayer("Mario", 12, 12, 0, 2, true, 1, 1, false, false, false, false);
+        CrearPlayer Luigi = new CrearPlayer("Luigi", 10, 10, 0, 2, true, 1, 1, false, false, false, false);
+        CrearPlayer Hongo = new CrearPlayer("Hongo", 5, 5, 0, 2, true, 2, 2, false, false, false, false);
+        CrearPlayer Yoshi = new CrearPlayer("Yoshi", 6, 6, 0, 2, true, 1, 1, false, false, false, false);
+        CrearPlayer Peach = new CrearPlayer("Peach", 7, 7, 0, 2, true, 2, 2, false, false, false, false);
 
-        CrearPlayer Bowser = new CrearPlayer("Bowser", 8, 8, 0, 16, false, 1, 1, false, false, false, false);
-        CrearPlayer DonkeyKong = new CrearPlayer("DonKeyKong", 4, 4, 0, 16, false, 2, 2, false, false, false, false);
-        CrearPlayer Koopa = new CrearPlayer("Koopa", 3, 3, 0, 3, false, 3, 3, false, false, false, false);
-        CrearPlayer Waluigi = new CrearPlayer("Waluigi", 9, 9, 0, 18, false, 1, 1, false, false, false, false);
-        CrearPlayer Wario = new CrearPlayer("Wario", 11, 11, 0, 11, false, 1, 1, false, false, false, false);
+        CrearPlayer Bowser = new CrearPlayer("Bowser", 8, 8, 0, 2, false, 1, 1, false, false, false, false);
+        CrearPlayer DonkeyKong = new CrearPlayer("DonKeyKong", 4, 4, 0, 2, false, 2, 2, false, false, false, false);
+        CrearPlayer Koopa = new CrearPlayer("Koopa", 3, 3, 0,2, false, 3, 3, false, false, false, false);
+        CrearPlayer Waluigi = new CrearPlayer("Waluigi", 9, 9, 0, 2, false, 1, 1, false, false, false, false);
+        CrearPlayer Wario = new CrearPlayer("Wario", 11, 11, 0, 2, false, 1, 1, false, false, false, false);
 
         //////////////////////////// DICCIONARIO PLAYERS /////////////////////////////
 
@@ -237,6 +238,20 @@ public class Program
         Panel.Add(28, $"[italic]Waluigi:\n\nIt's me Waluigi...[/]");
         Panel.Add(29, $"[italic]Wario:\n\nIt's me Wario...[/]");
 
+        // Habilidades
+        Panel.Add(200, $"[italic]Mario:\n\nIt's me Mario...Habilidad[/]");
+        Panel.Add(211, $"[italic]Luigi:\n\nIt's me Luigi...Habilidad[/]");
+        Panel.Add(222, $"[italic]Hongo:\n\nIt's me Hongo...Habilidad[/]");
+        Panel.Add(233, $"[italic]Yoshi:\n\nIt's me Yoshi...Habilidad[/]");
+        Panel.Add(244, $"[italic]Peach:\n\nIt's me Peach...Habilidad[/]");
+
+        Panel.Add(255, $"[italic]Bowser:\n\nIt's me Bowser...Habilidad[/]");
+        Panel.Add(266, $"[italic]DonKeyKong:\n\nIt's me DonKeyKong...Habilidad[/]");
+        Panel.Add(277, $"[italic]Koopa:\n\nIt's me Koopa...Habilidad[/]");
+        Panel.Add(288, $"[italic]Waluigi:\n\nIt's me Waluigi...Habilidad[/]");
+        Panel.Add(299, $"[italic]Wario:\n\nIt's me Wario...Habilidad[/]");
+
+
         /////////////////////////////////////////////////////////////////////////
 
         // Trampas
@@ -255,38 +270,52 @@ public class Program
 
         Panel.Add(5, $"[italic]Meta:\n\nGenial haz llegado a la meta.[/]");
 
-        ////// MENU SELECT //////
-        
-
-        
         ///// TIENDA SELECT //////
 
         // Items / Poderes / Pociones / Salir
-                                                                                                  
+
         Panel.Add(555, $"[italic]Tienda:\n\n          (Seleccione una opcion)\n\n    (1)Items (2)Poderes (3)Pociones (4)Salir[/]");
 
         // Items Select / Escudo / Escalera / Salir
-                                                                                
-        Panel.Add(551,$"[italic]Items:\n\n        (Seleccione una opcion)\n\n    (1)Escudo (2)Escalera (3)Salir[/]");
+
+        Panel.Add(551, $"[italic]Items:\n\n        (Seleccione una opcion)\n\n    (1)Escudo (2)Escalera (3)Salir[/]");
 
         // Poderes Select / Bala / Mascara / Salir
-                                                                                
-        Panel.Add(552,$"[italic]Poderes:\n\n         (Seleccione una opcion)\n\n     (1)Bala (2)Mascara (3)Salir[/]");
+
+        Panel.Add(552, $"[italic]Poderes:\n\n         (Seleccione una opcion)\n\n     (1)Bala (2)Mascara (3)Salir[/]");
 
         // Pociones Select / Veneno / Vision / Velocidad / Niebla / Hielo / Salir
 
-        Panel.Add(553,$"[italic]Pociones:\n\n           (Seleccione una opcion)\n    (1)Veneno (2)Vision (3)Velocidad \n      (4)Niebla (5)Hielo (6)Salir[/]");
+        Panel.Add(553, $"[italic]Pociones:\n\n           (Seleccione una opcion)\n    (1)Veneno (2)Vision (3)Velocidad \n      (4)Niebla (5)Hielo (6)Salir[/]");
+
+        ////////// ITEMS /////////////////
+
+        Panel.Add(5511, $"[italic]Escudo:\n\nVuelve una de tus fichas inmune a trampas en su proximo turno.[/]");
+        Panel.Add(5512, $"[italic]Escalera:\n\nAlcanzale una escalera a una de tus fichas para q pueda subir la muralla.[/]");
+
+        //////////// PODERES ////////////
+
+        Panel.Add(5521, $"[italic]Bala:\n\nDisparale una bala gigante a una de las fichas enemigas.[/]");
+        Panel.Add(5522, $"[italic]Mascara:\n\nCon esta mascara tus enemigos no podran ver casi nada por un turno.[/]");
+
+        ////////////// POCIONES //////////////
+
+        Panel.Add(5531,$"[italic][/]");
+        Panel.Add(5532,$"[italic][/]");
+        Panel.Add(5533,$"[italic][/]");
+        Panel.Add(5534,$"[italic][/]");
+        Panel.Add(5535,$"[italic][/]");
 
         ///////// COFRES SELECTS //////////
 
         // Cofres abrir / Yes / No
-                                                                                 
+
         Panel.Add(6, $"[italic]Cofre Comun: (1$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
         Panel.Add(7, $"[italic]Cofre Epico: (3$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
         Panel.Add(8, $"[italic]Cofre Legendario: (5$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
 
         // Cofre Comun select / Bota / Antorcha
-                                                                                    
+
         Panel.Add(70, $"[italic]Cofre Comun: (1$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
 
         // Cofre Epico select / Bota / Antorcha
@@ -299,24 +328,24 @@ public class Program
 
         // Botas / Comunes / Epicas / Legendarias
 
-        Panel.Add(71,$"[italic]Botas Comunes:\n\nAhora la ficha seleccionada tendra +3 Pasos[/]");
+        Panel.Add(71, $"[italic]Botas Comunes:\n\nAhora la ficha seleccionada tendra +3 Pasos[/]");
 
-        Panel.Add(72,$"[italic]Botas Epicas:\n\nAhora la ficha seleccionada tendra +4 Pasos[/]");
+        Panel.Add(72, $"[italic]Botas Epicas:\n\nAhora la ficha seleccionada tendra +4 Pasos[/]");
 
-        Panel.Add(73,$"[italic]Botas Legendarias:\n\nAhora la ficha seleccionada tendra +5 Pasos[/]");
+        Panel.Add(73, $"[italic]Botas Legendarias:\n\nAhora la ficha seleccionada tendra +5 Pasos[/]");
 
         // Antorcha / Comun / Epica / Legendaria
 
-        Panel.Add(81,$"[italic]Antorcha Comun:\n\nAhora la ficha seleccionada tendra +1 Vision[/]");
+        Panel.Add(81, $"[italic]Antorcha Comun:\n\nAhora la ficha seleccionada tendra +1 Vision[/]");
 
-        Panel.Add(82,$"[italic]Antorcha Epica:\n\nAhora la ficha seleccionada tendra +2 Vision[/]");
+        Panel.Add(82, $"[italic]Antorcha Epica:\n\nAhora la ficha seleccionada tendra +2 Vision[/]");
 
-        Panel.Add(83,$"[italic]Antorcha Legendaria:\n\nAhora la ficha seleccionada tendra +3 Vision[/]");
+        Panel.Add(83, $"[italic]Antorcha Legendaria:\n\nAhora la ficha seleccionada tendra +3 Vision[/]");
 
         ///// OTHERS SELECTS ///////
 
-         // Cofre avanzar no tienes monedas suficientes / Yes / No  
-                                                                                                                                                                      
+        // Cofre avanzar no tienes monedas suficientes / Yes / No  
+
         Panel.Add(61, $"[italic]NOTA: No tienes monedas suficientes para abrir este cofre si deseas avanzar el cofre sera eliminado.\n\n       (Deseas avanzar?)\n         (1)Si (2)No[/]");
 
         // Select Players Buenos
@@ -333,7 +362,7 @@ public class Program
 
         // Menu / Continuar / guia / salir
 
-        Panel.Add(65, $"[italic]Menu:\n\n  (1)Continuar\n  (2)Guia\n  (3)Salir[/]");
+        Panel.Add(65, $"[italic]Menu:\n\n   (1)Continuar   (2)Guia   (3)Salir[/]");
 
         // Salir / yes / no
 
@@ -341,7 +370,11 @@ public class Program
 
         ///// ALERTAS ///////
 
-        // Llave Malos Buenos
+        // Tienda sin dinero
+
+        Panel.Add(151515, $"[italic]\n\n  NOTA: No tienes monedas suficientes.[/]");
+
+        // Llave Malos / Buenos
 
         Panel.Add(333, $"[italic]\n\n  NOTA: Esta no es tu llave.[/]");
 
@@ -349,7 +382,15 @@ public class Program
 
         Panel.Add(444, $"[italic]\n\n  NOTA:Esta no es tu puerta.[/]");
 
-        //////////////////////////////////////////////////////////////////////////////
+        // Kooopa
+
+        Panel.Add(2777, $"[italic]\n\n  NOTA:Ya no te queda vision.[/]");
+
+        // Wario
+
+        Panel.Add(2999, $"[italic]\n\n  NOTA:Ya no te quedan pasos.[/]");
+
+    //////////////////////////////////////////////////////////////////////////////
 
     main:
         Console.Clear();

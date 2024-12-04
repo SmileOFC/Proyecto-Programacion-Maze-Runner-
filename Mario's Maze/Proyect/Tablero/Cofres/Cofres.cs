@@ -2,26 +2,12 @@
 using Spectre.Console;
 public class Cofres
 {
-
-    static string SelectItem()
-    {
-
-        Console.WriteLine("");
-        var Select = AnsiConsole.Prompt(
-
-                        new SelectionPrompt<string>()
-                        .Title("───── [Red1]Seleccione un Item[/] ────────────────────────")
-                        .PageSize(3)
-                        .AddChoices(new[] { "Botas", "Antorcha" })
-                    );
-
-        return Select;
-    }
+    static int PlayerSelect;
 
     public static void Cofre(int Player, int x)
     {
 
-        
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////////
         if (x == 6) // COMUN
         {
@@ -31,97 +17,83 @@ public class Cofres
 
                 if (Program.EquipoBuenoCoins > 0) // Revisar q tenga monedas
                 {
-                    
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player); // Seleccione item
 
-                    var ItemComun = SelectItem();
-                    var PlayerSelect = "";
+
+                    int Comun = Selects.SelectCofreComun(Player);
+
                     int c = 0;
+
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
 
-                        PlayerSelect = Selects.SelectPlayerBuenos();
+                        PlayerSelect = Selects.SelectPlayerBuenos(Player);
 
                         for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
-                        {
-                            if (Program.Player[Rondas.EquipoBuenosList[0]].Name == PlayerSelect || Program.Player[Rondas.EquipoBuenosList[1]].Name == PlayerSelect || Program.Player[Rondas.EquipoBuenosList[2]].Name == PlayerSelect)
+                            if (Rondas.EquipoBuenosList[i] == PlayerSelect)
                                 c++;
-
-                        }
                     }
 
-                    if (ItemComun == "Botas") // BOTAS
+                    if (Comun == 1) // BOTAS
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].PasosStatic = Program.Player[Program.Nombre[PlayerSelect]].PasosStatic + 1;
-                        Program.Player[Program.Nombre[PlayerSelect]].Pasos = Program.Player[Program.Nombre[PlayerSelect]].Pasos + 1;
+                        Program.Player[PlayerSelect].PasosStatic = Program.Player[PlayerSelect].PasosStatic + 1;
+                        Program.Player[PlayerSelect].Pasos = Program.Player[PlayerSelect].Pasos + 1;
+                        Imprime.Print(Player, 62, 71); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
-                    if (ItemComun == "Antorcha") // ANTORCHA
+                    if (Comun == 2) // ANTORCHA
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].VisionStatic = Program.Player[Program.Nombre[PlayerSelect]].VisionStatic + 1;
-                        Program.Player[Program.Nombre[PlayerSelect]].Vision = Program.Player[Program.Nombre[PlayerSelect]].Vision + 1;
+                        Program.Player[PlayerSelect].VisionStatic = Program.Player[PlayerSelect].VisionStatic + 1;
+                        Program.Player[PlayerSelect].Vision = Program.Player[PlayerSelect].Vision + 1;
+                        Imprime.Print(Player, 61, 81); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
-
 
                 }
             }
-
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-            else // MALOS
+            else
             {
 
                 if (Program.EquipoMaloCoins > 0) // Revisar q tenga monedas
                 {
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player); // Seleccione item
 
-                    var ItemComun = SelectItem();
-                    var PlayerSelect = "";
+
+                    int Comun = Selects.SelectCofreComun(Player);
+
                     int c = 0;
+
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
 
-                        PlayerSelect = Selects.SelectPlayerMalos();
+                        PlayerSelect = Selects.SelectPlayerMalos(Player);
 
                         for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
-                        {
-                            if (Program.Player[Rondas.EquipoMalosList[0]].Name == PlayerSelect || Program.Player[Rondas.EquipoMalosList[1]].Name == PlayerSelect || Program.Player[Rondas.EquipoMalosList[2]].Name == PlayerSelect)
+                            if (Rondas.EquipoMalosList[i] == PlayerSelect)
                                 c++;
-
-                        }
                     }
 
-                    if (ItemComun == "Botas") // BOTAS
+                    if (Comun == 1) // BOTAS
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].PasosStatic = Program.Player[Program.Nombre[PlayerSelect]].PasosStatic + 1;
-                        Program.Player[Program.Nombre[PlayerSelect]].Pasos = Program.Player[Program.Nombre[PlayerSelect]].Pasos + 1;
+                        Program.Player[PlayerSelect].PasosStatic = Program.Player[PlayerSelect].PasosStatic + 1;
+                        Program.Player[PlayerSelect].Pasos = Program.Player[PlayerSelect].Pasos + 1;
+                        Imprime.Print(Player, 62, 71); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
-                    if (ItemComun == "Antorcha") // ANTORCHA
+                    if (Comun == 2) // ANTORCHA
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].VisionStatic = Program.Player[Program.Nombre[PlayerSelect]].VisionStatic + 1;
-                        Program.Player[Program.Nombre[PlayerSelect]].Vision = Program.Player[Program.Nombre[PlayerSelect]].Vision + 1;
+                        Program.Player[PlayerSelect].VisionStatic = Program.Player[PlayerSelect].VisionStatic + 1;
+                        Program.Player[PlayerSelect].Vision = Program.Player[PlayerSelect].Vision + 1;
+                        Imprime.Print(Player, 61, 81); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
 
 
                 }
-
             }
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -133,96 +105,83 @@ public class Cofres
 
                 if (Program.EquipoBuenoCoins > 2) // Revisar q tenga monedas
                 {
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player); // Seleccione item
 
-                    var ItemEpico = SelectItem();
-                    var PlayerSelect = "";
+
+                    int Epico = Selects.SelectCofreEpico(Player);
+
                     int c = 0;
+
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
 
-                        PlayerSelect = Selects.SelectPlayerBuenos();
+                        PlayerSelect = Selects.SelectPlayerBuenos(Player);
 
                         for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
-                        {
-                            if (Program.Player[Rondas.EquipoBuenosList[0]].Name == PlayerSelect || Program.Player[Rondas.EquipoBuenosList[1]].Name == PlayerSelect || Program.Player[Rondas.EquipoBuenosList[2]].Name == PlayerSelect)
+                            if (Rondas.EquipoBuenosList[i] == PlayerSelect)
                                 c++;
-
-                        }
                     }
 
-                    if (ItemEpico == "Botas") // BOTAS
+                    if (Epico == 1) // BOTAS
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].PasosStatic = Program.Player[Program.Nombre[PlayerSelect]].PasosStatic + 2;
-                        Program.Player[Program.Nombre[PlayerSelect]].Pasos = Program.Player[Program.Nombre[PlayerSelect]].Pasos + 2;
+                        Program.Player[PlayerSelect].PasosStatic = Program.Player[PlayerSelect].PasosStatic + 2;
+                        Program.Player[PlayerSelect].Pasos = Program.Player[PlayerSelect].Pasos + 2;
+                        Imprime.Print(Player, 72, 72); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
-                    if (ItemEpico == "Antorcha") // ANTORCHA
+                    if (Epico == 2) // ANTORCHA
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].VisionStatic = Program.Player[Program.Nombre[PlayerSelect]].VisionStatic + 2;
-                        Program.Player[Program.Nombre[PlayerSelect]].Vision = Program.Player[Program.Nombre[PlayerSelect]].Vision + 2;
+                        Program.Player[PlayerSelect].VisionStatic = Program.Player[PlayerSelect].VisionStatic + 2;
+                        Program.Player[PlayerSelect].Vision = Program.Player[PlayerSelect].Vision + 2;
+                        Imprime.Print(Player, 71, 82); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
-
 
                 }
             }
-
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-            else // MALOS
+            else
             {
 
                 if (Program.EquipoMaloCoins > 2) // Revisar q tenga monedas
                 {
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player); // Seleccione item
 
-                    var ItemEpico = SelectItem();
-                    var PlayerSelect = "";
+
+                    int Epico = Selects.SelectCofreEpico(Player);
+
                     int c = 0;
+
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
 
-                        PlayerSelect = Selects.SelectPlayerMalos();
+                        PlayerSelect = Selects.SelectPlayerMalos(Player);
 
                         for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
-                        {
-                            if (Program.Player[Rondas.EquipoMalosList[0]].Name == PlayerSelect || Program.Player[Rondas.EquipoMalosList[1]].Name == PlayerSelect || Program.Player[Rondas.EquipoMalosList[2]].Name == PlayerSelect)
+                            if (Rondas.EquipoMalosList[i] == PlayerSelect)
                                 c++;
-
-                        }
                     }
 
-                    if (ItemEpico == "Botas") // BOTAS
+                    if (Epico == 1) // BOTAS
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].PasosStatic = Program.Player[Program.Nombre[PlayerSelect]].PasosStatic + 2;
-                        Program.Player[Program.Nombre[PlayerSelect]].Pasos = Program.Player[Program.Nombre[PlayerSelect]].Pasos + 2;
+                        Program.Player[PlayerSelect].PasosStatic = Program.Player[PlayerSelect].PasosStatic + 2;
+                        Program.Player[PlayerSelect].Pasos = Program.Player[PlayerSelect].Pasos + 2;
+                        Imprime.Print(Player, 72, 72); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
-                    if (ItemEpico == "Antorcha") // ANTORCHA
+                    if (Epico == 2) // ANTORCHA
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].VisionStatic = Program.Player[Program.Nombre[PlayerSelect]].VisionStatic + 2;
-                        Program.Player[Program.Nombre[PlayerSelect]].Vision = Program.Player[Program.Nombre[PlayerSelect]].Vision + 2;
+                        Program.Player[PlayerSelect].VisionStatic = Program.Player[PlayerSelect].VisionStatic + 2;
+                        Program.Player[PlayerSelect].Vision = Program.Player[PlayerSelect].Vision + 2;
+                        Imprime.Print(Player, 71, 82); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
 
 
                 }
-
             }
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -234,96 +193,83 @@ public class Cofres
 
                 if (Program.EquipoBuenoCoins > 4) // Revisar q tenga monedas
                 {
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player); // Seleccione item
 
-                    var ItemLegendario = SelectItem();
-                    var PlayerSelect = "";
+
+                    int Legendario = Selects.SelectCofreLegendario(Player);
+
                     int c = 0;
+
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
 
-                        PlayerSelect = Selects.SelectPlayerBuenos();
+                        PlayerSelect = Selects.SelectPlayerBuenos(Player);
 
                         for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
-                        {
-                            if (Program.Player[Rondas.EquipoBuenosList[0]].Name == PlayerSelect || Program.Player[Rondas.EquipoBuenosList[1]].Name == PlayerSelect || Program.Player[Rondas.EquipoBuenosList[2]].Name == PlayerSelect)
+                            if (Rondas.EquipoBuenosList[i] == PlayerSelect)
                                 c++;
-
-                        }
                     }
 
-                    if (ItemLegendario == "Botas") // BOTAS
+                    if (Legendario == 1) // BOTAS
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].PasosStatic = Program.Player[Program.Nombre[PlayerSelect]].PasosStatic + 3;
-                        Program.Player[Program.Nombre[PlayerSelect]].Pasos = Program.Player[Program.Nombre[PlayerSelect]].Pasos + 3;
+                        Program.Player[PlayerSelect].PasosStatic = Program.Player[PlayerSelect].PasosStatic + 3;
+                        Program.Player[PlayerSelect].Pasos = Program.Player[PlayerSelect].Pasos + 3;
+                        Imprime.Print(Player, 82, 73); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
-                    if (ItemLegendario == "Antorcha") // ANTORCHA
+                    if (Legendario == 2) // ANTORCHA
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].VisionStatic = Program.Player[Program.Nombre[PlayerSelect]].VisionStatic + 3;
-                        Program.Player[Program.Nombre[PlayerSelect]].Vision = Program.Player[Program.Nombre[PlayerSelect]].Vision + 3;
+                        Program.Player[PlayerSelect].VisionStatic = Program.Player[PlayerSelect].VisionStatic + 3;
+                        Program.Player[PlayerSelect].Vision = Program.Player[PlayerSelect].Vision + 3;
+                        Imprime.Print(Player, 81, 83); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
-
 
                 }
             }
-
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-            else // MALOS
+            else
             {
 
                 if (Program.EquipoMaloCoins > 4) // Revisar q tenga monedas
                 {
-                    
-                    Console.Clear();
-                    Interfaz.Imprimir(Player); // Seleccione item
 
-                    var ItemLegendario = SelectItem();
-                    var PlayerSelect = "";
+
+                    int Legendario = Selects.SelectCofreLegendario(Player);
+
                     int c = 0;
+
 
                     while (c == 0) // Seleccione player para equipar
                     {
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
 
-                        PlayerSelect = Selects.SelectPlayerMalos();
+                        PlayerSelect = Selects.SelectPlayerMalos(Player);
 
-                       for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
-                        {
-                            if (Program.Player[Rondas.EquipoMalosList[0]].Name == PlayerSelect || Program.Player[Rondas.EquipoMalosList[1]].Name == PlayerSelect || Program.Player[Rondas.EquipoMalosList[2]].Name == PlayerSelect)
+                        for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
+                            if (Rondas.EquipoMalosList[i] == PlayerSelect)
                                 c++;
-
-                        }
                     }
 
-                    if (ItemLegendario == "Botas") // BOTAS
+                    if (Legendario == 1) // BOTAS
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].PasosStatic = Program.Player[Program.Nombre[PlayerSelect]].PasosStatic + 3;
-                        Program.Player[Program.Nombre[PlayerSelect]].Pasos = Program.Player[Program.Nombre[PlayerSelect]].PasosStatic;
+                        Program.Player[PlayerSelect].PasosStatic = Program.Player[PlayerSelect].PasosStatic + 3;
+                        Program.Player[PlayerSelect].Pasos = Program.Player[PlayerSelect].Pasos + 3;
+                        Imprime.Print(Player, 82, 73); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
-                    if (ItemLegendario == "Antorcha") // ANTORCHA
+                    if (Legendario == 2) // ANTORCHA
                     {
-                        Program.Player[Program.Nombre[PlayerSelect]].VisionStatic = Program.Player[Program.Nombre[PlayerSelect]].VisionStatic + 3;
-                        Program.Player[Program.Nombre[PlayerSelect]].Vision = Program.Player[Program.Nombre[PlayerSelect]].VisionStatic;
+                        Program.Player[PlayerSelect].VisionStatic = Program.Player[PlayerSelect].VisionStatic + 3;
+                        Program.Player[PlayerSelect].Vision = Program.Player[PlayerSelect].Vision + 3;
+                        Imprime.Print(Player, 81, 83); // Player / Img / Panel
+                        Console.ReadKey();
 
                     }
 
 
                 }
-
             }
         }
     }

@@ -2,30 +2,24 @@
 
 public class Items
 {
-    static string PlayerSelect = "";
-    static string DireccionSelect = "";
+
+    static int PlayerSelect;
+    static char DireccionSelect;
 
     public static void Escudo(int Player)
     {
-        
+
         int c = 0;
 
         if (Program.Player[Player].Equipo) // Buenos
         {
             while (c == 0) // Seleccione player para equipar
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
 
-                PlayerSelect = Selects.SelectPlayerBuenos();
+                PlayerSelect = Selects.SelectPlayerBuenos(Player);
 
                 for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
-                    if (
-                        Program.Player[Rondas.EquipoBuenosList[0]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoBuenosList[1]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoBuenosList[2]].Name == PlayerSelect
-                    )
+                    if (Rondas.EquipoBuenosList[i] == PlayerSelect)
                         c++;
             }
         }
@@ -33,47 +27,31 @@ public class Items
         {
             while (c == 0) // Seleccione player para equipar
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
 
-                PlayerSelect = Selects.SelectPlayerMalos();
+                PlayerSelect = Selects.SelectPlayerMalos(Player);
 
                 for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
-                    if (
-                        Program.Player[Rondas.EquipoMalosList[0]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoMalosList[1]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoMalosList[2]].Name == PlayerSelect
-                    )
+                    if (Rondas.EquipoMalosList[i] == PlayerSelect)
                         c++;
             }
         }
 
-        Program.Player[Program.Nombre[PlayerSelect]].Inmune = true;
+        Program.Player[PlayerSelect].Inmune = true;
     }
 
     public static void Escalera(int Player)
     {
         int c = 0;
 
-        // panel
-
         if (Program.Player[Player].Equipo) // Buenos
         {
             while (c == 0) // Seleccione player para equipar
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
 
-                PlayerSelect = Selects.SelectPlayerBuenos();
+                PlayerSelect = Selects.SelectPlayerBuenos(Player);
 
                 for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
-                    if (
-                        Program.Player[Rondas.EquipoBuenosList[0]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoBuenosList[1]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoBuenosList[2]].Name == PlayerSelect
-                    )
+                    if (Rondas.EquipoBuenosList[i] == PlayerSelect)
                         c++;
             }
         }
@@ -81,18 +59,11 @@ public class Items
         {
             while (c == 0) // Seleccione player para equipar
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(Player);
 
-                PlayerSelect = Selects.SelectPlayerMalos();
+                PlayerSelect = Selects.SelectPlayerMalos(Player);
 
                 for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
-                    if (
-                        Program.Player[Rondas.EquipoMalosList[0]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoMalosList[1]].Name == PlayerSelect
-                        || Program.Player[Rondas.EquipoMalosList[2]].Name == PlayerSelect
-                    )
+                    if (Rondas.EquipoMalosList[i] == PlayerSelect)
                         c++;
             }
         }
@@ -103,57 +74,54 @@ public class Items
         {
             for (int y = 1; y < Tablero.columnas; y++)
             {
-                if (Tablero.laberinto[x, y] == Program.Nombre[PlayerSelect])
+                if (Tablero.laberinto[x, y] == PlayerSelect)
                 {
                     while (true)
                     {
-                        
-                        Console.Clear();
-                        Interfaz.Imprimir(Player);
 
-                        DireccionSelect = Selects.SelectEscalera();
+                        DireccionSelect = Selects.Direccion(Player);
 
-                        if (DireccionSelect == "Arriba")
+                        if (DireccionSelect == 'w')
                         {
-                            if (x - 1 > 0 )
+                            if (x - 1 > 0 && Tablero.laberinto[x - 1, y] == 0)
                             {
                                 Tablero.laberinto[x - 1, y] = 151;
 
-                                if (Tablero.laberinto[x - 2, y] == 0 && x - 2 > 0)
+                                if (x - 2 > 0 && Tablero.laberinto[x - 2, y] == 0 )
                                     Tablero.laberinto[x - 2, y] = 1;
 
                                 break;
                             }
                         }
-                        if (DireccionSelect == "Abajo")
+                        if (DireccionSelect == 's')
                         {
-                            if (x + 1 < 30 )
+                            if (x + 1 < 30 && Tablero.laberinto[x + 1, y] == 0)
                             {
                                 Tablero.laberinto[x + 1, y] = 252;
 
-                                if (Tablero.laberinto[x - 2, y] == 0 && x + 2 < 30)
-                                    Tablero.laberinto[x - 2, y] = 1;
+                                if (x + 2 < 30 && Tablero.laberinto[x + 2, y] == 0 )
+                                    Tablero.laberinto[x + 2, y] = 1;
                                 break;
                             }
                         }
-                        if (DireccionSelect == "Izquierda")
+                        if (DireccionSelect == 'a')
                         {
-                            if (y - 1 > 0 )
+                            if (y - 1 > 0 && Tablero.laberinto[x, y - 1] == 0)
                             {
                                 Tablero.laberinto[x, y - 1] = 353;
 
-                                if (Tablero.laberinto[x, y - 2] == 0 && y - 2 > 0)
+                                if (y - 2 > 0 && Tablero.laberinto[x, y - 2] == 0)
                                     Tablero.laberinto[x, y - 2] = 1;
                                 break;
                             }
                         }
-                        if (DireccionSelect == "Derecha")
+                        if (DireccionSelect == 'd')
                         {
-                            if (y + 1 < 30 )
+                            if (y + 1 < 30 && Tablero.laberinto[x, y + 1] == 0)
                             {
                                 Tablero.laberinto[x, y + 1] = 454;
 
-                                if (Tablero.laberinto[x, y + 2] == 0 && y + 2 < 30)
+                                if (y + 2 < 30 && Tablero.laberinto[x, y + 2] == 0)
                                     Tablero.laberinto[x, y + 2] = 1;
                                 break;
                             }

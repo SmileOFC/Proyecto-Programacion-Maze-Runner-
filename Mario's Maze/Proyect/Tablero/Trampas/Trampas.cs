@@ -12,10 +12,6 @@
         {
             for (int x = 0; x < Muro.Count; x++)
             {
-                
-                Console.Clear();
-                Interfaz.Imprimir(p);
-                Thread.Sleep(1000);
                 Tablero.laberinto[Muro[x][0], Muro[x][1]] = 1;
             }
             Muro.Clear();
@@ -25,10 +21,6 @@
     public static void PlacaGenerar(int p, int x, int y)
     {
         
-
-        Console.Clear();
-        Interfaz.Imprimir(p);
-        Thread.Sleep(1000);
         Muro.Add(new int[] { x, y });
         Tablero.laberinto[x, y] = 35;
     }
@@ -327,6 +319,8 @@
                 Tablero.laberinto[tx, ty] = x;
                 Program.Player[x].Inmovil = true;
                 Tablero.UpdateNiebla(x, tx, ty);
+
+                
 
                 if (Tablero.laberinto[tx + 1, ty] == 1)
                     PlacaGenerar(p, tx + 1, ty);

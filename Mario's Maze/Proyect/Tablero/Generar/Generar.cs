@@ -3,10 +3,17 @@
     public static Random rand = new Random();
     public static int filas = 31, columnas = 31;
     static int Cont = 0;
-    public static bool[,] Puntero = new bool[filas, columnas];
+
+    static List<(int, int, int, int)> paredes = new List<(int, int, int, int)>();
+
     public static int[,] laberinto = new int[filas, columnas];
     public static bool[,] niebla = new bool[filas, columnas];
-    static List<(int, int, int, int)> paredes = new List<(int, int, int, int)>();
+    public static bool[,] Puntero = new bool[filas, columnas];
+
+    
+    public static int[,] LaberintoCopy = new int[Tablero.laberinto.GetLength(0), Tablero.laberinto.GetLength(1)];
+    public static bool[,] NieblaCopy = new bool[Tablero.niebla.GetLength(0), Tablero.niebla.GetLength(1)];
+    public static bool[,] PunteroCopy = new bool[Tablero.Puntero.GetLength(0), Tablero.Puntero.GetLength(1)];
 
     public static void GenerarTablero()
     {
@@ -279,19 +286,8 @@
         for (int i = 1; i < 30; i++)
         {
             for (int j = 1; j < 30; j++)
-                if (
-                    Tablero.laberinto[i, j] != 21
-                    || Tablero.laberinto[i, j] != 22
-                    || Tablero.laberinto[i, j] != 23
-                    || Tablero.laberinto[i, j] != 24
-                    || Tablero.laberinto[i, j] != 25
-                    || Tablero.laberinto[i, j] != 26
-                    || Tablero.laberinto[i, j] != 27
-                    || Tablero.laberinto[i, j] != 28
-                    || Tablero.laberinto[i, j] != 29
-                    || Tablero.laberinto[i, j] != 20
-                )
-                    niebla[i, j] = false; ////////////////////////////////////////////////////////////////////
+                if (Tablero.laberinto[i, j] != 21 || Tablero.laberinto[i, j] != 22 || Tablero.laberinto[i, j] != 23 || Tablero.laberinto[i, j] != 24 || Tablero.laberinto[i, j] != 25 || Tablero.laberinto[i, j] != 26 || Tablero.laberinto[i, j] != 27 || Tablero.laberinto[i, j] != 28 || Tablero.laberinto[i, j] != 29 || Tablero.laberinto[i, j] != 20)
+                    niebla[i, j] = true; ////////////////////////////////////////////////////////////////////
         }
 
         // Quitar Niebla inicial
@@ -299,20 +295,14 @@
         for (int i = 1; i < 30; i++)
         {
             for (int j = 1; j < 30; j++)
-                if (
-                    Tablero.laberinto[i, j] == 21
-                    || Tablero.laberinto[i, j] == 22
-                    || Tablero.laberinto[i, j] == 23
-                    || Tablero.laberinto[i, j] == 24
-                    || Tablero.laberinto[i, j] == 25
-                    || Tablero.laberinto[i, j] == 26
-                    || Tablero.laberinto[i, j] == 27
-                    || Tablero.laberinto[i, j] == 28
-                    || Tablero.laberinto[i, j] == 29
-                    || Tablero.laberinto[i, j] == 20
-                )
+                if (Tablero.laberinto[i, j] == 21|| Tablero.laberinto[i, j] == 22|| Tablero.laberinto[i, j] == 23|| Tablero.laberinto[i, j] == 24|| Tablero.laberinto[i, j] == 25|| Tablero.laberinto[i, j] == 26|| Tablero.laberinto[i, j] == 27|| Tablero.laberinto[i, j] == 28|| Tablero.laberinto[i, j] == 29|| Tablero.laberinto[i, j] == 20)
                     UpdateNiebla(Tablero.laberinto[i, j], i, j);
+
+
         }
+
+        /////////////////////////////////////////////////////////////////////////////////////////
+
 
         /////////////////////////////////////////////////////////////////////////////////////////
     }

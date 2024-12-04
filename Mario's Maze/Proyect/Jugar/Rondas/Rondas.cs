@@ -6,6 +6,7 @@ public class Rondas
     public static List<int> FichasList = new List<int>(Picks.Fichas.ToArray());
     public static List<int> EquipoMalosList = new List<int>(Picks.EquipoMalos.ToArray());
     public static List<int> EquipoBuenosList = new List<int>(Picks.EquipoBuenos.ToArray());
+
     static bool EntradaTiendaBuenos = false;
     static bool EntradaTiendaMalos = false;
     static int EquipoBuenoWin = 0;
@@ -16,9 +17,16 @@ public class Rondas
     static int Player;
     public static int Ronda()
     {
+        // Generar matrix / copia
         Tablero.GenerarTablero();
+        Array.Copy(Tablero.laberinto, Tablero.LaberintoCopy, Tablero.laberinto.Length);
+        Array.Copy(Tablero.niebla, Tablero.NieblaCopy, Tablero.niebla.Length);
+        Array.Copy(Tablero.Puntero, Tablero.PunteroCopy, Tablero.Puntero.Length);
 
-        //
+        // Imprimir pantalla
+        Console.Clear();
+        Interfaz.Imprimir(Player);
+
         if (Program.Player[Tablero.laberinto[1, 1]].Equipo)
             EntradaTiendaBuenos = true;
         else
@@ -59,18 +67,16 @@ public class Rondas
                         }
                     }
 
-                    ///////////////////Actualizar interfaz pendiente arreglar
-                    
-                    Console.Clear();
+                    /////////////////// UPDATE PANTALLA //////////////////////
+
                     Tablero.UpdateNiebla(Player, ejex, ejey);
-                    
-                    Interfaz.Imprimir(Player);
-                    Imprime.Print(Player, Player, Player);
+
+                    Imprime.Print(Player, Player, Player); // Player / Img / Panel
 
                     //////////////////////////////////////////////////////////
 
-                    
-                    
+
+
                     var keyInfo = Console.ReadKey();
 
                     // [T] Tienda
@@ -99,38 +105,17 @@ public class Rondas
                     // [Esc] Menu Pendiente //////////////////
                     if (keyInfo.KeyChar == 'q')
                     {
-                        Console.Clear();
+                        
+                        int Select = Selects.Menu(Player);
                        
-                        Interfaz.Imprimir(Player);
-                        Console.WriteLine("");
-                        var Select = AnsiConsole.Prompt(
-                            new SelectionPrompt<string>()
-                                .Title("───── [Red1]MENU[/] ────────────────────────")
-                                .PageSize(3)
-                                .MoreChoicesText("────────────────────────────────────────────────")
-                                .AddChoices(new[] { " Continuar", " Guia", " Salir" })
-                        );
 
-                        if (Select == " Guia") { }
-                        if (Select == " Salir")
+                        if (Select == 2) { }
+                        if (Select == 3)
                         {
-                            
-                            Console.Clear();
-                            Interfaz.Imprimir(Player);
-                            Console.WriteLine("");
-                            var Salir = AnsiConsole.Prompt(
-                                new SelectionPrompt<string>()
-                                    .Title(
-                                        "───── [Red1]Ya te aburriste de perder Chama? ^v^[/] ────────────────────────"
-                                    )
-                                    .PageSize(3)
-                                    .MoreChoicesText(
-                                        "────────────────────────────────────────────────"
-                                    )
-                                    .AddChoices(new[] { "Si", "No" })
-                            );
 
-                            if (Salir == "Si")
+                            int Y_N = Selects.Seguro(Player);
+
+                            if ( Y_N == 1)
                                 return 0;
                         }
                     }
@@ -256,10 +241,5 @@ public class Rondas
         }
 
         return 1;
-    }
-
-    private static object HeaderStyle(Style style)
-    {
-        throw new NotImplementedException();
     }
 }
