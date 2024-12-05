@@ -93,7 +93,7 @@ public class Habilidades
             {
                 Program.Player[Rondas.EquipoBuenosList[i]].Vision =
                     Program.Player[Rondas.EquipoBuenosList[i]].Vision + 1;
-                Program.Player[Rondas.EquipoBuenosList[i]].BufVision = true;
+                Program.Player[Rondas.EquipoBuenosList[i]].BufVision = 1;
             }
 
             Program.Player[player].PasosCont = 0;

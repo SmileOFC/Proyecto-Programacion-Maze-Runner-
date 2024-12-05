@@ -229,7 +229,7 @@ public class Selects
         while (true)
         {
 
-            Imprime.Print(Player, Player, 6); // Player / Img / Panel
+            Imprime.Print(Player, 6, 6); // Player / Img / Panel
             var keyInfo = Console.ReadKey();
 
             if (keyInfo.KeyChar == '1')
@@ -249,7 +249,7 @@ public class Selects
         while (true)
         {
 
-            Imprime.Print(Player, Player, 70); // Player / Img / Panel
+            Imprime.Print(Player, 6, 70); // Player / Img / Panel
             var keyInfo = Console.ReadKey();
 
             if (keyInfo.KeyChar == '1')
@@ -269,7 +269,7 @@ public class Selects
         while (true)
         {
 
-            Imprime.Print(Player, Player, 80); // Player / Img / Panel
+            Imprime.Print(Player, 7, 80); // Player / Img / Panel
             var keyInfo = Console.ReadKey();
 
             if (keyInfo.KeyChar == '1')
@@ -289,7 +289,7 @@ public class Selects
         while (true)
         {
 
-            Imprime.Print(Player, Player, 90); // Player / Img / Panel
+            Imprime.Print(Player, 8, 90); // Player / Img / Panel
             var keyInfo = Console.ReadKey();
 
             if (keyInfo.KeyChar == '1')
@@ -311,7 +311,7 @@ public class Selects
         while (true)
         {
 
-            Imprime.Print(Player, Player, 7); // Player / Img / Panel
+            Imprime.Print(Player, 7, 7); // Player / Img / Panel
             var keyInfo = Console.ReadKey();
 
             if (keyInfo.KeyChar == '1')
@@ -331,7 +331,7 @@ public class Selects
         while (true)
         {
 
-            Imprime.Print(Player, Player, 8); // Player / Img / Panel
+            Imprime.Print(Player, 8, 8); // Player / Img / Panel
             var keyInfo = Console.ReadKey();
 
             if (keyInfo.KeyChar == '1')

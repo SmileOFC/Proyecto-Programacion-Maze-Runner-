@@ -116,17 +116,17 @@ public class Program
 
         }
 
-        CrearPlayer Mario = new CrearPlayer("Mario", 12, 12, 0, 2, true, 1, 1, false, false, false, false);
-        CrearPlayer Luigi = new CrearPlayer("Luigi", 10, 10, 0, 2, true, 1, 1, false, false, false, false);
-        CrearPlayer Hongo = new CrearPlayer("Hongo", 5, 5, 0, 2, true, 2, 2, false, false, false, false);
-        CrearPlayer Yoshi = new CrearPlayer("Yoshi", 6, 6, 0, 2, true, 1, 1, false, false, false, false);
-        CrearPlayer Peach = new CrearPlayer("Peach", 7, 7, 0, 2, true, 2, 2, false, false, false, false);
+        CrearPlayer Mario = new CrearPlayer("Mario", 12, 12, 0, 2, true, 1, 1, false, false, 0, 0);
+        CrearPlayer Luigi = new CrearPlayer("Luigi", 10, 10, 0, 2, true, 1, 1, false, false, 0, 0);
+        CrearPlayer Hongo = new CrearPlayer("Hongo", 5, 5, 0, 2, true, 2, 2, false, false, 0, 0);
+        CrearPlayer Yoshi = new CrearPlayer("Yoshi", 6, 6, 0, 2, true, 1, 1, false, false, 0, 0);
+        CrearPlayer Peach = new CrearPlayer("Peach", 7, 7, 0, 2, true, 2, 2, false, false, 0, 0);
 
-        CrearPlayer Bowser = new CrearPlayer("Bowser", 8, 8, 0, 2, false, 1, 1, false, false, false, false);
-        CrearPlayer DonkeyKong = new CrearPlayer("DonKeyKong", 4, 4, 0, 2, false, 2, 2, false, false, false, false);
-        CrearPlayer Koopa = new CrearPlayer("Koopa", 3, 3, 0,2, false, 3, 3, false, false, false, false);
-        CrearPlayer Waluigi = new CrearPlayer("Waluigi", 9, 9, 0, 2, false, 1, 1, false, false, false, false);
-        CrearPlayer Wario = new CrearPlayer("Wario", 11, 11, 0, 2, false, 1, 1, false, false, false, false);
+        CrearPlayer Bowser = new CrearPlayer("Bowser", 8, 8, 0, 2, false, 1, 1, false, false, 0, 0);
+        CrearPlayer DonkeyKong = new CrearPlayer("DonKeyKong", 4, 4, 0, 2, false, 2, 2, false, false, 0, 0);
+        CrearPlayer Koopa = new CrearPlayer("Koopa", 3, 3, 0,2, false, 3, 3, false, false, 0, 0);
+        CrearPlayer Waluigi = new CrearPlayer("Waluigi", 9, 9, 0, 2, false, 1, 1, false, false, 0, 0);
+        CrearPlayer Wario = new CrearPlayer("Wario", 11, 11, 0, 2, false, 1, 1, false, false, 0, 0);
 
         //////////////////////////// DICCIONARIO PLAYERS /////////////////////////////
 
@@ -226,169 +226,171 @@ public class Program
         // Players
 
         // Inicio
-        Panel.Add(20, $"[italic]Mario:\n\nIt's me Mario...[/]");
-        Panel.Add(21, $"[italic]Luigi:\n\nIt's me Luigi...[/]");
-        Panel.Add(22, $"[italic]Hongo:\n\nIt's me Hongo...[/]");
-        Panel.Add(23, $"[italic]Yoshi:\n\nIt's me Yoshi...[/]");
-        Panel.Add(24, $"[italic]Peach:\n\nIt's me Peach...[/]");
+        Panel.Add(20, $"[italic bold]Mario:\n\nIt's me Mario...[/]");
+        Panel.Add(21, $"[italic bold]Luigi:\n\nIt's me Luigi...[/]");
+        Panel.Add(22, $"[italic bold]Hongo:\n\nIt's me Hongo...[/]");
+        Panel.Add(23, $"[italic bold]Yoshi:\n\nIt's me Yoshi...[/]");
+        Panel.Add(24, $"[italic bold]Peach:\n\nIt's me Peach...[/]");
 
-        Panel.Add(25, $"[italic]Bowser:\n\nIt's me Bowser...[/]");
-        Panel.Add(26, $"[italic]DonKeyKong:\n\nIt's me DonKeyKong...[/]");
-        Panel.Add(27, $"[italic]Koopa:\n\nIt's me Koopa...[/]");
-        Panel.Add(28, $"[italic]Waluigi:\n\nIt's me Waluigi...[/]");
-        Panel.Add(29, $"[italic]Wario:\n\nIt's me Wario...[/]");
+        Panel.Add(25, $"[italic bold]Bowser:\n\nIt's me Bowser...[/]");
+        Panel.Add(26, $"[italic bold]DonKeyKong:\n\nIt's me DonKeyKong...[/]");
+        Panel.Add(27, $"[italic bold]Koopa:\n\nIt's me Koopa...[/]");
+        Panel.Add(28, $"[italic bold]Waluigi:\n\nIt's me Waluigi...[/]");
+        Panel.Add(29, $"[italic bold]Wario:\n\nIt's me Wario...[/]");
 
         // Habilidades
-        Panel.Add(200, $"[italic]Mario:\n\nIt's me Mario...Habilidad[/]");
-        Panel.Add(211, $"[italic]Luigi:\n\nIt's me Luigi...Habilidad[/]");
-        Panel.Add(222, $"[italic]Hongo:\n\nIt's me Hongo...Habilidad[/]");
-        Panel.Add(233, $"[italic]Yoshi:\n\nIt's me Yoshi...Habilidad[/]");
-        Panel.Add(244, $"[italic]Peach:\n\nIt's me Peach...Habilidad[/]");
+        Panel.Add(200, $"[italic bold]MARIO:\n\nSelecciona una direccion para\nindicarle a Mario que muro saltar.\n              (W)\n           (A)(S)(D)[/]");
+        Panel.Add(211, $"[italic bold]Luigi:\n\nIt's me Luigi...Habilidad[/]");
+        Panel.Add(222, $"[italic bold]Hongo:\n\nIt's me Hongo...Habilidad[/]");
+        Panel.Add(233, $"[italic bold]Yoshi:\n\nIt's me Yoshi...Habilidad[/]");
+        Panel.Add(244, $"[italic bold]Peach:\n\nIt's me Peach...Habilidad[/]");
 
-        Panel.Add(255, $"[italic]Bowser:\n\nIt's me Bowser...Habilidad[/]");
-        Panel.Add(266, $"[italic]DonKeyKong:\n\nIt's me DonKeyKong...Habilidad[/]");
-        Panel.Add(277, $"[italic]Koopa:\n\nIt's me Koopa...Habilidad[/]");
-        Panel.Add(288, $"[italic]Waluigi:\n\nIt's me Waluigi...Habilidad[/]");
-        Panel.Add(299, $"[italic]Wario:\n\nIt's me Wario...Habilidad[/]");
+        Panel.Add(255, $"[italic bold]Bowser:\n\nIt's me Bowser...Habilidad[/]");
+        Panel.Add(266, $"[italic bold]DonKeyKong:\n\nIt's me DonKeyKong...Habilidad[/]");
+        Panel.Add(277, $"[italic bold]Koopa:\n\nIt's me Koopa...Habilidad[/]");
+        Panel.Add(288, $"[italic bold]Waluigi:\n\nIt's me Waluigi...Habilidad[/]");
+        Panel.Add(299, $"[italic bold]Wario:\n\nIt's me Wario...Habilidad[/]");
 
 
         /////////////////////////////////////////////////////////////////////////
 
         // Trampas
 
-        Panel.Add(31, $"[italic]Hueco:\n\nHaz caido en un hueco tu ficha saldra donde comenzo.[/]");
-        Panel.Add(32, $"[italic]Bomba:\n\nHaz pisado una bomba tu ficha fue empujada 2 pasos.[/]");
-        Panel.Add(33, $"[italic]Jaula:\n\nHaz activado una placa de presion y ha caido una jaula encima de tu ficha dejandola inmovil.[/]");
+        Panel.Add(31, $"[italic bold]Hueco:\n\nHaz caido en un hueco tu ficha saldra donde comenzo.[/]");
+        Panel.Add(32, $"[italic bold]Bomba:\n\nHaz pisado una bomba tu ficha fue empujada 2 pasos.[/]");
+        Panel.Add(33, $"[italic bold]Jaula:\n\nHaz activado una placa de presion y ha caido una jaula encima de tu ficha dejandola inmovil.[/]");
 
         // Buffs
 
-        Panel.Add(41, $"[italic]Hongo:\n\nQue bien te haz encontrado un Hongo ahora podras avanzar +10 Pasos en este turno.[/]");
-        Panel.Add(42, $"[italic]Estrella:\n\nQue bien te haz encontrado una Estrella ahora seras inmune a las trampas en este turno.[/]");
-        Panel.Add(43, $"[italic]Flor:\n\nQue bien te haz encontrado una Flor ahora tendras +2 vision en este turno.[/]");
+        Panel.Add(41, $"[italic bold]Hongo:\n\nQue bien te haz encontrado un Hongo ahora podras avanzar +10 Pasos en este turno.[/]");
+        Panel.Add(42, $"[italic bold]Estrella:\n\nQue bien te haz encontrado una Estrella ahora seras inmune a las trampas en este turno.[/]");
+        Panel.Add(43, $"[italic bold]Flor:\n\nQue bien te haz encontrado una Flor ahora tendras +2 vision en este turno.[/]");
 
         // Meta
 
-        Panel.Add(5, $"[italic]Meta:\n\nGenial haz llegado a la meta.[/]");
+        Panel.Add(5, $"[italic bold]Meta:\n\nGenial haz llegado a la meta.[/]");
 
         ///// TIENDA SELECT //////
 
         // Items / Poderes / Pociones / Salir
 
-        Panel.Add(555, $"[italic]Tienda:\n\n          (Seleccione una opcion)\n\n    (1)Items (2)Poderes (3)Pociones (4)Salir[/]");
+        Panel.Add(555, $"[italic bold]TIENDA:\n\n          (SELECCIONE UNA OPCION)\n\n     (1)ITEMS        (2)PODERES      (3)POCIONES     (4)SALIR[/]");
 
         // Items Select / Escudo / Escalera / Salir
 
-        Panel.Add(551, $"[italic]Items:\n\n        (Seleccione una opcion)\n\n    (1)Escudo (2)Escalera (3)Salir[/]");
+        Panel.Add(551, $"[italic bold]Items:\n\n        (Seleccione una opcion)\n\n    (1)Escudo (2)Escalera (3)Salir[/]");
 
         // Poderes Select / Bala / Mascara / Salir
 
-        Panel.Add(552, $"[italic]Poderes:\n\n         (Seleccione una opcion)\n\n     (1)Bala (2)Mascara (3)Salir[/]");
+        Panel.Add(552, $"[italic bold]Poderes:\n\n         (Seleccione una opcion)\n\n     (1)Bala (2)Mascara (3)Salir[/]");
 
         // Pociones Select / Veneno / Vision / Velocidad / Niebla / Hielo / Salir
 
-        Panel.Add(553, $"[italic]Pociones:\n\n           (Seleccione una opcion)\n    (1)Veneno (2)Vision (3)Velocidad \n      (4)Niebla (5)Hielo (6)Salir[/]");
+        Panel.Add(553, $"[italic bold]Pociones:\n\n           (Seleccione una opcion)\n    (1)Veneno (2)Vision (3)Velocidad \n      (4)Niebla (5)Hielo (6)Salir[/]");
 
         ////////// ITEMS /////////////////
 
-        Panel.Add(5511, $"[italic]Escudo:\n\nVuelve una de tus fichas inmune a trampas en su proximo turno.[/]");
-        Panel.Add(5512, $"[italic]Escalera:\n\nAlcanzale una escalera a una de tus fichas para q pueda subir la muralla.[/]");
+        Panel.Add(5511, $"[italic bold]Escudo:\n\nVuelve una de tus fichas inmune a trampas en su proximo turno.[/]");
+        Panel.Add(5512, $"[italic bold]Escalera:\n\nAlcanzale una escalera a una de tus fichas para q pueda subir la muralla.[/]");
 
         //////////// PODERES ////////////
 
-        Panel.Add(5521, $"[italic]Bala:\n\nDisparale una bala gigante a una de las fichas enemigas.[/]");
-        Panel.Add(5522, $"[italic]Mascara:\n\nCon esta mascara tus enemigos no podran ver casi nada por un turno.[/]");
+        Panel.Add(5521, $"[italic bold]Bala:\n\nDisparale una bala gigante a una de las fichas enemigas.[/]");
+        Panel.Add(5522, $"[italic bold]Mascara:\n\nCon esta mascara tus enemigos no podran ver casi nada por un turno.[/]");
 
         ////////////// POCIONES //////////////
 
-        Panel.Add(5531,$"[italic][/]");
-        Panel.Add(5532,$"[italic][/]");
-        Panel.Add(5533,$"[italic][/]");
-        Panel.Add(5534,$"[italic][/]");
-        Panel.Add(5535,$"[italic][/]");
+        Panel.Add(5531,$"[italic bold][/]");
+        Panel.Add(5532,$"[italic bold][/]");
+        Panel.Add(5533,$"[italic bold][/]");
+        Panel.Add(5534,$"[italic bold][/]");
+        Panel.Add(5535,$"[italic bold][/]");
 
         ///////// COFRES SELECTS //////////
 
         // Cofres abrir / Yes / No
 
-        Panel.Add(6, $"[italic]Cofre Comun: (1$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
-        Panel.Add(7, $"[italic]Cofre Epico: (3$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
-        Panel.Add(8, $"[italic]Cofre Legendario: (5$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
+        Panel.Add(6, $"[italic bold]Cofre Comun: (1$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
+        Panel.Add(7, $"[italic bold]Cofre Epico: (3$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
+        Panel.Add(8, $"[italic bold]Cofre Legendario: (5$)\n\n   (Deseas abrir este cofre?)\n\n        (1)Si (2)No[/]");
 
         // Cofre Comun select / Bota / Antorcha
 
-        Panel.Add(70, $"[italic]Cofre Comun: (1$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
+        Panel.Add(70, $"[italic bold]Cofre Comun: (1$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
 
         // Cofre Epico select / Bota / Antorcha
 
-        Panel.Add(80, $"[italic]Cofre Epico: (3$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
+        Panel.Add(80, $"[italic bold]Cofre Epico: (3$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
 
         // Cofre Legendario select / Bota / Antorcha
 
-        Panel.Add(90, $"[italic]Cofre Legendario: (5$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
+        Panel.Add(90, $"[italic bold]Cofre Legendario: (5$)\n\n    (Seleccione una opcion)\n\n     (1)Botas (2)Antorcha[/]");
 
         // Botas / Comunes / Epicas / Legendarias
 
-        Panel.Add(71, $"[italic]Botas Comunes:\n\nAhora la ficha seleccionada tendra +3 Pasos[/]");
+        Panel.Add(71, $"[italic bold]Botas Comunes:\n\nAhora la ficha seleccionada tendra +3 Pasos[/]");
 
-        Panel.Add(72, $"[italic]Botas Epicas:\n\nAhora la ficha seleccionada tendra +4 Pasos[/]");
+        Panel.Add(72, $"[italic bold]Botas Epicas:\n\nAhora la ficha seleccionada tendra +4 Pasos[/]");
 
-        Panel.Add(73, $"[italic]Botas Legendarias:\n\nAhora la ficha seleccionada tendra +5 Pasos[/]");
+        Panel.Add(73, $"[italic bold]Botas Legendarias:\n\nAhora la ficha seleccionada tendra +5 Pasos[/]");
 
         // Antorcha / Comun / Epica / Legendaria
 
-        Panel.Add(81, $"[italic]Antorcha Comun:\n\nAhora la ficha seleccionada tendra +1 Vision[/]");
+        Panel.Add(81, $"[italic bold]Antorcha Comun:\n\nAhora la ficha seleccionada tendra +1 Vision[/]");
 
-        Panel.Add(82, $"[italic]Antorcha Epica:\n\nAhora la ficha seleccionada tendra +2 Vision[/]");
+        Panel.Add(82, $"[italic bold]Antorcha Epica:\n\nAhora la ficha seleccionada tendra +2 Vision[/]");
 
-        Panel.Add(83, $"[italic]Antorcha Legendaria:\n\nAhora la ficha seleccionada tendra +3 Vision[/]");
+        Panel.Add(83, $"[italic bold]Antorcha Legendaria:\n\nAhora la ficha seleccionada tendra +3 Vision[/]");
 
         ///// OTHERS SELECTS ///////
 
         // Cofre avanzar no tienes monedas suficientes / Yes / No  
 
-        Panel.Add(61, $"[italic]NOTA: No tienes monedas suficientes para abrir este cofre si deseas avanzar el cofre sera eliminado.\n\n       (Deseas avanzar?)\n         (1)Si (2)No[/]");
+        Panel.Add(61, $"[italic bold]NOTA: No tienes monedas suficientes para abrir este cofre si deseas avanzar el cofre sera eliminado.\n\n       (Deseas avanzar?)\n         (1)Si (2)No[/]");
 
         // Select Players Buenos
 
-        Panel.Add(62, $"[italic]Seleccione una Ficha:\n\n  (1)Mario (2)Luigi (3)Hongo (4)Yoshi (5)Peach[/]");
+        Panel.Add(62, $"[italic bold]Seleccione una Ficha:\n\n  (1)Mario (2)Luigi (3)Hongo (4)Yoshi (5)Peach[/]");
 
         // Select Players Malos 
 
-        Panel.Add(63, $"[italic]Seleccione una Ficha:\n\n  (1)Bowser (2)DonKeyKong (3)Koopa (4)Waluigi (5)Wario[/]");
+        Panel.Add(63, $"[italic bold]Seleccione una Ficha:\n\n  (1)Bowser (2)DonKeyKong (3)Koopa (4)Waluigi (5)Wario[/]");
 
         // Direccion
 
-        Panel.Add(64, $"[italic]Seleccione una Direccion:\n\n       (W)\n    (A)(S)(D)[/]");
+        Panel.Add(64, $"[italic bold]Seleccione una Direccion:\n\n       (W)\n    (A)(S)(D)[/]");
 
         // Menu / Continuar / guia / salir
 
-        Panel.Add(65, $"[italic]Menu:\n\n   (1)Continuar   (2)Guia   (3)Salir[/]");
+        Panel.Add(65, $"[italic bold]Menu:\n\n   (1)Continuar   (2)Guia   (3)Salir[/]");
 
         // Salir / yes / no
 
-        Panel.Add(66, $"[italic]NOTA: Si sales se perdera la partida.\n\n      (Seguro que deseas Salir?)\n      (1)Si (2)No[/]");
+        Panel.Add(66, $"[italic bold]NOTA: Si sales se perdera la partida.\n\n      (Seguro que deseas Salir?)\n      (1)Si (2)No[/]");
 
         ///// ALERTAS ///////
 
         // Tienda sin dinero
 
-        Panel.Add(151515, $"[italic]\n\n  NOTA: No tienes monedas suficientes.[/]");
+        Panel.Add(151515, $"[italic bold]\n\n  NOTA: No tienes monedas suficientes.[/]");
 
         // Llave Malos / Buenos
 
-        Panel.Add(333, $"[italic]\n\n  NOTA: Esta no es tu llave.[/]");
+        Panel.Add(333, $"[italic bold]\n\n  NOTA: Esta no es tu llave.[/]");
 
         // Puerta 
 
-        Panel.Add(444, $"[italic]\n\n  NOTA:Esta no es tu puerta.[/]");
+        Panel.Add(444, $"[italic bold]\n\n  NOTA:Esta no es tu puerta.[/]");
 
         // Kooopa
 
-        Panel.Add(2777, $"[italic]\n\n  NOTA:Ya no te queda vision.[/]");
+        Panel.Add(2777, $"[italic bold]\n\n  NOTA:Ya no te queda vision.[/]");
 
         // Wario
 
-        Panel.Add(2999, $"[italic]\n\n  NOTA:Ya no te quedan pasos.[/]");
+        Panel.Add(2999, $"[italic bold]\n\n  NOTA:Ya no te quedan pasos.[/]");
+
+        Panel.Add(1010, $"[italic bold]\n\n\n  GOOOO!!!![/]");
 
     //////////////////////////////////////////////////////////////////////////////
 

@@ -11,10 +11,10 @@ public class CrearPlayer
     public int VisionStatic;
     public bool Inmovil;
     public bool Inmune;
-    public bool BufPasos;
-    public bool BufVision;
+    public int BufPasos;
+    public int BufVision;
     
-    public CrearPlayer(string Name_, int Pasos_,int PasosStatic_, int PasosCont_, int Habilidad_, bool Equipo_, int Vision_,int VisionStatic_, bool Inmovil_, bool Inmune_, bool BufPasos_, bool BufVision_)
+    public CrearPlayer(string Name_, int Pasos_,int PasosStatic_, int PasosCont_, int Habilidad_, bool Equipo_, int Vision_,int VisionStatic_, bool Inmovil_, bool Inmune_, int BufPasos_, int BufVision_)
     {
         Name = Name_;
         Pasos = Pasos_;

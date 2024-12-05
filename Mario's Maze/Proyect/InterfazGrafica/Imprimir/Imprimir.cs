@@ -2,7 +2,7 @@
 
 public class Interfaz
 {
-    public static void Imprimir(int Player)
+    public static void Imprimir()
     {
         // Definir el color blanco en RGB 
         var whiteColor = new Color(255, 255, 255);
@@ -209,24 +209,69 @@ public class Interfaz
 
                 if (Tablero.Puntero[i, j])
                 {
-                    AnsiConsole.Markup($"[red1 on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]✖️[/]");
+                    AnsiConsole.Markup($"[rgb({whiteColor.R},{whiteColor.G},{whiteColor.B}) on red1]✖️[/]");
                 }
             }
 
             ////////////////////////// LAYOUT //////////////////////////
 
-            if (i < 5 || i > 24)
+            if (i <= 5 || i > 24)
             {
-
-                for (int x = 80; x < Ancho; x++)
+                if (i == 3 || i == 4 || i == 5 || i == 2)
                 {
+                    if (i == 2)
+                    {
 
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.Write(" ");
+                        for (int x = 80; x < Ancho; x++)
+                        {
+                            if (x >= 128)
+                            {
+
+                                AnsiConsole.Markup($"[on grey35] [/]");
+
+                            }
+                            else
+                            {
+                                Console.BackgroundColor = ConsoleColor.Cyan;
+                                Console.Write(" ");
+                            }
+
+
+                        }
+                        Console.WriteLine("");
+
+                    }
+                    else
+                    {
+                        for (int x = 80; x < Ancho; x++)
+                        {
+                            if (x == 135 || x == 136 || x == 145 || x == 146)
+                            {
+                                AnsiConsole.Markup($"[on grey50] [/]");
+                            }
+                            else
+                            {
+                                Console.BackgroundColor = ConsoleColor.Cyan;
+                                Console.Write(" ");
+                            }
+
+
+                        }
+                        Console.WriteLine("");
+                    }
 
                 }
-                Console.WriteLine("");
+                else
+                {
+                    for (int x = 80; x < Ancho; x++)
+                    {
 
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.Write(" ");
+
+                    }
+                    Console.WriteLine("");
+                }
             }
             else
             {
@@ -235,18 +280,70 @@ public class Interfaz
                 Console.WriteLine("                                        ");
 
             }
+
         }
 
+
+
+        //Centro
         for (int x = 7; x <= 24; x++) // fila
         {
-            for (int y = 122; y < Ancho; y++) // columna
+            Console.SetCursorPosition(120, x);
+            AnsiConsole.Markup($"[on orange4_1]  [/]");
+
+            for (int y = 122; y < Ancho; y++) // columna //                                  //
             {
 
                 Console.SetCursorPosition(y, x);
-                AnsiConsole.Markup($"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]");
+                if (y < 158)
+                    AnsiConsole.Markup($"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]");
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine(" ");
+                }
+                if (y == 158)
+                {
+                    Console.SetCursorPosition(y, x);
+                    AnsiConsole.Markup($"[on orange4_1]  [/]");
+                    y++;
+                }
+            }
 
+        }
+        // Arriba
+        for (int x = 120; x < Ancho; x++)
+        {
+            Console.SetCursorPosition(x, 6);
+            if (x < 160)
+            {
+
+                AnsiConsole.Markup($"[on orange4_1] [/]");
+            }
+            else
+            {
+
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.WriteLine(" ");
             }
         }
+        // Abajo
+        for (int x = 120; x < Ancho; x++)
+        {
+            Console.SetCursorPosition(x, 25);
+            if (x < 160)
+            {
+
+                AnsiConsole.Markup($"[on orange4_1] [/]");
+            }
+            else
+            {
+
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.WriteLine(" ");
+            }
+        }
+
 
         for (int x = 0; x < Ancho; x++)
         {
@@ -255,9 +352,16 @@ public class Interfaz
             AnsiConsole.Markup("[on green] [/]");
 
         }
+        for (int x = 0; x < Ancho;)
+        {
+
+            Console.SetCursorPosition(x, 33);
+            AnsiConsole.Markup("[green on orange4_1] ▀[/]");
+            x += 2;
+        }
         for (int x = 0; x < Ancho; x++)
         {
-            for (int y = 33; y < Alto - 10; y++)
+            for (int y = 34; y < Alto - 10; y++)
             {
 
                 Console.SetCursorPosition(x, y);

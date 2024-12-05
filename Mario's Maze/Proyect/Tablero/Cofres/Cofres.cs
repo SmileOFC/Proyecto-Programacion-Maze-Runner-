@@ -12,6 +12,8 @@ public class Cofres
         if (x == 6) // COMUN
         {
 
+            
+
             if (Program.Player[Player].Equipo) // BUENOS
             {
 

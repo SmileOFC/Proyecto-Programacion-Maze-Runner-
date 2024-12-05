@@ -25,7 +25,10 @@ public class Rondas
 
         // Imprimir pantalla
         Console.Clear();
-        Interfaz.Imprimir(Player);
+        Interfaz.Imprimir();
+        Imprime.Print(Tablero.laberinto[1, 1], Tablero.laberinto[1, 1], 1010); // Player / Img / Panel
+        Console.ReadKey();
+        Imprime.Do = false;
 
         if (Program.Player[Tablero.laberinto[1, 1]].Equipo)
             EntradaTiendaBuenos = true;
@@ -105,9 +108,9 @@ public class Rondas
                     // [Esc] Menu Pendiente //////////////////
                     if (keyInfo.KeyChar == 'q')
                     {
-                        
+
                         int Select = Selects.Menu(Player);
-                       
+
 
                         if (Select == 2) { }
                         if (Select == 3)
@@ -115,7 +118,7 @@ public class Rondas
 
                             int Y_N = Selects.Seguro(Player);
 
-                            if ( Y_N == 1)
+                            if (Y_N == 1)
                                 return 0;
                         }
                     }
@@ -132,8 +135,8 @@ public class Rondas
                     {
                         if (Program.Player[Player].PasosCont >= Program.Player[Player].Habilidad)
                             Habilidades.Habilidad(Player, ejex, ejey);
-                        else // todavia no haz cargado la habilidad
-                            Console.WriteLine("todavia");
+                         // todavia no haz cargado la habilidad
+                            
                     }
 
                     // [A][W][S][D] Moverse
@@ -213,17 +216,17 @@ public class Rondas
                     Program.Player[Player].Inmune = false;
 
                 //Buff pasos
-                if (Program.Player[Player].BufPasos)
+                if (Program.Player[Player].BufPasos > 0)
                 {
                     Program.Player[Player].Pasos = Program.Player[Player].PasosStatic;
-                    Program.Player[Player].BufPasos = false;
+                    Program.Player[Player].BufPasos = 0;
                 }
 
                 //Buff vision
-                if (Program.Player[Player].BufVision)
+                if (Program.Player[Player].BufVision > 0)
                 {
                     Program.Player[Player].Vision = Program.Player[Player].VisionStatic;
-                    Program.Player[Player].BufVision = false;
+                    Program.Player[Player].BufVision = 0;
                 }
 
                 //Inmobilidad
