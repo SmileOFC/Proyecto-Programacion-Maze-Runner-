@@ -10,13 +10,13 @@
 using System;
 using System.Reflection;
 
-/* [assembly: System.Reflection.AssemblyCompanyAttribute("Mario\'sMaze")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Mario\'sMaze")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cc4ee2a6359930eff5442e6c2a3540f0b928a86")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b20156c2bd8ca0408bfe31bfd3c8a815a6ef2686")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mario\'sMaze")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mario\'sMaze")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")] */
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 
