@@ -5,8 +5,8 @@
     public static Stack<int> EquipoBuenos = new Stack<int>();
     public static Stack<int> EquipoMalos = new Stack<int>();
 
-    static List<int> EquipoMalosList = new List<int>(Picks.EquipoMalos.ToArray());
-    static List<int> EquipoBuenosList = new List<int>(Picks.EquipoBuenos.ToArray());
+    public static List<int> EquipoMalosList = new List<int>(Picks.EquipoMalos.ToArray());
+    public static List<int> EquipoBuenosList = new List<int>(Picks.EquipoBuenos.ToArray());
     
     static bool Esta;
 

@@ -66,7 +66,7 @@ public class Tienda
                     {
 
                         Imprime.Print(Player, 55555, 151515); // Player / Img / Panel
-
+                        Console.ReadKey();
                     }
                 }
             }

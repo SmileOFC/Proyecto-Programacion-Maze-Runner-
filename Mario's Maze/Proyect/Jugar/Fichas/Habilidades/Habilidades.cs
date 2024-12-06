@@ -62,7 +62,8 @@ public class Habilidades
         if (player == 21) //Luigi
         {
 
-            Imprime.Print(player, player, 211); // Player / Img / Panel            
+            Imprime.Print(player, player, 211); // Player / Img / Panel    
+                   
 
             int v = Program.Player[player].Vision;
             for (int i = x - v; i <= x + v; i++)
@@ -79,7 +80,7 @@ public class Habilidades
                 }
             }
 
-            Thread.Sleep(5000);
+            Console.ReadKey();
             Imprime.TrampaVisibleF.Clear();
             Imprime.TrampaVisibleC.Clear();
             Program.Player[player].PasosCont = 0;
@@ -88,11 +89,11 @@ public class Habilidades
         if (player == 22) //Hongo
         {
             Imprime.Print(player, player, 222); // Player / Img / Panel
+            Console.ReadKey();
 
             for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
             {
-                Program.Player[Rondas.EquipoBuenosList[i]].Vision =
-                    Program.Player[Rondas.EquipoBuenosList[i]].Vision + 1;
+                Program.Player[Rondas.EquipoBuenosList[i]].Vision = Program.Player[Rondas.EquipoBuenosList[i]].Vision + 1;
                 Program.Player[Rondas.EquipoBuenosList[i]].BufVision = 1;
             }
 
@@ -152,9 +153,9 @@ public class Habilidades
                 {
                     Tablero.Puntero[xx, yy] = false;
 
-                    for (int i = xx - 3; i <= xx + 3; i++)
+                    for (int i = xx - 2; i <= xx + 2; i++)
                     {
-                        for (int j = yy - 3; j <= yy + 3; j++)
+                        for (int j = yy - 2; j <= yy + 2; j++)
                         {
                             if (i < 30 && i >= 0 && j < 30 && j >= 0)
                                 Tablero.niebla[i, j] = false;
@@ -170,9 +171,10 @@ public class Habilidades
         if (player == 24) //Peach
         {
             Imprime.Print(player, player, 244); // Player / Img / Panel
+            Console.ReadKey();
 
-            for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
-                Program.Player[Rondas.EquipoBuenosList[i]].Inmovil = true;
+            for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
+                Program.Player[Rondas.EquipoMalosList[i]].Inmovil = true;
 
             Program.Player[player].PasosCont = 0;
         }
@@ -180,6 +182,7 @@ public class Habilidades
         if (player == 25) //Bowser
         {
             Imprime.Print(player, player, 255); // Player / Img / Panel
+            Console.ReadKey();
 
             Program.Player[player].Inmune = true;
             Program.Player[player].PasosCont = 0;
@@ -237,6 +240,7 @@ public class Habilidades
         if (player == 27) //Koopa
         {
             Imprime.Print(player, player, 277); // Player / Img / Panel
+            Console.ReadKey();
 
             if (Program.Player[player].VisionStatic - 1 > 0 && Program.Player[player].Vision - 1 > 0)
             {
@@ -252,6 +256,7 @@ public class Habilidades
             {
 
                 Imprime.Print(player, 55555, 2777); // Player / Img / Panel
+                Console.ReadKey();
 
             }
         }
@@ -319,6 +324,7 @@ public class Habilidades
         if (player == 29) //Wario
         {
             Imprime.Print(player, player, 299); // Player / Img / Panel
+            Console.ReadKey();
 
             if (Program.Player[player].Pasos - 5 > 0 || Program.Player[player].PasosStatic - 5 > 0)
             {
@@ -333,6 +339,7 @@ public class Habilidades
             else
             {
                 Imprime.Print(player, 55555, 2999); // Player / Img / Panel
+                Console.ReadKey();
             }
         }
     }

@@ -17,6 +17,16 @@
 
     public static void GenerarTablero()
     {
+        for (int i = 0; i < laberinto.GetLength(0); i++)
+        {
+            for (int j = 0; j < laberinto.GetLength(1); j++)
+            {
+                laberinto[i,j] = 0;
+            }
+
+            
+        }
+
         int x = 1,
             y = 1;
         laberinto[x, y] = 1;
@@ -245,9 +255,9 @@
 
         laberinto[11, 15] = 1;
         laberinto[12, 15] = 1;
-        laberinto[14, 15] = 1112;
+        laberinto[14, 15] = 1;
         laberinto[15, 15] = 5;
-        laberinto[16, 15] = 1112;
+        laberinto[16, 15] = 1;
         laberinto[18, 15] = 1;
         laberinto[19, 15] = 1;
 
@@ -287,7 +297,7 @@
         {
             for (int j = 1; j < 30; j++)
                 if (Tablero.laberinto[i, j] != 21 || Tablero.laberinto[i, j] != 22 || Tablero.laberinto[i, j] != 23 || Tablero.laberinto[i, j] != 24 || Tablero.laberinto[i, j] != 25 || Tablero.laberinto[i, j] != 26 || Tablero.laberinto[i, j] != 27 || Tablero.laberinto[i, j] != 28 || Tablero.laberinto[i, j] != 29 || Tablero.laberinto[i, j] != 20)
-                    niebla[i, j] = true; ////////////////////////////////////////////////////////////////////
+                    niebla[i, j] = false; ////////////////////////////////////////////////////////////////////
         }
 
         // Quitar Niebla inicial

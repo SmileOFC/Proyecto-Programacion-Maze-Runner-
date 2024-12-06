@@ -23,33 +23,10 @@ public class Jugar
     }
     public static int Mover(int Player, char Direccion)
     {
-
-
         int x = 1;
         int y = 1;
         var yn = "";
         int ChekCoins;
-
-        // NOTAS
-        var panel1 = new Panel("Tu equipo no tiene monedas suficientes para abrir este cofre si avanzas el cofre desaparecera.");
-        panel1.Header("[Red1] NOTA [/]", Justify.Left);
-        panel1.Border(BoxBorder.Rounded);
-        panel1.Padding(1, 1, 1, 1);
-
-        var panel2 = new Panel("Esta llave no le pertenece a tu equipo.");
-        panel2.Header("[Red1] NOTA [/]", Justify.Left);
-        panel2.Border(BoxBorder.Rounded);
-        panel2.Padding(1, 1, 1, 1);
-
-        var panel3 = new Panel("Necesitas una llave para abrir esta puerta.");
-        panel3.Header("[Red1] NOTA [/]", Justify.Left);
-        panel3.Border(BoxBorder.Rounded);
-        panel3.Padding(1, 1, 1, 1);
-
-        var panel4 = new Panel("Esta no es la entrada de tu equipo.");
-        panel3.Header("[Red1] NOTA [/]", Justify.Left);
-        panel3.Border(BoxBorder.Rounded);
-        panel3.Padding(1, 1, 1, 1);
 
         for (int xx = 1; xx < Tablero.filas; xx++)
         {
@@ -305,7 +282,7 @@ public class Jugar
                 {
 
                     Imprime.Print(Player, 55555, 333); // Player / Img / Panel
-                    var keyInfo = Console.ReadKey();
+                    Console.ReadKey();
 
                 }
 
@@ -331,7 +308,7 @@ public class Jugar
                 {
 
                     Imprime.Print(Player, 55555, 333); // Player / Img / Panel
-                    var keyInfo = Console.ReadKey();
+                    Console.ReadKey();
 
                 }
 
@@ -340,46 +317,57 @@ public class Jugar
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            if (Program.chek[Tablero.laberinto[x - 1, y]] == 11 && Program.Player[Player].Equipo) // puerta abierta
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 11) // puerta abierta
             {
 
-                Tablero.laberinto[x - 1, y] = Player;
-                Tablero.laberinto[x, y] = 1;
-
-                return RestPasos(Player);
-
-            }
-
-            if (Program.chek[Tablero.laberinto[x - 1, y]] == 12 && !Program.Player[Player].Equipo) // puerta abierta
-            {
-
-                Tablero.laberinto[x - 1, y] = Player;
-                Tablero.laberinto[x, y] = 1;
-
-                return RestPasos(Player);
-
-            }
-
-            if (Program.chek[Tablero.laberinto[x - 1, y]] == 1112) // puerta abierta
-            {
                 if (Program.Player[Player].Equipo)
                 {
-
                     Tablero.laberinto[x - 1, y] = Player;
-                    Tablero.laberinto[x, y] = 11;
-
+                    Tablero.laberinto[x, y] = 1;
+                    Console.Write("bueno entrando");
                     return RestPasos(Player);
-
                 }
                 else
                 {
+                    Console.Write("malo no puede entrar");
+                    Imprime.Print(Player, 55555, 4441); // Player / Img / Panel
+                    Console.ReadKey();
+
+                }
+
+            }
+
+
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 12) // puerta abierta
+            {
+
+                if (!Program.Player[Player].Equipo)
+                {
 
                     Tablero.laberinto[x - 1, y] = Player;
-                    Tablero.laberinto[x, y] = 12;
-
+                    Tablero.laberinto[x, y] = 1;
+                    Console.Write("malo entrando");
                     return RestPasos(Player);
                 }
+                else
+                {
+                    Console.Write("bueno no puede entrar");
+                    Imprime.Print(Player, 55555, 4441); // Player / Img / Panel
+                    Console.ReadKey();
+                }
+
             }
+
+
+
+            if (Program.chek[Tablero.laberinto[x - 1, y]] == 111) // puerta cerrada
+            {
+                Console.Write(Tablero.laberinto[x - 1, y]);
+                Imprime.Print(Player, 55555, 444); // Player / Img / Panel
+                Console.ReadKey();
+            }
+
+
 
         }
         if (Direccion == 's')
@@ -655,45 +643,52 @@ public class Jugar
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            if (Program.chek[Tablero.laberinto[x + 1, y]] == 11 && Program.Player[Player].Equipo) // puerta abierta
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 11) // puerta abierta
             {
 
-                Tablero.laberinto[x + 1, y] = Player;
-                Tablero.laberinto[x, y] = 1;
-
-                return RestPasos(Player);
-
-            }
-
-            if (Program.chek[Tablero.laberinto[x + 1, y]] == 12 && !Program.Player[Player].Equipo) // puerta abierta
-            {
-
-                Tablero.laberinto[x + 1, y] = Player;
-                Tablero.laberinto[x, y] = 1;
-
-                return RestPasos(Player);
-
-            }
-
-            if (Program.chek[Tablero.laberinto[x + 1, y]] == 1112) // puerta abierta
-            {
                 if (Program.Player[Player].Equipo)
                 {
-
                     Tablero.laberinto[x + 1, y] = Player;
-                    Tablero.laberinto[x, y] = 11;
-
+                    Tablero.laberinto[x, y] = 1;
+                    Console.Write("bueno entrando");
                     return RestPasos(Player);
-
                 }
                 else
                 {
+                    Console.Write("malo no puede entrar");
+                    Imprime.Print(Player, 55555, 4441); // Player / Img / Panel
+                    Console.ReadKey();
+
+                }
+
+            }
+
+
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 12) // puerta abierta
+            {
+
+                if (!Program.Player[Player].Equipo)
+                {
 
                     Tablero.laberinto[x + 1, y] = Player;
-                    Tablero.laberinto[x, y] = 12;
-
+                    Tablero.laberinto[x, y] = 1;
+                    Console.Write("malo entrando");
                     return RestPasos(Player);
                 }
+                else
+                {
+                    Console.Write("bueno no puede entrar");
+                    Imprime.Print(Player, 55555, 4441); // Player / Img / Panel
+                    Console.ReadKey();
+                }
+
+            }
+
+
+            if (Program.chek[Tablero.laberinto[x + 1, y]] == 111) // puerta cerrada
+            {
+                Imprime.Print(Player, 55555, 444); // Player / Img / Panel
+                Console.ReadKey();
             }
 
         }
@@ -968,45 +963,52 @@ public class Jugar
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            if (Program.chek[Tablero.laberinto[x, y - 1]] == 11 && Program.Player[Player].Equipo) // puerta abierta
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 11) // puerta abierta
             {
 
-                Tablero.laberinto[x, y - 1] = Player;
-                Tablero.laberinto[x, y] = 1;
-
-                return RestPasos(Player);
-
-            }
-
-            if (Program.chek[Tablero.laberinto[x, y - 1]] == 12 && !Program.Player[Player].Equipo) // puerta abierta
-            {
-
-                Tablero.laberinto[x, y - 1] = Player;
-                Tablero.laberinto[x, y] = 1;
-
-                return RestPasos(Player);
-
-            }
-
-            if (Program.chek[Tablero.laberinto[x, y - 1]] == 1112) // puerta abierta
-            {
                 if (Program.Player[Player].Equipo)
                 {
-
                     Tablero.laberinto[x, y - 1] = Player;
-                    Tablero.laberinto[x, y] = 11;
-
+                    Tablero.laberinto[x, y] = 1;
+                    Console.Write("bueno entrando");
                     return RestPasos(Player);
-
                 }
                 else
                 {
+                    Console.Write("malo no puede entrar");
+                    Imprime.Print(Player, 55555, 4441); // Player / Img / Panel
+                    Console.ReadKey();
+
+                }
+
+            }
+
+
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 12) // puerta abierta
+            {
+
+                if (!Program.Player[Player].Equipo)
+                {
 
                     Tablero.laberinto[x, y - 1] = Player;
-                    Tablero.laberinto[x, y] = 12;
-
+                    Tablero.laberinto[x, y] = 1;
+                    Console.Write("malo entrando");
                     return RestPasos(Player);
                 }
+                else
+                {
+                    Console.Write("bueno no puede entrar");
+                    Imprime.Print(Player, 55555, 4441); // Player / Img / Panel
+                    Console.ReadKey();
+                }
+
+            }
+
+
+            if (Program.chek[Tablero.laberinto[x, y - 1]] == 111) // puerta cerrada
+            {
+                Imprime.Print(Player, 55555, 444); // Player / Img / Panel
+                Console.ReadKey();
             }
 
         }
@@ -1277,45 +1279,52 @@ public class Jugar
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            if (Program.chek[Tablero.laberinto[x, y + 1]] == 11 && Program.Player[Player].Equipo) // puerta abierta
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 11) // puerta abierta
             {
 
-                Tablero.laberinto[x, y + 1] = Player;
-                Tablero.laberinto[x, y] = 1;
-
-                return RestPasos(Player);
-
-            }
-
-            if (Program.chek[Tablero.laberinto[x, y + 1]] == 12 && !Program.Player[Player].Equipo) // puerta abierta
-            {
-
-                Tablero.laberinto[x, y + 1] = Player;
-                Tablero.laberinto[x, y] = 1;
-
-                return RestPasos(Player);
-
-            }
-
-            if (Program.chek[Tablero.laberinto[x, y + 1]] == 1112) // puerta abierta
-            {
                 if (Program.Player[Player].Equipo)
                 {
-
                     Tablero.laberinto[x, y + 1] = Player;
-                    Tablero.laberinto[x, y] = 11;
-
+                    Tablero.laberinto[x, y] = 1;
+                    Console.Write("bueno entrando");
                     return RestPasos(Player);
-
                 }
                 else
                 {
+                    Console.Write("malo no puede entrar");
+                    Imprime.Print(Player, 55555, 4441); // Player / Img / Panel
+                    Console.ReadKey();
+
+                }
+
+            }
+
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 12) // puerta abierta
+            {
+
+                if (!Program.Player[Player].Equipo)
+                {
 
                     Tablero.laberinto[x, y + 1] = Player;
-                    Tablero.laberinto[x, y] = 12;
-
+                    Tablero.laberinto[x, y] = 1;
+                    Console.Write("malo entrando");
                     return RestPasos(Player);
                 }
+                else
+                {
+                    Console.Write("bueno no puede entrar");
+                    Imprime.Print(Player, 55555, 4441); // Player / Img / Panel
+                    Console.ReadKey();
+                }
+
+            }
+
+
+            if (Program.chek[Tablero.laberinto[x, y + 1]] == 111) // puerta cerrada
+            {
+                Imprime.Print(Player, 55555, 444); // Player / Img / Panel
+                Console.ReadKey();
             }
         }
 

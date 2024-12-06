@@ -6,7 +6,8 @@ public class Rondas
     public static List<int> FichasList = new List<int>(Picks.Fichas.ToArray());
     public static List<int> EquipoMalosList = new List<int>(Picks.EquipoMalos.ToArray());
     public static List<int> EquipoBuenosList = new List<int>(Picks.EquipoBuenos.ToArray());
-
+    static bool buenosarriba;
+    static bool malosarriba;
     static bool EntradaTiendaBuenos = false;
     static bool EntradaTiendaMalos = false;
     static int EquipoBuenoWin = 0;
@@ -40,7 +41,7 @@ public class Rondas
         {
             Jugando = 1;
 
-            if (Turno == FichasList.Count)
+            if (Turno >= FichasList.Count)
                 Turno = 0;
 
             Player = FichasList[Turno];
@@ -135,8 +136,8 @@ public class Rondas
                     {
                         if (Program.Player[Player].PasosCont >= Program.Player[Player].Habilidad)
                             Habilidades.Habilidad(Player, ejex, ejey);
-                         // todavia no haz cargado la habilidad
-                            
+                        // todavia no haz cargado la habilidad
+
                     }
 
                     // [A][W][S][D] Moverse
@@ -145,14 +146,11 @@ public class Rondas
                         Jugando = Jugar.Mover(Player, keyInfo.KeyChar);
                     }
 
-                    //////////////////////////// REVISAR ///////////////////////////////////////////
+                    //////////////////////////// REVISAR WIN ///////////////////////////////////////////
 
                     // Ficha Buenos Meta 
                     if (Jugando == 515)
                     {
-                        Console.WriteLine("Holaaaaa");
-                        Thread.Sleep(5000);
-
                         EquipoBuenoWin += 1;
                         break;
                     }
@@ -168,21 +166,79 @@ public class Rondas
 
                     // Quitar puertas
 
+
+
                     if (Program.EquipoBuenoLlave)
                     {
                         if (Tablero.laberinto[13, 15] == 111)
+                        {
                             Tablero.laberinto[13, 15] = 11;
-                        else
-                            Tablero.laberinto[17, 15] = 1;
+                            buenosarriba = true;
+                        }
+                        if (Tablero.laberinto[17, 15] == 111)
+                        {
+                            Tablero.laberinto[17, 15] = 11;
+                            buenosarriba = false;
+                        }
                     }
 
                     if (Program.EquipoMaloLlave)
                     {
                         if (Tablero.laberinto[13, 15] == 121)
+                        {
                             Tablero.laberinto[13, 15] = 12;
-                        else
-                            Tablero.laberinto[17, 15] = 1;
+                            malosarriba = true;
+                        }
+                        if (Tablero.laberinto[17, 15] == 121)
+                        {
+                            Tablero.laberinto[17, 15] = 12;
+                            malosarriba = false;
+                        }
                     }
+
+                    if (buenosarriba && Program.EquipoBuenoLlave)
+                    {
+
+                        if (Tablero.laberinto[13, 15] == 1)
+                        {
+
+                            Tablero.laberinto[13, 15] = 11;
+
+                        }
+
+                    }
+                    else
+                    {
+                        if (Program.EquipoBuenoLlave && Tablero.laberinto[17, 15] == 1)
+                        {
+
+                            Tablero.laberinto[17, 15] = 11;
+
+                        }
+                    }
+
+                    if (malosarriba && Program.EquipoMaloLlave)
+                    {
+
+                        if (Tablero.laberinto[13, 15] == 1)
+                        {
+
+                            Tablero.laberinto[13, 15] = 12;
+
+                        }
+
+                    }
+                    else
+                    {
+                        if (Program.EquipoMaloLlave && Tablero.laberinto[17, 15] == 1)
+                        {
+
+                            Tablero.laberinto[17, 15] = 12;
+
+                        }
+                    }
+
+
 
                     // Update Coldown Habilidad de Koopa/Wario
 

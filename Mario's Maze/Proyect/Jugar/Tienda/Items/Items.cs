@@ -83,11 +83,11 @@ public class Items
 
                         if (DireccionSelect == 'w')
                         {
-                            if (x - 1 > 0 && Tablero.laberinto[x - 1, y] == 0)
+                            if (x - 1 > 0 && Tablero.laberinto[x - 1, y] == 0 && Tablero.laberinto[x - 1, y] != 1111)
                             {
                                 Tablero.laberinto[x - 1, y] = 151;
 
-                                if (x - 2 > 0 && Tablero.laberinto[x - 2, y] == 0 )
+                                if (x - 2 > 0 && Tablero.laberinto[x - 2, y] == 0 && Tablero.laberinto[x - 2, y] != 1111)
                                     Tablero.laberinto[x - 2, y] = 1;
 
                                 break;
@@ -95,11 +95,11 @@ public class Items
                         }
                         if (DireccionSelect == 's')
                         {
-                            if (x + 1 < 30 && Tablero.laberinto[x + 1, y] == 0)
+                            if (x + 1 < 30 && Tablero.laberinto[x + 1, y] == 0 && Tablero.laberinto[x + 1, y] != 1111)
                             {
                                 Tablero.laberinto[x + 1, y] = 252;
 
-                                if (x + 2 < 30 && Tablero.laberinto[x + 2, y] == 0 )
+                                if (x + 2 < 30 && Tablero.laberinto[x + 2, y] == 0 && Tablero.laberinto[x + 2, y] != 1111)
                                     Tablero.laberinto[x + 2, y] = 1;
                                 break;
                             }

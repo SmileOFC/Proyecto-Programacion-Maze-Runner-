@@ -34,9 +34,6 @@
             if (t == 31)
             { //hueco
 
-                Imprime.Print(player, 31, 31);
-                Console.ReadKey();
-
                 List<int> Respwn = new List<int>(Picks.Fichas.ToArray());
                 int c = 0;
 
@@ -51,6 +48,8 @@
 
                             if (Tablero.laberinto[1, 1] == 1)
                             {
+                                Imprime.Print(player, 31, 31);
+                                Console.ReadKey();
 
                                 Tablero.laberinto[1, 1] = Respwn[c];
                                 Tablero.laberinto[px, py] = 1;
@@ -76,6 +75,8 @@
 
                             if (Tablero.laberinto[1, 15] == 1)
                             {
+                                Imprime.Print(player, 31, 31);
+                                Console.ReadKey();
 
                                 Tablero.laberinto[1, 15] = Respwn[c];
                                 Tablero.laberinto[px, py] = 1;
@@ -101,6 +102,8 @@
 
                             if (Tablero.laberinto[1, 29] == 1)
                             {
+                                Imprime.Print(player, 31, 31);
+                                Console.ReadKey();
 
                                 Tablero.laberinto[1, 29] = Respwn[c];
                                 Tablero.laberinto[px, py] = 1;
@@ -126,6 +129,8 @@
 
                             if (Tablero.laberinto[29, 1] == 1)
                             {
+                                Imprime.Print(player, 31, 31);
+                                Console.ReadKey();
 
                                 Tablero.laberinto[29, 1] = Respwn[c];
                                 Tablero.laberinto[px, py] = 1;
@@ -151,6 +156,8 @@
 
                             if (Tablero.laberinto[29, 15] == 1)
                             {
+                                Imprime.Print(player, 31, 31);
+                                Console.ReadKey();
 
                                 Tablero.laberinto[29, 15] = Respwn[c];
                                 Tablero.laberinto[px, py] = 1;
@@ -176,6 +183,8 @@
 
                             if (Tablero.laberinto[29, 29] == 1)
                             {
+                                Imprime.Print(player, 31, 31);
+                                Console.ReadKey();
 
                                 Tablero.laberinto[29, 29] = Respwn[c];
                                 Tablero.laberinto[px, py] = 1;
@@ -203,14 +212,13 @@
             if (t == 32)
             { //bomba
 
-                Imprime.Print(player, 32, 32);
-                Console.ReadKey();
-
                 if (p == 'a')
                 {
 
                     if (py + 2 < 30 && Tablero.laberinto[px, py + 2] == 1)
                     {
+                        Imprime.Print(player, 32, 32);
+                        Console.ReadKey();
 
                         Tablero.laberinto[px, py] = 1;
                         Tablero.laberinto[tx, ty] = 1;
@@ -220,6 +228,8 @@
                     {
                         if (Tablero.laberinto[px, py + 1] == 1)
                         {
+                            Imprime.Print(player, 32, 32);
+                            Console.ReadKey();
 
                             Tablero.laberinto[px, py] = 1;
                             Tablero.laberinto[tx, ty] = 1;
@@ -240,6 +250,8 @@
 
                     if (py - 2 > 0 && Tablero.laberinto[px, py - 2] == 1)
                     {
+                        Imprime.Print(player, 32, 32);
+                        Console.ReadKey();
 
                         Tablero.laberinto[px, py] = 1;
                         Tablero.laberinto[tx, ty] = 1;
@@ -249,6 +261,9 @@
                     {
                         if (Tablero.laberinto[px, py - 1] == 1)
                         {
+                            Imprime.Print(player, 32, 32);
+                            Console.ReadKey();
+
                             Tablero.laberinto[px, py] = 1;
                             Tablero.laberinto[tx, ty] = 1;
                             Tablero.laberinto[px, py - 1] = player;
@@ -268,6 +283,8 @@
 
                     if (px + 2 < 30 && Tablero.laberinto[px + 2, py] == 1)
                     {
+                        Imprime.Print(player, 32, 32);
+                        Console.ReadKey();
 
                         Tablero.laberinto[px, py] = 1;
                         Tablero.laberinto[tx, ty] = 1;
@@ -277,6 +294,9 @@
                     {
                         if (Tablero.laberinto[px + 1, py] == 1)
                         {
+                            Imprime.Print(player, 32, 32);
+                            Console.ReadKey();
+
                             Tablero.laberinto[px, py] = 1;
                             Tablero.laberinto[tx, ty] = 1;
                             Tablero.laberinto[px + 1, py] = player;
@@ -296,6 +316,9 @@
                     if (px - 2 > 0 && Tablero.laberinto[px - 2, py] == 1)
                     {
 
+                        Imprime.Print(player, 32, 32);
+                        Console.ReadKey();
+
                         Tablero.laberinto[px, py] = 1;
                         Tablero.laberinto[tx, ty] = 1;
                         Tablero.laberinto[px - 2, py] = player;
@@ -304,6 +327,9 @@
                     {
                         if (Tablero.laberinto[px - 1, py] == 1)
                         {
+                            Imprime.Print(player, 32, 32);
+                            Console.ReadKey();
+
                             Tablero.laberinto[px, py] = 1;
                             Tablero.laberinto[tx, ty] = 1;
                             Tablero.laberinto[px - 1, py] = player;

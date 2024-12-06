@@ -1726,7 +1726,12 @@ class Imprime
                         AnsiConsole.Markup("[lightsalmon3]██[/]");
                     }
 
-                    if (Tablero.laberinto[i, j] == 1112 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (Tablero.laberinto[i, j] == 12 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    {
+                        AnsiConsole.Markup("[lightsalmon3]██[/]");
+                    }
+
+                    if (Tablero.laberinto[i, j] == 11 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
                     {
                         AnsiConsole.Markup("[lightsalmon3]██[/]");
                     }
