@@ -4,21 +4,20 @@
 
 ## Descripción del Proyecto
 
-Mario’s Maze es un emocionante juego de laberintos 1vs1 inspirado en el universo de Super Mario. Cada jugador selecciona uno de los dos equipos disponibles y compite para ser el primero en llegar al centro del tablero con sus fichas. El juego combina estrategia y habilidad, ofreciendo una experiencia única y divertida para los fans de Mario y los juegos de laberintos.
+Mario’s Maze es un emocionante juego de laberintos 1vs1 inspirado en el universo de Super Mario. Cada jugador selecciona uno de los dos equipos disponibles y compite para ser el primero en llegar al centro. El juego combina estrategia y habilidad, ofreciendo una experiencia única y divertida para los fans de Mario y los juegos de laberintos.
 
-En "Mario's Maze", te embarcarás en una carrera trepidante a través de un laberinto lleno de trampas, buffs, cofres y desafíos únicos. El objetivo es ser el primer jugador en alcanzar la meta en el centro del tablero con todas tus fichas, utilizando tus habilidades especiales y estrategias para superar obstáculos y enemigos.
+En Mario's Maze, te embarcarás en una carrera trepidante a través de un laberinto lleno de trampas, buffs, cofres y desafíos únicos. El objetivo es ser el primer jugador en alcanzar la meta en el centro del tablero con todas tus fichas, utilizando tus habilidades especiales y estrategias para superar obstáculos y enemigos. Al inicio de la partida, cada ficha solo podrá ver un cuadrado del laberinto del tamaño `n x n`, donde `n` es igual a la visión de la ficha. Todo lo demás estará cubierto por una niebla que se despeja a medida que las fichas avanzan y exploran el tablero.
 
-- [MECANICAS](#Información-del-Juego)
-- [GUIA](#equipos-y-fichas)
-- [CONTACTAME](#contribución)
+## Menú de Navegación
 
-#### Información del Juego
+- [MECÁNICAS](#información-del-juego)
+- [LEYENDA](#leyenda-controles)
+- [CONTÁCTAME](#contribución)
+
+### Información del Juego
 El juego se desarrolla en tres escenas:
 
 1. **Lobby**:
-    - Jugar
-    - Ver guía
-    - Salir del juego
 
 2. **Picks**:
     - Selección de equipos:
@@ -31,17 +30,19 @@ El juego se desarrolla en tres escenas:
     - Información de interacciones con el tablero
     - Visualización del tablero con el laberinto
 
-## Leyenda de Controles
+## Leyenda Controles
 
-- **Arriba**: W
-- **Abajo**: S
-- **Izquierda**: A
-- **Derecha**: D
-- **Menú**: Q
-- **Saltar Turno**: R
-- **Abrir Tienda**: T
-- **Usar Habilidad**: F
-- **Seleccionar/Interactuar**: E
+| **Acción**             | **Tecla** |
+|------------------------|-----------|
+| Arriba                 |     W     |
+| Abajo                  |     S     |
+| Izquierda              |     A     |
+| Derecha                |     D     |
+| Menú                   |     Q     |
+| Saltar Turno           |     R     |
+| Abrir Tienda           |     T     |
+| Usar Habilidad         |     F     |
+| Seleccionar/Interactuar|     E     |
 
 ## Equipos y Fichas
 
@@ -83,28 +84,30 @@ El juego se desarrolla en tres escenas:
 
 ## Elementos del Tablero
 
-- **Trampas**:
-  - **Hueco**: Al pisarlo, la ficha regresa al inicio del juego, como si cayera en un agujero sin fondo.
-  - **Bomba**: Al activarla, la ficha retrocede dos casillas, como si hubiera sido empujada por una explosión.
-  - **Reja**: Al activarla, encierra a la ficha volviéndola inmóvil, atrapándola como en una trampa de metal.
+El tablero de juego está lleno de diversos elementos que afectarán tu progreso o te ayudaran a llegar mas rapido a la meta:
 
-- **Buffs**:
-  - **Estrella**: Vuelve inmune a la ficha, otorgándole el poder estelar de Mario.
-  - **Hongo**: Buffea +10 pasos a la ficha, dándole un impulso de energía.
-  - **Flor**: Buffea +2 visión a la ficha, iluminando su camino con el poder de la flor de fuego.
+### Trampas
+- **Hueco**: Al pisarlo, la ficha regresa al inicio del juego, como si cayera en un agujero sin fondo.
+- **Bomba**: Al activarla, la ficha retrocede dos casillas, como si hubiera sido empujada por una explosión.
+- **Reja**: Al activarla, encierra a la ficha volviéndola inmóvil, atrapándola como en una trampa de metal.
 
-- **Cofres**:
-  - **Común**: Precio 1 coin, suma 1 visión y 3 pasos.
-  - **Épico**: Precio 3 coins, suma 2 visión y 4 pasos.
-  - **Legendario**: Precio 5 coins, suma 3 visión y 5 pasos.
+### Buffs
+- **Estrella**: Vuelve inmune a la ficha, otorgándole el poder estelar de Mario.
+- **Hongo**: Buffea +10 pasos a la ficha, dándole un impulso de energía.
+- **Flor**: Buffea +2 visión a la ficha, iluminando su camino con el poder de la flor de fuego.
 
-- **Llaves y Puertas**:
-  - **Llaves**: Necesarias para abrir las puertas y acceder a la meta. Ubicadas aleatoriamente en el tablero a la izquiera o a la derecha.
-  - **Puertas**: Cada equipo tiene una puerta que solo puede ser abierta por la llave correspondiente.
+### Cofres
+- **Común**: Precio 1 coin, suma 1 visión y 3 pasos.
+- **Épico**: Precio 3 coins, suma 2 visión y 4 pasos.
+- **Legendario**: Precio 5 coins, suma 3 visión y 5 pasos.
+
+### Llaves y Puertas
+- **Llaves**: Necesarias para abrir las puertas y acceder a la meta. Ubicadas aleatoriamente en el tablero a la izquierda o a la derecha.
+- **Puertas**: Cada equipo tiene una puerta que solo puede ser abierta por la llave correspondiente.
 
 ## Tienda
 
-La tienda dispone de ítems (Apoyo) y poderes (Ofensivos). Su uso es limitado a una vez por ronda, pero la cantidad de compras es ilimitada. Si un jugador usa la tienda, no podra volver a usarla en esa ronda ni hasta que el otro jugador use tambien y viceversa.
+La tienda dispone de ítems (Apoyo) y poderes (Ofensivos). Su uso está limitado a una vez por ronda, pero la cantidad de compras es ilimitada. Si un jugador usa la tienda, no podrá volver a usarla en esa ronda ni hasta que el otro jugador la use también.
 
 ### Ítems (Apoyo) - Precio: 2 coins
 - **Escudo**: Vuelve inmune a la ficha seleccionada, protegiéndola de cualquier trampa o peligro.
@@ -112,7 +115,7 @@ La tienda dispone de ítems (Apoyo) y poderes (Ofensivos). Su uso es limitado a 
 
 ### Poderes (Ofensivos) - Precio: 3 coins
 - **Bala**: Empuja a la ficha enemiga seleccionada hasta 5 pasos en dirección contraria, como si fuera golpeada por una bala.
-- **Máscara**: Vuelve 0 la visión del player enemigo seleccionado en su próximo turno, cegándolo temporalmente.
+- **Máscara**: Vuelve 0 la visión del jugador enemigo seleccionado en su próximo turno, cegándolo temporalmente.
 
 ## Contribución
 
