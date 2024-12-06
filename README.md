@@ -1,5 +1,5 @@
 
-# ![Mario's Maze](https://i.pinimg.com/736x/35/d9/60/35d9605ff6d363ca45950c1c8f6782b6.jpg)
+# ![Mario's Maze](https://eltallerdehector.com/2022/07/26/mario-bros-png-logo/)
 
 # Descripción del Proyecto
 
