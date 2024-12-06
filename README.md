@@ -1,5 +1,5 @@
 
-# ![Mario's Maze](https://eltallerdehector.com/2022/07/26/mario-bros-png-logo/)
+# ![Mario's Maze](https://github.com/SmileOFC/Proyecto-Programacion-Maze-Runner-/blob/main/LogoReadme.png)
 
 # Descripción del Proyecto
 
