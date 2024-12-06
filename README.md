@@ -1,8 +1,7 @@
-# Mario's Maze
 
-![Mario's Maze Logo](https://link_to_your_logo_image)
+# ![Mario's Maze](https://github.com/SmileOFC/Proyecto-Programacion-Maze-Runner-/tree/main/Mario's%20Maze/Proyect)
 
-## Descripción del Proyecto
+# Descripción del Proyecto
 
 Mario’s Maze es un emocionante juego de laberintos 1vs1 inspirado en el universo de Super Mario. Cada jugador selecciona uno de los dos equipos disponibles y compite para ser el primero en llegar al centro. El juego combina estrategia y habilidad, ofreciendo una experiencia única y divertida para los fans de Mario y los juegos de laberintos.
 
