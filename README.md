@@ -1,5 +1,5 @@
 
-# ![Mario's Maze](https://github.com/SmileOFC/Proyecto-Programacion-Maze-Runner-/blob/main/LogoReadme.png)
+# Mario's Maze
 
 # Descripción del Proyecto
 
