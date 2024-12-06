@@ -1,203 +1,135 @@
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# Mario's Maze
+
+![Mario's Maze Logo](https://link_to_your_logo_image)
 
-Descripcion:
+## Descripción del Proyecto
+
+Mario’s Maze es un emocionante juego de laberintos 1vs1 inspirado en el universo de Super Mario. Cada jugador selecciona uno de los dos equipos disponibles y compite para ser el primero en llegar al centro del tablero con sus fichas. El juego combina estrategia y habilidad, ofreciendo una experiencia única y divertida para los fans de Mario y los juegos de laberintos.
+
+En "Mario's Maze", te embarcarás en una carrera trepidante a través de un laberinto lleno de trampas, buffs, cofres y desafíos únicos. El objetivo es ser el primer jugador en alcanzar la meta en el centro del tablero con todas tus fichas, utilizando tus habilidades especiales y estrategias para superar obstáculos y enemigos.
+
+## Menú de Navegación
+
+- [Jugar](#mecánica-del-juego)
+- [Ver Guía](#equipos-y-fichas)
+- [Salir del Juego](#contribución)
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+## Mecánica del Juego
 
-Este proyecto es un juego 1 vs 1 de laberintos a nivel de consola, cada jugador pertenecera a un equipo, cada equipo tiene 5 fichas a elegir de las cuales puedes 
-elegir 3, hay un solo modo de juego, 1 vs 1 y 6 fichas en total en el tablero 3 fichas por equipo en el tablero. Las fichas tienen rols como apoyarse a si misma 
-apoyar un aliado o retrasar a una ficha  del contrario. En el camino te encontraras a obstaculos como son trampas y NPCs, que te dificultaran llegar a la meta. 
-Tambien tendras Buffs y cofres por el camino. Para  interactuar con los NPCs se tiene q pagar con monedas que recogeras x el camnino. Los cofres traeran 5 items 
-de los cuales solo podras llevar 2 a tu inventario. Tambien podras comprarle items mejores a los vendedores. Cada Jugador tendra un inventario con una capacidad 
-de 3 espacios, por tanto los items pasivos q este  jugador lleve en el inventario afectaran a todas sus fichas y los activos los podra usar estrategicamente en 
-dependencia de la situacion en la que se vea alguna de sus fichas. Hay dos tipos de items, pasivos(Cofres) y activos(Vendedores). El primer equipo que logre llevar
-una de sus fichas al centro gana.
+### Jugar
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#### Información del Juego
+El juego se desarrolla en tres fases principales:
 
-# MazeRunner
+1. **Lobby**:
+    - Jugar
+    - Ver guía
+    - Salir del juego
 
-![🎮 MazeRunner](https://img.shields.io/badge/MazeRunner-Black?style=for-the-badge&logo=joystick&logoColor=white&labelColor=black)
+2. **Picks**:
+    - Selección de equipos:
+        - **Reino Champiñón**
+        - **Reino Koopa**
+    - Selección de fichas (3 de 5 disponibles para cada equipo)
+    
+3. **Juego**:
+    - Información de la ficha en juego
+    - Información de interacciones con el tablero
+    - Visualización del tablero con el laberinto
 
-## Bienvenido a MazeRunner
+Al inicio, cada ficha podrá ver un cuadrado del laberinto del tamaño `n x n` (donde `n` es la visión). Todo lo demás será niebla. A medida que avances, podrás encontrarte con Trampas, Buffs, Cofres, Coins y las llaves que abren las puertas a la meta.
 
-Este es un proyecto increíble para los amantes de los videojuegos y los desafíos de laberintos. ¡Explora, resuelve y disfruta!
+## Leyenda de Controles
 
-### Características
-- 🕹️ Diversión garantizada
-- 🎮 Interfaz amigable
-- 🚀 Rápido y eficiente
+- **Arriba**: W
+- **Abajo**: S
+- **Izquierda**: A
+- **Derecha**: D
+- **Menú**: Q
+- **Saltar Turno**: R
+- **Abrir Tienda**: T
+- **Usar Habilidad**: F
+- **Seleccionar/Interactuar**: E
 
+## Equipos y Fichas
 
-///LEYENDA///
+### Reino Champiñón
 
-Equipos: 2
+| Ficha       | Pasos | Visión |
+|-------------|-------|--------|
+| Mario       | 12    | 1      |
+| Luigi       | 10    | 1      |
+| Hongo       | 5     | 2      |
+| Yoshi       | 6     | 1      |
+| Peach       | 7     | 2      |
 
->Malos(M) => Players: 5
+### Reino Koopa
 
->>=> Roles: Apoyo(2) Ofensivos(3)
+| Ficha       | Pasos | Visión |
+|-------------|-------|--------|
+| Bowser      | 8     | 1      |
+| Donkey Kong | 4     | 2      |
+| Koopa       | 3     | 3      |
+| Waluigi     | 9     | 1      |
+| Wario       | 11    | 1      |
 
->Buenos(B) => players: 5
+## Habilidades Especiales
 
->>=> Roles: Apoyo(3) Ofensivos(2)
+### Reino Champiñón
+- **Mario**: Salta un muro que tenga en frente, con la agilidad que lo caracteriza en sus aventuras clásicas.
+- **Luigi**: Revela trampas en su campo de visión, utilizando su valentía espectral para detectar peligros ocultos.
+- **Hongo**: Buffea +1 la visión de todas las fichas aliadas, esparciendo su sabiduría micótica a sus compañeros.
+- **Yoshi**: Genera un cuadrado 2x2 de visión en el tablero, gracias a su olfato y agilidad inigualables.
+- **Peach**: Inmoviliza todas las fichas enemigas, permitiéndote repetir la ronda con la gracia real que la caracteriza.
 
-///Total de Fichas: 10///
+### Reino Koopa
+- **Bowser**: Se vuelve inmune por ese turno, desatando su furia imparable para protegerse de cualquier ataque.
+- **Donkey Kong**: Rompe una muralla en la dirección seleccionada, demostrando su fuerza bruta.
+- **Koopa**: Resta 1 visión y suma +5 pasos, sacrificando su vista para ganar velocidad en el tablero.
+- **Waluigi**: Genera una trampa "Hueco" en una casilla del tablero, siempre travieso y astuto en sus movimientos.
+- **Wario**: Resta 3 pasos y suma 1 visión, ajustando su torpe equilibrio para ver más claramente y planificar sus movimientos.
 
-///Roles: 3///
+## Elementos del Tablero
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- **Trampas**:
+  - **Hueco**: Al pisarlo, la ficha regresa al inicio del juego, como si cayera en un agujero sin fondo.
+  - **Bomba**: Al activarla, la ficha retrocede dos casillas, como si hubiera sido empujada por una explosión.
+  - **Reja**: Al activarla, encierra a la ficha volviéndola inmóvil, atrapándola como en una trampa de metal.
 
-Apoyo(4)
+- **Buffs**:
+  - **Estrella**: Vuelve inmune a la ficha, otorgándole el poder estelar de Mario.
+  - **Hongo**: Buffea +10 pasos a la ficha, dándole un impulso de energía.
+  - **Flor**: Buffea +2 visión a la ficha, iluminando su camino con el poder de la flor de fuego.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- **Cofres**:
+  - **Común**: Precio 1 coin, suma 1 visión y 3 pasos.
+  - **Épico**: Precio 3 coins, suma 2 visión y 4 pasos.
+  - **Legendario**: Precio 5 coins, suma 3 visión y 5 pasos.
 
-(M)Tortuga
->=> Vision: 5
->=> Pasos: 3
+- **Llaves y Puertas**:
+  - **Llaves**: Necesarias para abrir las puertas y acceder a la meta. Ubicadas aleatoriamente en el tablero.
+  - **Puertas**: Cada equipo tiene una puerta que solo puede ser abierta por la llave correspondiente.
 
-(B)Yoshi
->=> Vision: 1
->=> Pasos: 10
+## Tienda
 
-(B)Luigi
->=> Vision: 1
->=> Pasos: 6
+La tienda dispone de ítems (Apoyo) y poderes (Ofensivos). Su uso es limitado a una vez por ronda, pero la cantidad de compras es ilimitada. Si un jugador usa la tienda, el otro no puede usarla hasta que sea su turno de abrirla.
 
-(B)Hongo
->=> Vision: 1
->=> Pasos: 4
+### Ítems (Apoyo) - Precio: 2 coins
+- **Escudo**: Vuelve inmune a la ficha seleccionada, protegiéndola de cualquier trampa o peligro.
+- **Escalera**: Genera una escalera en la dirección seleccionada, considerada un pasillo libre para el próximo turno, permitiendo a la ficha saltar obstáculos.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+### Poderes (Ofensivos) - Precio: 3 coins
+- **Bala**: Empuja a la ficha enemiga seleccionada hasta 5 pasos en dirección contraria, como si fuera golpeada por una bala.
+- **Máscara**: Vuelve 0 la visión del player enemigo seleccionado en su próximo turno, cegándolo temporalmente.
 
-Ofensivos(4)
+## Contribución
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request para discutir cualquier cambio que desees realizar.
 
-(M)Koopa
->=> Vision: 3
->=> Pasos: 7
+## Licencia
 
-(M)Wario
->=> Vision: 2
->=> Pasos: 8
+Mario's Maze está licenciado bajo la [Licencia Nombre](link_to_license).
 
-(M)Waluigi
->=> Vision: 1
->=> Pasos: 12
+---
 
-(B)Peach
->=> Vision: 1
->=> Pasos: 11
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Mixtos(2)
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-(M)Bowser
->=> Vision: 1
->=> Pasos: 9
-
-(B)Mario
->=> Vision: 1
->=> Pasos: 5
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Habilidades:
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
->Yoshi(Apoyo) => +5 Vision / Efecto inmediato / Individual / Refresca(3)
-
->Luigi(Apoyo) => +3 Revelar Trampas / Efecto Inmediato / Global / Refresca(5)
-
->Hongo(Apoyo) => +2 Pasos(Aliados) -2 Pasos(Contrario)/ Efecto Temporal(2) / Selectiva / Refresca(8)
-
->Tortuga(Apoyo) =>  Destruye un muro / Efecto Temporal(2) / Selectiva / Refresca(8)
-
->Wario(Ofensiva) => Se vuelve inmune a trampas / Efecto inmediato / Individual / Refresca(5)
-
->Koopa(Ofensiva) => -1 vision(Individual) +2 Pasos(Individual) / Efecto Inmediato / Selectiva / Refresca(8)
-
->Waluigi(Ofensiva) => Elimina todos los items del inventario del contrario / Efecto Inmediato / Activa / Refesca(8)
-
->Peach(Ofensiva) => Anula todos los efectos negativos de un aliado / Efecto Inmediato / Selectiva / Refresca(5)
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Habilidades Mixtas:
-
->Bowser(Apoyo) => -1 Pasos(Individual) +1 Vision(Aliado) / Efecto inmediato / Selectiva / Refresca(5)
-
->Bowser(Ofensiva) => -1 vision(Contrario) -2 Pasos(Contrario) / Efeccto Temporal(3) / Slectiva / Refresca(8)
-
-
->Mario(Apoyo) => Salta un muro / Efecto  inmediato / Individual / Refresca(5)
-
->Mario(Ofensiva) => Empuja max(5) paso en cualquier direccion a un Contrario / Efecto Inmediato / Selectiva / Refresca(8)
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Trampas: 3 (Ocultas)
-
->Hueco => Al caer en un hueco con una ficha esta vuelve a su posicion inicial
-
->Bomba => Retrasa 2 casillas en direccion contraria
-
->Placa => Se levantara un muro justo delante imposibilitantote el paso hasta el siguiente turno
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Buff: 2 (Visibles)
-
->Hongo => La ficha aumentara su cantidad de pasos en 2
-
->Estrella => La ficha sera inmune a trampas en 3 turnos
-
->Gafas => Vision +1
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Npc: 2 (Visibles)
-
->Obstaculiza(Ghost): Por $1 podras quitarlo del medio y seguir avanzando
-
->Vendedor(Hongo): Este señor te vende los mejores items(activos) del juego por un precio modico de 3$, este solo llevara 1 item.
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Items Activos: 4 (Uso unico)
-
->>=> Escudo: Anula el efecto de cualquier trampa que hallas pisado
-
->>=> TP: Genera un tubo que te transportara en cualquier lugar del Laberinto
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Items Pasivos: 8 (Temporales)
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
->>=>  Gorra de SM: +1 Cant.Pasos / Refresca()
-
->>=>  Corona de Peach: +2 Cant.Pasos / Refresca() 
-
->>=>  Mario's Car: +3 Cant.Pasos / Refresca()
-
->>=>  Arcoiris: +1 Vision / Refresca()
-
->>=>  Ventilador: +2 Vision / Refresca()
-
->>=>  Tornado: +3 Vision / Refresca()
-
->>=>  Pala: +1 Revelar Trampas / Refresca()
-
->>=>  Detector de metales: +2 Revelar Trampas / Refresca()
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Cofres Total: 10
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+¡Gracias por jugar Mario's Maze!
