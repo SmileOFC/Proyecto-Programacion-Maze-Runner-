@@ -8,18 +8,12 @@ Mario’s Maze es un emocionante juego de laberintos 1vs1 inspirado en el univer
 
 En "Mario's Maze", te embarcarás en una carrera trepidante a través de un laberinto lleno de trampas, buffs, cofres y desafíos únicos. El objetivo es ser el primer jugador en alcanzar la meta en el centro del tablero con todas tus fichas, utilizando tus habilidades especiales y estrategias para superar obstáculos y enemigos.
 
-## Menú de Navegación
-
-- [Jugar](#mecánica-del-juego)
-- [Ver Guía](#equipos-y-fichas)
-- [Salir del Juego](#contribución)
-
-## Mecánica del Juego
-
-### Jugar
+- [MECANICAS](#Información-del-Juego)
+- [GUIA](#equipos-y-fichas)
+- [CONTACTAME](#contribución)
 
 #### Información del Juego
-El juego se desarrolla en tres fases principales:
+El juego se desarrolla en tres escenas:
 
 1. **Lobby**:
     - Jugar
@@ -36,8 +30,6 @@ El juego se desarrolla en tres fases principales:
     - Información de la ficha en juego
     - Información de interacciones con el tablero
     - Visualización del tablero con el laberinto
-
-Al inicio, cada ficha podrá ver un cuadrado del laberinto del tamaño `n x n` (donde `n` es la visión). Todo lo demás será niebla. A medida que avances, podrás encontrarte con Trampas, Buffs, Cofres, Coins y las llaves que abren las puertas a la meta.
 
 ## Leyenda de Controles
 
@@ -107,12 +99,12 @@ Al inicio, cada ficha podrá ver un cuadrado del laberinto del tamaño `n x n` (
   - **Legendario**: Precio 5 coins, suma 3 visión y 5 pasos.
 
 - **Llaves y Puertas**:
-  - **Llaves**: Necesarias para abrir las puertas y acceder a la meta. Ubicadas aleatoriamente en el tablero.
+  - **Llaves**: Necesarias para abrir las puertas y acceder a la meta. Ubicadas aleatoriamente en el tablero a la izquiera o a la derecha.
   - **Puertas**: Cada equipo tiene una puerta que solo puede ser abierta por la llave correspondiente.
 
 ## Tienda
 
-La tienda dispone de ítems (Apoyo) y poderes (Ofensivos). Su uso es limitado a una vez por ronda, pero la cantidad de compras es ilimitada. Si un jugador usa la tienda, el otro no puede usarla hasta que sea su turno de abrirla.
+La tienda dispone de ítems (Apoyo) y poderes (Ofensivos). Su uso es limitado a una vez por ronda, pero la cantidad de compras es ilimitada. Si un jugador usa la tienda, no podra volver a usarla en esa ronda ni hasta que el otro jugador use tambien y viceversa.
 
 ### Ítems (Apoyo) - Precio: 2 coins
 - **Escudo**: Vuelve inmune a la ficha seleccionada, protegiéndola de cualquier trampa o peligro.
@@ -125,10 +117,6 @@ La tienda dispone de ítems (Apoyo) y poderes (Ofensivos). Su uso es limitado a 
 ## Contribución
 
 Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request para discutir cualquier cambio que desees realizar.
-
-## Licencia
-
-Mario's Maze está licenciado bajo la [Licencia Nombre](link_to_license).
 
 ---
 
