@@ -1,5 +1,5 @@
 
-# ![Mario's Maze](https://github.com/SmileOFC/Proyecto-Programacion-Maze-Runner-/tree/main/Mario's%20Maze/Proyect/Icono.ico)
+# ![Mario's Maze](https://i.pinimg.com/736x/35/d9/60/35d9605ff6d363ca45950c1c8f6782b6.jpg)
 
 # Descripción del Proyecto
 
