@@ -5,7 +5,7 @@
 
 Mario’s Maze es un emocionante juego de laberintos 1vs1 inspirado en el universo de Super Mario. Cada jugador selecciona uno de los dos equipos disponibles y compite para ser el primero en llegar al centro. El juego combina estrategia y habilidad, ofreciendo una experiencia única y divertida para los fans de Mario y los juegos de laberintos.
 
-En Mario's Maze, te embarcarás en una carrera trepidante a través de un laberinto lleno de trampas, buffs, cofres y desafíos únicos. El objetivo es ser el primer jugador en alcanzar la meta en el centro del tablero con todas tus fichas, utilizando tus habilidades especiales y estrategias para superar obstáculos y enemigos. Al inicio de la partida, cada ficha solo podrá ver un cuadrado del laberinto del tamaño `n x n`, donde `n` es igual a la visión de la ficha. Todo lo demás estará cubierto por una niebla que se despeja a medida que las fichas avanzan y exploran el tablero.
+En Mario's Maze, te embarcarás en una carrera trepidante a través de un laberinto utilizando tus habilidades especiales y estrategias para superar obstáculos, enemigo, caminos lleno de trampas, buffs, cofres y desafíos únicos. El objetivo es ser el primer jugador en alcanzar la meta en el centro del tablero con todas tus fichas, teniendo en cuenta que para alcanzar la meta tendras que abrir las puertas que la rodean con sus respectivas llaves que van a estar a la izquiera o a la derecha del todo de forma aleatoria. Al inicio de la partida, cada ficha solo podrá ver un cuadrado del laberinto del tamaño `n x n`, donde `n` es igual a la visión de la ficha. Todo lo demás estará cubierto por una niebla que se despeja a medida que las fichas avanzan y exploran el tablero.
 
 ## Menú de Navegación
 
