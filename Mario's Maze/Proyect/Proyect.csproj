@@ -33,4 +33,8 @@
     <PackageReference Include="Spectre.Console.ImageSharp" Version="0.49.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include=".vscode\" />
+  </ItemGroup>
+
 </Project>

@@ -3,6 +3,7 @@ using Spectre.Console;
 
 public class Rondas
 {
+    #region VARIABLES
     public static List<int> FichasList = new List<int>(Picks.Fichas.ToArray());
     public static List<int> EquipoMalosList = new List<int>(Picks.EquipoMalos.ToArray());
     public static List<int> EquipoBuenosList = new List<int>(Picks.EquipoBuenos.ToArray());
@@ -16,6 +17,11 @@ public class Rondas
     static int ejex = 1;
     static int ejey = 1;
     static int Player;
+
+    #endregion
+
+
+
     public static int Ronda()
     {
         // Generar matrix / copia
@@ -36,6 +42,8 @@ public class Rondas
         else
             EntradaTiendaMalos = true;
 
+        #region INICO RONDA
+
         // Rondas
         for (int Turno = 0; ; Turno++)
         {
@@ -49,7 +57,9 @@ public class Rondas
             // Revisar q el player no haya llegado a la meta o este inmovil
             if (Player != 0)
             {
-                // Turnos
+                #region INICIO TURNO
+
+                // Turnos / Pasos
                 while (Jugando > 0)
                 {
                     // revisar q no este inmovil
@@ -79,7 +89,7 @@ public class Rondas
 
                     //////////////////////////////////////////////////////////
 
-
+                    #region ENTRADA
 
                     var keyInfo = Console.ReadKey();
 
@@ -109,18 +119,19 @@ public class Rondas
                     // [Esc] Menu Pendiente //////////////////
                     if (keyInfo.KeyChar == 'q')
                     {
-
                         int Select = Selects.Menu(Player);
-
 
                         if (Select == 2) { }
                         if (Select == 3)
                         {
-
                             int Y_N = Selects.Seguro(Player);
 
                             if (Y_N == 1)
+                            {
+                                Picks.Fichas.Clear();
+                                Picks.cant = 1;
                                 return 0;
+                            }
                         }
                     }
 
@@ -136,37 +147,57 @@ public class Rondas
                     {
                         if (Program.Player[Player].PasosCont >= Program.Player[Player].Habilidad)
                             Habilidades.Habilidad(Player, ejex, ejey);
+                        Program.Player[Player].PasosCont = 0;
                         // todavia no haz cargado la habilidad
-
                     }
 
                     // [A][W][S][D] Moverse
-                    if (keyInfo.KeyChar == 'w' || keyInfo.KeyChar == 's' || keyInfo.KeyChar == 'd' || keyInfo.KeyChar == 'a')
+                    if (
+                        keyInfo.KeyChar == 'w'
+                        || keyInfo.KeyChar == 's'
+                        || keyInfo.KeyChar == 'd'
+                        || keyInfo.KeyChar == 'a'
+                    )
                     {
                         Jugando = Jugar.Mover(Player, keyInfo.KeyChar);
                     }
 
+                    #endregion
+
                     //////////////////////////// REVISAR WIN ///////////////////////////////////////////
 
-                    // Ficha Buenos Meta 
-                    if (Jugando == 515)
+                    // Ficha Buenos Meta
+                    if (Jugando == 555)
                     {
-                        EquipoBuenoWin += 1;
-                        break;
-                    }
+                        for (int i = 0; i < Rondas.FichasList.Count; i++)
+                            if (Rondas.FichasList[i] == Player)
+                            {
+                                Turno = i - 1;
+                                Rondas.FichasList.RemoveAt(i);
+                            }
 
-                    // Ficha Malos Meta
-                    if (Jugando == 525)
-                    {
-                        EquipoMaloWin += 1;
+                        if (Program.Player[Player].Equipo) // Buenos
+                        {
+                            for (int i = 0; i < Rondas.EquipoBuenosList.Count; i++)
+                                if (Rondas.EquipoBuenosList[i] == Player)
+                                    Rondas.EquipoBuenosList.RemoveAt(i);
+
+                            EquipoBuenoWin += 1; // BuenoMeta
+                        }
+                        else // Malos
+                        {
+                            for (int i = 0; i < Rondas.EquipoMalosList.Count; i++)
+                                if (Rondas.EquipoMalosList[i] == Player)
+                                    Rondas.EquipoMalosList.RemoveAt(i);
+
+                            EquipoMaloWin += 1; // MaloMeta
+                        }
                         break;
                     }
 
                     /////////////////////////////////////////////////////////////////////////////////////
 
                     // Quitar puertas
-
-
 
                     if (Program.EquipoBuenoLlave)
                     {
@@ -198,47 +229,35 @@ public class Rondas
 
                     if (buenosarriba && Program.EquipoBuenoLlave)
                     {
-
                         if (Tablero.laberinto[13, 15] == 1)
                         {
-
                             Tablero.laberinto[13, 15] = 11;
-
                         }
-
                     }
                     else
                     {
                         if (Program.EquipoBuenoLlave && Tablero.laberinto[17, 15] == 1)
                         {
-
                             Tablero.laberinto[17, 15] = 11;
-
                         }
                     }
 
                     if (malosarriba && Program.EquipoMaloLlave)
                     {
-
                         if (Tablero.laberinto[13, 15] == 1)
                         {
-
                             Tablero.laberinto[13, 15] = 12;
-
                         }
-
                     }
                     else
                     {
                         if (Program.EquipoMaloLlave && Tablero.laberinto[17, 15] == 1)
                         {
-
                             Tablero.laberinto[17, 15] = 12;
-
                         }
                     }
 
-
+                    #region RESETEAR
 
                     // Update Coldown Habilidad de Koopa/Wario
 
@@ -279,7 +298,7 @@ public class Rondas
                 }
 
                 //Buff vision
-                if (Program.Player[Player].BufVision > 0)
+                if (Program.Player[Player].BufVision != 0)
                 {
                     Program.Player[Player].Vision = Program.Player[Player].VisionStatic;
                     Program.Player[Player].BufVision = 0;
@@ -294,10 +313,16 @@ public class Rondas
                 }
             }
 
+                    #endregion
+
+                #endregion
+
             // WIN background sonido.stop();
             if (EquipoBuenoWin == 3 || EquipoMaloWin == 3)
                 break;
         }
+
+        #endregion
 
         return 1;
     }

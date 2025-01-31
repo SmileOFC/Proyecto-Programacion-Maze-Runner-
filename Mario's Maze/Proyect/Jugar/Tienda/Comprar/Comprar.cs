@@ -6,14 +6,11 @@ public class Tienda
 
     public static void Comprar(int Player)
     {
-
         while (true)
         {
-
             int Select = Selects.Tienda(Player);
 
-
-            if (Select == 4)
+            if (Select == 3)
                 break;
 
             if (Select == 1) // Items
@@ -24,7 +21,6 @@ public class Tienda
                         ChekCoins = Program.EquipoBuenoCoins;
                     else
                         ChekCoins = Program.EquipoMaloCoins;
-
 
                     int SelectItem = Selects.Items(Player);
 
@@ -60,11 +56,9 @@ public class Tienda
 
                             break;
                         }
-
                     }
                     else // Monedas Insuficientes Panel
                     {
-
                         Imprime.Print(Player, 55555, 151515); // Player / Img / Panel
                         Console.ReadKey();
                     }
@@ -80,7 +74,6 @@ public class Tienda
                     else
                         ChekCoins = Program.EquipoMaloCoins;
 
-
                     int SelectPoder = Selects.Poderes(Player);
 
                     if (SelectPoder == 3)
@@ -90,7 +83,6 @@ public class Tienda
                     {
                         if (SelectPoder == 1) // Bala
                         {
-
                             Imprime.Print(Player, 5521, 5521); // Player / Img / Panel
                             Console.ReadKey();
                             Poderes.Bala(Player);
@@ -105,10 +97,9 @@ public class Tienda
 
                         if (SelectPoder == 2) // Mascara
                         {
-
-                            Imprime.Print(Player, 5521, 5521); // Player / Img / Panel
-                            var keyInfo = Console.ReadKey();
-                            //Poderes.Mascara(Player);
+                            Imprime.Print(Player, 5522, 5522); // Player / Img / Panel
+                            Console.ReadKey();
+                            Poderes.Mascara(Player);
 
                             if (Program.Player[Player].Equipo)
                                 Program.EquipoBuenoCoins -= 1;
@@ -116,15 +107,17 @@ public class Tienda
                                 Program.EquipoMaloCoins -= 1;
 
                             break;
-
                         }
                     }
                     else // Monedas Insuficientes Panel
-                    { }
+                    {
+                        Imprime.Print(Player, 55555, 151515); // Player / Img / Panel
+                        Console.ReadKey();
+                    }
                 }
             }
 
-            if (Select == 3) //  Pociones
+            /* if (Select == 3) //  Pociones
             {
                 while (true)
                 {
@@ -132,7 +125,6 @@ public class Tienda
                         ChekCoins = Program.EquipoBuenoCoins;
                     else
                         ChekCoins = Program.EquipoMaloCoins;
-
 
                     int SelectPocion = Selects.Pociones(Player);
 
@@ -150,13 +142,11 @@ public class Tienda
                         if (SelectPocion == 4) { }
 
                         if (SelectPocion == 5) { }
-
-
                     }
                     else // Monedas Insuficientes Panel
                     { }
                 }
-            }
+            } */
         }
     }
 }

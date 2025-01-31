@@ -1,9 +1,9 @@
-﻿using Spectre.Console;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Spectre.Console;
+
 class Imprime
 {
-
     public static int Panel = 1010;
     public static bool Do = true;
     public static Dictionary<int, bool> TrampaVisibleF = new Dictionary<int, bool>();
@@ -11,10 +11,9 @@ class Imprime
 
     public static void Print(int player, int img, int panel) // int player
     {
-
-        // Definir el color blanco en RGB 
+        // Definir el color blanco en RGB
         var whiteColor = new Color(255, 255, 255);
-        // Crear un estilo con texto negro y fondo blanco 
+        // Crear un estilo con texto negro y fondo blanco
         var style = new Style(foreground: Color.Black, background: whiteColor);
 
         int Ancho = Console.WindowWidth;
@@ -22,7 +21,6 @@ class Imprime
 
         if (panel != Panel || Do == true)
         {
-
             // Reset Cursor Grid
             Console.SetCursorPosition(0, Alto - 9);
 
@@ -32,7 +30,9 @@ class Imprime
 
             if (img == 20)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Mario.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Mario.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,8 +60,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -73,7 +72,9 @@ class Imprime
 
             if (img == 21)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Luigi.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Luigi.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,8 +102,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -114,7 +114,9 @@ class Imprime
 
             if (img == 22)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Hongo.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Hongo.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -142,8 +144,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -155,7 +156,9 @@ class Imprime
 
             if (img == 23)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Yoshi.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Yoshi.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -183,8 +186,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -196,7 +198,9 @@ class Imprime
 
             if (img == 24)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Peach.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Peach.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -224,8 +228,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -239,7 +242,9 @@ class Imprime
 
             if (img == 25)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Bowser.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Bowser.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -267,8 +272,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -280,7 +284,9 @@ class Imprime
 
             if (img == 26)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Donkey Kong.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Donkey Kong.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -308,8 +314,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -321,7 +326,9 @@ class Imprime
 
             if (img == 27)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Koopa.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Koopa.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -349,8 +356,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -362,7 +368,9 @@ class Imprime
 
             if (img == 28)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Waluigi.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Waluigi.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -390,8 +398,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -403,7 +410,9 @@ class Imprime
 
             if (img == 29)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Wario.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Players\Wario.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -431,8 +440,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -446,7 +454,9 @@ class Imprime
 
             if (img == 31)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Trampas\Hueco.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Trampas\Hueco.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -474,8 +484,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -487,7 +496,9 @@ class Imprime
 
             if (img == 32)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Trampas\Bomba.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Trampas\Bomba.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -515,8 +526,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -528,7 +538,9 @@ class Imprime
 
             if (img == 33)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Trampas\Jaula.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Trampas\Jaula.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -556,8 +568,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -571,7 +582,9 @@ class Imprime
 
             if (img == 41)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Buffs\BuffHongo.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Buffs\BuffHongo.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -599,8 +612,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -612,7 +624,9 @@ class Imprime
 
             if (img == 42)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Buffs\Estrella.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Buffs\Estrella.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -640,8 +654,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -653,7 +666,9 @@ class Imprime
 
             if (img == 43)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Buffs\Flor.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Buffs\Flor.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -681,8 +696,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -696,7 +710,9 @@ class Imprime
 
             if (img == 5)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\Meta.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\Meta.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -724,8 +740,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -735,12 +750,13 @@ class Imprime
                 /////////////////////////////////////////////////////////////////////////////////////////
             }
 
-
             //// TIENDA ////
 
             if (img == 555)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\Tienda.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\Tienda.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -768,8 +784,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -783,7 +798,9 @@ class Imprime
 
             if (img == 1)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\LlaveMalos.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\LlaveMalos.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -811,8 +828,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -824,7 +840,9 @@ class Imprime
 
             if (img == 1)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\LlaveBuenos.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\LlaveBuenos.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -852,8 +870,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -868,7 +885,9 @@ class Imprime
             // comun
             if (img == 6)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Comun\CofreComun.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Comun\CofreComun.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -896,8 +915,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -909,7 +927,9 @@ class Imprime
 
             if (img == 61)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Comun\AntorchaComun.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Comun\AntorchaComun.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -937,8 +957,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -950,7 +969,9 @@ class Imprime
 
             if (img == 62)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Comun\BotaComun.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Comun\BotaComun.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -978,8 +999,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -992,7 +1012,9 @@ class Imprime
             // epico
             if (img == 7)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Epico\CofreEpico.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Epico\CofreEpico.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1020,8 +1042,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1033,7 +1054,9 @@ class Imprime
 
             if (img == 71)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Epico\AntorchaEpica.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Epico\AntorchaEpica.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1061,8 +1084,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1074,7 +1096,9 @@ class Imprime
 
             if (img == 72)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Epico\BotaEpica.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Epico\BotaEpica.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1102,8 +1126,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1116,7 +1139,9 @@ class Imprime
             // legendario
             if (img == 8)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Legendario\CofreLegendario .png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Legendario\CofreLegendario .png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1144,8 +1169,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1157,7 +1181,9 @@ class Imprime
 
             if (img == 81)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Legendario\AntorchaLegendaria.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Legendario\AntorchaLegendaria.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1185,8 +1211,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1198,7 +1223,9 @@ class Imprime
 
             if (img == 82)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Legendario\BotaLegendaria.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Cofres\Legendario\BotaLegendaria.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1226,8 +1253,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1237,14 +1263,15 @@ class Imprime
                 /////////////////////////////////////////////////////////////////////////////////////////
             }
 
-
             ///// TIENDA ////
 
             // items
 
             if (img == 5511)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Items\Escudo.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Items\Escudo.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1272,8 +1299,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1285,7 +1311,9 @@ class Imprime
 
             if (img == 5512)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Items\Escalera.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Items\Escalera.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1313,8 +1341,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 127, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 127, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1328,7 +1355,9 @@ class Imprime
 
             if (img == 5521)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Poderes\Bala.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Poderes\Bala.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1356,8 +1385,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1369,7 +1397,9 @@ class Imprime
 
             if (img == 5522)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Poderes\Mascara.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Poderes\Mascara.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1397,8 +1427,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1412,7 +1441,9 @@ class Imprime
 
             if (img == 5531)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionHielo.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionHielo.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1440,8 +1471,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1453,7 +1483,9 @@ class Imprime
 
             if (img == 5532)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionNiebla.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionNiebla.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1481,8 +1513,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1494,7 +1525,9 @@ class Imprime
 
             if (img == 5533)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionVelocidad.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionVelocidad.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1522,8 +1555,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1535,7 +1567,9 @@ class Imprime
 
             if (img == 5534)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionVeneno.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionVeneno.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1563,8 +1597,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1576,7 +1609,9 @@ class Imprime
 
             if (img == 5535)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionVision.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tienda\Pociones\PocionVision.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1604,8 +1639,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1619,7 +1653,9 @@ class Imprime
 
             if (img == 55555)
             {
-                var Img = new CanvasImage(@"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\Alerta.png");
+                var Img = new CanvasImage(
+                    @"C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\InterfazGrafica\Assets\Tablero\Alerta.png"
+                );
                 Img.MaxWidth(7);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1647,8 +1683,7 @@ class Imprime
                 grid.AddRow(canvasImagePanel, textPanel);
 
                 // Crear el padder y envolver el grid
-                var paddedGrid = new Padder(grid)
-                    .Padding(15, 0, Ancho - 80, 0);  // padding: izquierda, arriba, derecha, abajo
+                var paddedGrid = new Padder(grid).Padding(15, 0, Ancho - 80, 0); // padding: izquierda, arriba, derecha, abajo
 
                 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1657,7 +1692,6 @@ class Imprime
 
                 /////////////////////////////////////////////////////////////////////////////////////////
             }
-
 
             /////////////////////////////////// MARCO //////////////////////////////////////////////////
 
@@ -1670,7 +1704,9 @@ class Imprime
                     AnsiConsole.Markup("[on orange4_1] [/]");
 
                     Console.SetCursorPosition(Ancho - 80, y);
-                    AnsiConsole.Markup($"[grey85 on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]█ [/]");
+                    AnsiConsole.Markup(
+                        $"[grey85 on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]█ [/]"
+                    );
                 }
             }
             // Izquierda
@@ -1683,7 +1719,9 @@ class Imprime
                     AnsiConsole.Markup("[on orange4_1] [/]");
 
                     Console.SetCursorPosition(10, y);
-                    AnsiConsole.Markup($"[grey85 on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] █[/]");
+                    AnsiConsole.Markup(
+                        $"[grey85 on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] █[/]"
+                    );
                 }
             }
 
@@ -1692,28 +1730,33 @@ class Imprime
             for (int x = 11; x < Ancho - 80; x++)
             {
                 Console.SetCursorPosition(x, Alto - 10);
-                AnsiConsole.Markup($"[grey85 on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]▄▄[/]");
+                AnsiConsole.Markup(
+                    $"[grey85 on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]▄▄[/]"
+                );
             }
 
             for (int x = 11; x < Ancho - 80; x++)
             {
                 Console.SetCursorPosition(x, Alto - 1);
-                AnsiConsole.Markup($"[grey85 on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]▀▀[/]");
+                AnsiConsole.Markup(
+                    $"[grey85 on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]▀▀[/]"
+                );
             }
 
             Panel = panel;
-
         }
 
         ///////////////////////////////////////// TBLERO /////////////////////////////////////////////////
 
         for (int i = 0; i < Tablero.filas; i++)
         {
-
             for (int j = 0; j < Tablero.columnas; j++)
             {
-
-                if (Tablero.laberinto[i, j] != Tablero.LaberintoCopy[i, j] || Tablero.niebla[i, j] != Tablero.NieblaCopy[i, j] || Tablero.Puntero[i, j] != Tablero.PunteroCopy[i, j])
+                if (
+                    Tablero.laberinto[i, j] != Tablero.LaberintoCopy[i, j]
+                    || Tablero.niebla[i, j] != Tablero.NieblaCopy[i, j]
+                    || Tablero.Puntero[i, j] != Tablero.PunteroCopy[i, j]
+                )
                 {
                     int fila = i + 1;
                     int columna = j * 2 + 18;
@@ -1721,87 +1764,177 @@ class Imprime
 
                     // LABERINTO
 
-                    if (Tablero.laberinto[i, j] == 1 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 1
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[lightsalmon3]██[/]");
                     }
 
-                    if (Tablero.laberinto[i, j] == 12 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 12
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[lightsalmon3]██[/]");
                     }
 
-                    if (Tablero.laberinto[i, j] == 11 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 11
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[lightsalmon3]██[/]");
                     }
 
-
-
-
-                    if (Tablero.laberinto[i, j] == 0 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 0
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[green on darkgreen]░░[/]");
                     }
 
-                    if (Tablero.laberinto[i, j] == 1111 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 1111
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[green on darkgreen]░░[/]");
                     }
 
                     // META
 
-                    if (Tablero.laberinto[i, j] == 111 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 111
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[orange4_1 on blue3]◘◘[/]");
                     }
 
-                    if (Tablero.laberinto[i, j] == 121 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 121
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[orange4_1 on red1]◘◘[/]");
                     }
 
-                    if (Tablero.laberinto[i, j] == 5 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 5
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[red1 on lightsalmon3]🚩[/]");
                     }
 
-
                     // PLAYERS
 
-                    if (Tablero.laberinto[i, j] == 20 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 20
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                         AnsiConsole.Markup("[red1]█[/]" + "[blue3]█[/]");
 
-                    if (Tablero.laberinto[i, j] == 21 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                        AnsiConsole.Markup($"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]" + "[green3]█[/]");
+                    if (
+                        Tablero.laberinto[i, j] == 21
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
+                        AnsiConsole.Markup(
+                            $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]"
+                                + "[green3]█[/]"
+                        );
 
-                    if (Tablero.laberinto[i, j] == 22 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                        AnsiConsole.Markup("[red1]█[/]" + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]");
+                    if (
+                        Tablero.laberinto[i, j] == 22
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
+                        AnsiConsole.Markup(
+                            "[red1]█[/]"
+                                + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]"
+                        );
 
-                    if (Tablero.laberinto[i, j] == 23 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                        AnsiConsole.Markup($"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]" + "[green1]█[/]");
+                    if (
+                        Tablero.laberinto[i, j] == 23
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
+                        AnsiConsole.Markup(
+                            $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]"
+                                + "[green1]█[/]"
+                        );
 
-                    if (Tablero.laberinto[i, j] == 24 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 24
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                         AnsiConsole.Markup("[hotpink]█[/]" + "[yellow1]█[/]");
 
-                    if (Tablero.laberinto[i, j] == 25 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 25
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                         AnsiConsole.Markup("[red1]█[/]" + "[green3]█[/]");
 
-                    if (Tablero.laberinto[i, j] == 26 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                        AnsiConsole.Markup("[orange4_1]█[/]" + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]");
+                    if (
+                        Tablero.laberinto[i, j] == 26
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
+                        AnsiConsole.Markup(
+                            "[orange4_1]█[/]"
+                                + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]"
+                        );
 
-                    if (Tablero.laberinto[i, j] == 27 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                        AnsiConsole.Markup("[green1]█[/]" + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]");
+                    if (
+                        Tablero.laberinto[i, j] == 27
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
+                        AnsiConsole.Markup(
+                            "[green1]█[/]"
+                                + $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]"
+                        );
 
-                    if (Tablero.laberinto[i, j] == 28 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                        AnsiConsole.Markup($"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]" + "[purple4]█[/]");
+                    if (
+                        Tablero.laberinto[i, j] == 28
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
+                        AnsiConsole.Markup(
+                            $"[on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})] [/]"
+                                + "[purple4]█[/]"
+                        );
 
-                    if (Tablero.laberinto[i, j] == 29 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 29
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                         AnsiConsole.Markup("[yellow1]█[/]" + "[purple4]█[/]");
 
                     // TRAMPAS
 
-                    if (Tablero.laberinto[i, j] == 31 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 31
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         if (TrampaVisibleF.Count == 0)
                         {
@@ -1818,7 +1951,11 @@ class Imprime
                         }
                     }
 
-                    if (Tablero.laberinto[i, j] == 32 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 32
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         if (TrampaVisibleF.Count == 0)
                         {
@@ -1835,7 +1972,11 @@ class Imprime
                         }
                     }
 
-                    if (Tablero.laberinto[i, j] == 33 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 33
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         if (TrampaVisibleF.Count == 0)
                         {
@@ -1854,83 +1995,139 @@ class Imprime
 
                     // Reja
 
-                    if (Tablero.laberinto[i, j] == 35 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
-                        AnsiConsole.Markup("[black on lightsalmon3]■■[/]");
+                    if (
+                        Tablero.laberinto[i, j] == 35
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
+                        AnsiConsole.Markup("[black on lightsalmon3]■ [/]");
 
                     // BUFF
 
-                    if (Tablero.laberinto[i, j] == 41 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 41
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[black on lightsalmon3]🍄[/]");
                     }
-                    if (Tablero.laberinto[i, j] == 42 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 42
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[yellow on lightsalmon3]★ [/]");
                     }
-                    if (Tablero.laberinto[i, j] == 43 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 43
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[red1 on lightsalmon3]✿ [/]");
                     }
 
                     // Coins
 
-                    if (Tablero.laberinto[i, j] == 2 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 2
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[yellow1 on lightsalmon3]💲[/]");
                     }
                     //Llaves
 
-                    if (Tablero.laberinto[i, j] == 323 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 323
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[red1 on lightsalmon3]🔑[/]");
                     }
 
-                    if (Tablero.laberinto[i, j] == 313 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 313
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[blue3 on lightsalmon3]🔑[/]");
                     }
 
                     //Cofres
 
-                    if (Tablero.laberinto[i, j] == 6 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false) // comun
+                    if (
+                        Tablero.laberinto[i, j] == 6
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    ) // comun
                     {
                         AnsiConsole.Markup("[blue3 on orange4_1]▀▀[/]");
                     }
 
-                    if (Tablero.laberinto[i, j] == 7 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false) // epico
+                    if (
+                        Tablero.laberinto[i, j] == 7
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    ) // epico
                     {
                         AnsiConsole.Markup("[purple4 on orange4_1]▀▀[/]");
                     }
 
-                    if (Tablero.laberinto[i, j] == 8 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false) // legendario
+                    if (
+                        Tablero.laberinto[i, j] == 8
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    ) // legendario
                     {
                         AnsiConsole.Markup("[red1 on orange4_1]▀▀[/]");
                     }
 
                     // Escalera arriba
 
-                    if (Tablero.laberinto[i, j] == 151 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 151
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[orange4_1 on rosybrown]▀▀[/]");
                     }
 
                     // escalera abajo
 
-                    if (Tablero.laberinto[i, j] == 252 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 252
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[orange4_1 on rosybrown]▄▄[/]");
                     }
 
                     // escalera izquierda
 
-                    if (Tablero.laberinto[i, j] == 353 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 353
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[orange4_1 on rosybrown]▌ [/]");
                     }
 
                     // escalera derecha
 
-                    if (Tablero.laberinto[i, j] == 454 && Tablero.niebla[i, j] == false && Tablero.Puntero[i, j] == false)
+                    if (
+                        Tablero.laberinto[i, j] == 454
+                        && Tablero.niebla[i, j] == false
+                        && Tablero.Puntero[i, j] == false
+                    )
                     {
                         AnsiConsole.Markup("[orange4_1 on rosybrown] ▐[/]");
                     }
@@ -1944,7 +2141,9 @@ class Imprime
 
                     if (Tablero.Puntero[i, j])
                     {
-                        AnsiConsole.Markup($"[rgb({whiteColor.R},{whiteColor.G},{whiteColor.B}) on red1]✖️[/]");
+                        AnsiConsole.Markup(
+                            $"[rgb({whiteColor.R},{whiteColor.G},{whiteColor.B}) on red1]✖️[/]"
+                        );
                     }
                 }
             }
@@ -1958,59 +2157,76 @@ class Imprime
 
         /////////////////////////////////////// LABEL //////////////////////////////////////////////
 
-        for (int fil = 8; fil <= 22;)
+        for (int fil = 8; fil <= 22; )
         {
-
             Console.SetCursorPosition(124, fil);
             if (fil == 8)
             {
-                AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]            {Program.Player[player].Equipo}         [/]");
+                AnsiConsole.Markup(
+                    $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]            {Program.Player[player].Equipo}         [/]"
+                );
             }
             if (fil == 10)
             {
-                AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ FICHA: {Program.Player[player].Name}            [/]");
+                AnsiConsole.Markup(
+                    $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ FICHA: {Program.Player[player].Name}            [/]"
+                );
             }
             if (fil == 12)
             {
-                if(Program.Player[player].Equipo)
-                    AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ COINS: {Program.EquipoBuenoCoins} [/]");
+                if (Program.Player[player].Equipo)
+                    AnsiConsole.Markup(
+                        $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ COINS: {Program.EquipoBuenoCoins} [/]"
+                    );
                 else
-                    AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ COINS: {Program.EquipoMaloCoins} [/]");
+                    AnsiConsole.Markup(
+                        $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ COINS: {Program.EquipoMaloCoins} [/]"
+                    );
             }
             if (fil == 14)
             {
-                AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ PASOS: {Program.Player[player].Pasos}     [/]");
+                AnsiConsole.Markup(
+                    $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ PASOS: {Program.Player[player].Pasos}     [/]"
+                );
             }
             if (fil == 16)
             {
-                AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ VISION: {Program.Player[player].Vision}     [/]");
+                AnsiConsole.Markup(
+                    $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ VISION: {Program.Player[player].Vision}     [/]"
+                );
             }
             if (fil == 18)
             {
                 if (Program.Player[player].Inmune)
-                    AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ INMUNE: Si[/]");
-                else 
-                    AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ INMUNE: No[/]");
+                    AnsiConsole.Markup(
+                        $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ INMUNE: Si[/]"
+                    );
+                else
+                    AnsiConsole.Markup(
+                        $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ INMUNE: No[/]"
+                    );
             }
             if (fil == 20)
             {
-                float porciento = (Program.Player[player].PasosCont * 100)/Program.Player[player].Habilidad;
-                if(porciento>=100) porciento =100;
-                AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ HABILIDAD: {porciento}%   [/]");                
-
+                float porciento =
+                    (Program.Player[player].PasosCont * 100) / Program.Player[player].Habilidad;
+                if (porciento >= 100)
+                    porciento = 100;
+                AnsiConsole.Markup(
+                    $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ HABILIDAD: {porciento}%   [/]"
+                );
             }
             if (fil == 22)
             {
-                AnsiConsole.Markup($"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ BUFFS:  +{Program.Player[player].BufPasos} PASOS  +{Program.Player[player].BufVision} VISION[/]");
+                AnsiConsole.Markup(
+                    $"[italic bold black on rgb({whiteColor.R},{whiteColor.G},{whiteColor.B})]■ BUFFS:  +{Program.Player[player].BufPasos} PASOS  +{Program.Player[player].BufVision} VISION[/]"
+                );
             }
-            
 
             fil += 2;
         }
 
-
         // Posisitionreset cursor
         Console.SetCursorPosition(0, 0);
-
     }
 }

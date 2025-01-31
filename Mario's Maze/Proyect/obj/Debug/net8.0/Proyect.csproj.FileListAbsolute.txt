@@ -65,3 +65,7 @@ C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Ma
 C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\InterfazGrafica\Assets\Cofres\Legendario\CofreLegendario .png
 C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\InterfazGrafica\Assets\Tablero\Alerta.png
 C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\InterfazGrafica\Assets\Tienda\Pociones\PocionTelaraña.png
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\InterfazGrafica\Assets\Carga\Carga.png
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\InterfazGrafica\Assets\Carga\Loby.png
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\InterfazGrafica\Assets\Carga\PicksB.png
+C:\Users\Mayito\OneDrive\Documentos\GitHub\Proyecto-Programacion-Maze-Runner-\Mario's Maze\Proyect\bin\Debug\net8.0\InterfazGrafica\Assets\Carga\PicksM.png

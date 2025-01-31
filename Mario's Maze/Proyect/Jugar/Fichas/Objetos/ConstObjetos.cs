@@ -1,5 +1,4 @@
-﻿
-public class CrearPlayer
+﻿public class CrearPlayer
 {
     public string? Name;
     public int Pasos;
@@ -13,8 +12,21 @@ public class CrearPlayer
     public bool Inmune;
     public int BufPasos;
     public int BufVision;
-    
-    public CrearPlayer(string Name_, int Pasos_,int PasosStatic_, int PasosCont_, int Habilidad_, bool Equipo_, int Vision_,int VisionStatic_, bool Inmovil_, bool Inmune_, int BufPasos_, int BufVision_)
+
+    public CrearPlayer(
+        string Name_,
+        int Pasos_,
+        int PasosStatic_,
+        int PasosCont_,
+        int Habilidad_,
+        bool Equipo_,
+        int Vision_,
+        int VisionStatic_,
+        bool Inmovil_,
+        bool Inmune_,
+        int BufPasos_,
+        int BufVision_
+    )
     {
         Name = Name_;
         Pasos = Pasos_;
@@ -28,20 +40,5 @@ public class CrearPlayer
         Inmune = Inmune_;
         BufPasos = BufPasos_;
         BufVision = BufVision_;
-
     }
 }
-
-
-    // inventario obj equipo pendiente
-  /*  public static int[] inv21 = new int[5] { 0, 0, 0, 0, 0, };
-    public static int[] inv22 = new int[5] { 0, 0, 0, 0, 0, };
-    public static int[] inv23 = new int[5] { 0, 0, 0, 0, 0, };
-    public static int[] inv24 = new int[5] { 0, 0, 0, 0, 0, };
-    public static int[] inv25 = new int[5] { 0, 0, 0, 0, 0, };
-    public static int[] inv26 = new int[5] { 0, 0, 0, 0, 0, };
-    public static int[] inv27 = new int[5] { 0, 0, 0, 0, 0, };
-    public static int[] inv28 = new int[5] { 0, 0, 0, 0, 0, };
-    public static int[] inv29 = new int[5] { 0, 0, 0, 0, 0, };
-    public static int[] inv20 = new int[5] { 0, 0, 0, 0, 0, }; */
-

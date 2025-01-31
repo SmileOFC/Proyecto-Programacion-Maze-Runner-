@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "**/*.meta": true,
+        "**/*.DS_Store": true
+    },
+    "editor.cursorStyle": "line-thin",
+    "editor.cursorBlinking": "blink",
+    "editorCursor.foreground": "#000000",
+    "editorCursor.background": "#000000",
+    "editor.hideCursorInOverviewRuler": true
+}

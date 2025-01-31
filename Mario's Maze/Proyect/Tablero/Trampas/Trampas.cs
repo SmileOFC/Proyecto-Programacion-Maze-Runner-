@@ -1,13 +1,9 @@
 ﻿public class Trampas
 {
-
-
     public static List<int[]> Muro = new List<int[]>();
 
     public static void PlacaQuitar(int p)
     {
-
-
         if (Muro.Count > 0)
         {
             for (int player = 0; player < Muro.Count; player++)
@@ -20,32 +16,27 @@
 
     public static void PlacaGenerar(int p, int player, int y)
     {
-
         Muro.Add(new int[] { player, y });
         Tablero.laberinto[player, y] = 35;
     }
 
     public static void Trampa(int t, int player, int tx, int ty, int px, int py, char p)
     {
-
         if (!Program.Player[player].Inmune)
         {
-
             if (t == 31)
             { //hueco
-
                 List<int> Respwn = new List<int>(Picks.Fichas.ToArray());
                 int c = 0;
 
                 while (Respwn.Count > 0)
                 {
-
-                    if (c > Respwn.Count) break;
+                    if (c > Respwn.Count)
+                        break;
                     if (Respwn[c] == player)
                     {
                         if (c == 0)
                         {
-
                             if (Tablero.laberinto[1, 1] == 1)
                             {
                                 Imprime.Print(player, 31, 31);
@@ -56,23 +47,17 @@
                                 Tablero.laberinto[tx, ty] = 1;
                                 Program.Player[player].Inmovil = true;
                                 break;
-
                             }
                             else
                             {
-
                                 Tablero.laberinto[px, py] = 1;
                                 Tablero.laberinto[tx, ty] = Respwn[c];
                                 break;
-
                             }
-
                         }
-
 
                         if (c == 1)
                         {
-
                             if (Tablero.laberinto[1, 15] == 1)
                             {
                                 Imprime.Print(player, 31, 31);
@@ -83,23 +68,17 @@
                                 Tablero.laberinto[tx, ty] = 1;
                                 Program.Player[player].Inmovil = true;
                                 break;
-
                             }
                             else
                             {
-
                                 Tablero.laberinto[px, py] = 1;
                                 Tablero.laberinto[tx, ty] = Respwn[c];
                                 break;
-
                             }
-
                         }
-
 
                         if (c == 2)
                         {
-
                             if (Tablero.laberinto[1, 29] == 1)
                             {
                                 Imprime.Print(player, 31, 31);
@@ -110,23 +89,17 @@
                                 Tablero.laberinto[tx, ty] = 1;
                                 Program.Player[player].Inmovil = true;
                                 break;
-
                             }
                             else
                             {
-
                                 Tablero.laberinto[px, py] = 1;
                                 Tablero.laberinto[tx, ty] = Respwn[c];
                                 break;
-
                             }
-
                         }
-
 
                         if (c == 3)
                         {
-
                             if (Tablero.laberinto[29, 1] == 1)
                             {
                                 Imprime.Print(player, 31, 31);
@@ -137,23 +110,17 @@
                                 Tablero.laberinto[tx, ty] = 1;
                                 Program.Player[player].Inmovil = true;
                                 break;
-
                             }
                             else
                             {
-
                                 Tablero.laberinto[px, py] = 1;
                                 Tablero.laberinto[tx, ty] = Respwn[c];
                                 break;
-
                             }
-
                         }
-
 
                         if (c == 4)
                         {
-
                             if (Tablero.laberinto[29, 15] == 1)
                             {
                                 Imprime.Print(player, 31, 31);
@@ -164,23 +131,17 @@
                                 Tablero.laberinto[tx, ty] = 1;
                                 Program.Player[player].Inmovil = true;
                                 break;
-
                             }
                             else
                             {
-
                                 Tablero.laberinto[px, py] = 1;
                                 Tablero.laberinto[tx, ty] = Respwn[c];
                                 break;
-
                             }
-
                         }
-
 
                         if (c == 5)
                         {
-
                             if (Tablero.laberinto[29, 29] == 1)
                             {
                                 Imprime.Print(player, 31, 31);
@@ -191,19 +152,14 @@
                                 Tablero.laberinto[tx, ty] = 1;
                                 Program.Player[player].Inmovil = true;
                                 break;
-
                             }
                             else
                             {
-
                                 Tablero.laberinto[px, py] = 1;
                                 Tablero.laberinto[tx, ty] = Respwn[c];
                                 break;
-
                             }
-
                         }
-
                     }
                     c++;
                 }
@@ -211,10 +167,8 @@
 
             if (t == 32)
             { //bomba
-
                 if (p == 'a')
                 {
-
                     if (py + 2 < 30 && Tablero.laberinto[px, py + 2] == 1)
                     {
                         Imprime.Print(player, 32, 32);
@@ -243,11 +197,8 @@
                     }
                 }
 
-
-
                 if (p == 'd')
                 {
-
                     if (py - 2 > 0 && Tablero.laberinto[px, py - 2] == 1)
                     {
                         Imprime.Print(player, 32, 32);
@@ -267,7 +218,6 @@
                             Tablero.laberinto[px, py] = 1;
                             Tablero.laberinto[tx, ty] = 1;
                             Tablero.laberinto[px, py - 1] = player;
-
                         }
                         else
                         {
@@ -277,10 +227,8 @@
                     }
                 }
 
-
                 if (p == 'w')
                 {
-
                     if (px + 2 < 30 && Tablero.laberinto[px + 2, py] == 1)
                     {
                         Imprime.Print(player, 32, 32);
@@ -309,13 +257,10 @@
                     }
                 }
 
-
                 if (p == 's')
                 {
-
                     if (px - 2 > 0 && Tablero.laberinto[px - 2, py] == 1)
                     {
-
                         Imprime.Print(player, 32, 32);
                         Console.ReadKey();
 
@@ -339,20 +284,16 @@
                             Tablero.laberinto[px, py] = 1;
                             Tablero.laberinto[tx, ty] = player;
                         }
-
                     }
                 }
             }
 
             if (t == 33)
             { //Placa
-
                 Tablero.laberinto[px, py] = 1;
                 Tablero.laberinto[tx, ty] = player;
                 Program.Player[player].Inmovil = true;
                 Tablero.UpdateNiebla(player, tx, ty);
-
-
 
                 if (Tablero.laberinto[tx + 1, ty] == 1)
                     PlacaGenerar(p, tx + 1, ty);
@@ -380,7 +321,6 @@
 
                 Imprime.Print(player, 33, 33);
                 Console.ReadKey();
-
             }
 
             /* if(t==34){ //bala
@@ -429,7 +369,6 @@
         {
             Tablero.laberinto[px, py] = 1;
             Tablero.laberinto[tx, ty] = player;
-
         }
     }
 }
