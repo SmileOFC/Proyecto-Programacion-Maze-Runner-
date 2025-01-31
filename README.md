@@ -7,6 +7,10 @@ Mario’s Maze es un emocionante juego de laberintos 1vs1 inspirado en el univer
 
 En Mario's Maze, te embarcarás en una carrera trepidante a través de un laberinto utilizando tus habilidades especiales y estrategias para superar obstáculos, enemigo, caminos lleno de trampas, buffs, cofres y desafíos únicos. El objetivo es ser el primer jugador en alcanzar la meta en el centro del tablero con todas tus fichas, teniendo en cuenta que para alcanzar la meta tendras que abrir las puertas que la rodean con sus respectivas llaves que van a estar a la izquiera o a la derecha del todo de forma aleatoria. Al inicio de la partida, cada ficha solo podrá ver un cuadrado del laberinto del tamaño `n x n`, donde `n` es igual a la visión de la ficha. Todo lo demás estará cubierto por una niebla que se despeja a medida que las fichas avanzan y exploran el tablero.
 
+# Uso
+
+El juego es una aplicacion de consola por tanto lo recomendado es abrirlo desde su archivo.exe al descargar el repositorio podra ver su acceso directo en la carpeta principal.
+
 ## Menú de Navegación
 
 - [MECÁNICAS](#información-del-juego)
